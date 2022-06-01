@@ -20,3 +20,25 @@ C:\wamp64\www\GitHub\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.pdb
 C:\wamp64\www\GitHub\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormClientes.resources
 C:\wamp64\www\GitHub\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormGlobalRestaurantes.resources
 C:\wamp64\www\GitHub\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormIndividualRestaurante.resources
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\bin\Debug\RestGest.exe.config
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\bin\Debug\RestGest.exe
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\bin\Debug\RestGest.pdb
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\bin\Debug\EntityFramework.dll
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\bin\Debug\EntityFramework.xml
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.csproj.AssemblyReference.cache
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.csproj.SuggestedBindingRedirects.cache
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormLogin.resources
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormClientes.resources
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormGlobalRestaurantes.resources
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormIndividualRestaurante.resources
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormMenu.resources
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormMenuPrincipal.resources
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormPedidos.resources
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.Properties.Resources.resources
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.csproj.GenerateResource.cache
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.csproj.CoreCompileInputs.cache
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.csproj.CopyComplete
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.exe
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.pdb
