@@ -63,7 +63,7 @@
             // toolStripSplitButtonSair
             // 
             this.toolStripSplitButtonSair.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButtonSair.Image = global::RestGest.Properties.Resources.file;
+            this.toolStripSplitButtonSair.Image = global::RestGest.Properties.Resources.sair;
             this.toolStripSplitButtonSair.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.toolStripSplitButtonSair.Name = "toolStripSplitButtonSair";
             this.toolStripSplitButtonSair.Size = new System.Drawing.Size(32, 20);
@@ -92,7 +92,6 @@
             this.buttonMenus.Text = "Menus";
             this.buttonMenus.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonMenus.UseVisualStyleBackColor = true;
-            this.buttonMenus.Click += new System.EventHandler(this.buttonMenus_Click);
             // 
             // buttonPedidos
             // 
@@ -106,7 +105,6 @@
             this.buttonPedidos.Text = "Pedidos";
             this.buttonPedidos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonPedidos.UseVisualStyleBackColor = true;
-            this.buttonPedidos.Click += new System.EventHandler(this.buttonPedidos_Click);
             // 
             // buttonIndividualRestaurante
             // 
@@ -120,7 +118,6 @@
             this.buttonIndividualRestaurante.Text = "Individual Restaurante";
             this.buttonIndividualRestaurante.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonIndividualRestaurante.UseVisualStyleBackColor = true;
-            this.buttonIndividualRestaurante.Click += new System.EventHandler(this.buttonIndividualRestaurante_Click);
             // 
             // buttonGlobalRestaurantes
             // 
@@ -136,7 +133,6 @@
             this.buttonGlobalRestaurantes.Text = "Global Restaurantes";
             this.buttonGlobalRestaurantes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonGlobalRestaurantes.UseVisualStyleBackColor = true;
-            this.buttonGlobalRestaurantes.Click += new System.EventHandler(this.buttonGlobalRestaurantes_Click);
             // 
             // buttonClientes
             // 
