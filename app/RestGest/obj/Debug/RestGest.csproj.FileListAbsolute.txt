@@ -16,3 +16,4 @@ C:\wamp64\www\GitHub\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.csproj.CoreCom
 C:\wamp64\www\GitHub\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.csproj.CopyComplete
 C:\wamp64\www\GitHub\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.exe
 C:\wamp64\www\GitHub\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.pdb
+C:\wamp64\www\GitHub\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormPedidos.resources

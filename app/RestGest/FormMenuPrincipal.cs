@@ -35,5 +35,25 @@ namespace RestGest
         {
 
         }
+
+        private void buttonPedidos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonIndividualRestaurante_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonMenus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonGlobalRestaurantes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace RestGest
 {
-    public partial class FormLogin : Form
+    public partial class FormPedidos : Form
     {
-        public FormLogin()
+        public FormPedidos()
         {
             InitializeComponent();
-            FormPedidos form = new FormPedidos();
-            form.ShowDialog();
-        }
-
-        private void buttonLogin_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
