@@ -50,7 +50,7 @@
             this.toolStripSplitButtonSair});
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(715, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(710, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStripMain";
             // 
@@ -73,7 +73,7 @@
             // pictureBoxBanner
             // 
             this.pictureBoxBanner.Image = global::RestGest.Properties.Resources.RestGestLogo256;
-            this.pictureBoxBanner.Location = new System.Drawing.Point(50, 45);
+            this.pictureBoxBanner.Location = new System.Drawing.Point(50, 25);
             this.pictureBoxBanner.Name = "pictureBoxBanner";
             this.pictureBoxBanner.Size = new System.Drawing.Size(200, 200);
             this.pictureBoxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -85,7 +85,7 @@
             this.buttonMenus.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMenus.Image = global::RestGest.Properties.Resources.table_list_solid;
             this.buttonMenus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonMenus.Location = new System.Drawing.Point(256, 457);
+            this.buttonMenus.Location = new System.Drawing.Point(256, 437);
             this.buttonMenus.Name = "buttonMenus";
             this.buttonMenus.Size = new System.Drawing.Size(200, 200);
             this.buttonMenus.TabIndex = 6;
@@ -98,7 +98,7 @@
             this.buttonPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPedidos.Image = global::RestGest.Properties.Resources.receipt_solid;
             this.buttonPedidos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonPedidos.Location = new System.Drawing.Point(256, 251);
+            this.buttonPedidos.Location = new System.Drawing.Point(256, 231);
             this.buttonPedidos.Name = "buttonPedidos";
             this.buttonPedidos.Size = new System.Drawing.Size(200, 200);
             this.buttonPedidos.TabIndex = 5;
@@ -111,7 +111,7 @@
             this.buttonIndividualRestaurante.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonIndividualRestaurante.Image = global::RestGest.Properties.Resources.building_solid;
             this.buttonIndividualRestaurante.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonIndividualRestaurante.Location = new System.Drawing.Point(462, 251);
+            this.buttonIndividualRestaurante.Location = new System.Drawing.Point(462, 231);
             this.buttonIndividualRestaurante.Name = "buttonIndividualRestaurante";
             this.buttonIndividualRestaurante.Size = new System.Drawing.Size(200, 200);
             this.buttonIndividualRestaurante.TabIndex = 3;
@@ -126,7 +126,7 @@
             this.buttonGlobalRestaurantes.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonGlobalRestaurantes.Image = global::RestGest.Properties.Resources.globe;
             this.buttonGlobalRestaurantes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonGlobalRestaurantes.Location = new System.Drawing.Point(50, 251);
+            this.buttonGlobalRestaurantes.Location = new System.Drawing.Point(50, 231);
             this.buttonGlobalRestaurantes.Name = "buttonGlobalRestaurantes";
             this.buttonGlobalRestaurantes.Size = new System.Drawing.Size(200, 200);
             this.buttonGlobalRestaurantes.TabIndex = 2;
@@ -139,7 +139,7 @@
             this.buttonClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClientes.Image = global::RestGest.Properties.Resources.image_portrait_solid;
             this.buttonClientes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonClientes.Location = new System.Drawing.Point(256, 45);
+            this.buttonClientes.Location = new System.Drawing.Point(256, 25);
             this.buttonClientes.Name = "buttonClientes";
             this.buttonClientes.Size = new System.Drawing.Size(200, 200);
             this.buttonClientes.TabIndex = 1;
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 669);
+            this.ClientSize = new System.Drawing.Size(710, 646);
             this.Controls.Add(this.pictureBoxBanner);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.buttonMenus);
