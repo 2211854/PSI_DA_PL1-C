@@ -20,13 +20,14 @@ namespace RestGest
             this.Pedido = new HashSet<Pedido>();
         }
     
-        public string IdRestaurante { get; set; }
         public string Salario { get; set; }
         public string Posicao { get; set; }
         public string email { get; set; }
         public string password { get; set; }
+        public int IdRestaurante { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }
+        public virtual Restaurante Restaurante { get; set; }
     }
 }

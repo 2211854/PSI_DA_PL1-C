@@ -18,7 +18,6 @@
         <EntityTypeShape EntityType="meuRestaurante.Estado" Width="1.5" PointX="7.75" PointY="8.75" />
         <EntityTypeShape EntityType="meuRestaurante.Pagamento" Width="1.5" PointX="0.625" PointY="8.25" />
         <EntityTypeShape EntityType="meuRestaurante.MetodoPagamento" Width="1.5" PointX="0.75" PointY="11.5" />
-        <AssociationConnector Association="meuRestaurante.MoradaPessoa" />
         <AssociationConnector Association="meuRestaurante.MetodoPagamentoPagamento" />
         <AssociationConnector Association="meuRestaurante.MoradaRestaurante" />
         <AssociationConnector Association="meuRestaurante.RestauranteItemMenu" />
@@ -26,7 +25,7 @@
         <AssociationConnector Association="meuRestaurante.PedidoEstado" />
         <AssociationConnector Association="meuRestaurante.ItemMenuPedido" />
         <AssociationConnector Association="meuRestaurante.RestaurantePedido" ManuallyRouted="true" >
-          <ConnectorPoint PointX="10.09375" PointY="3.7398893229166683" />
+          <ConnectorPoint PointX="10.09375" PointY="3.5475878906250005" />
           <ConnectorPoint PointX="10.09375" PointY="4.2767097352051069" />
           <ConnectorPoint PointX="5.4433218750000005" PointY="4.2767097352051069" />
           <ConnectorPoint PointX="5.4433218750000005" PointY="7.8458968098958328" />
@@ -42,8 +41,9 @@
           <ConnectorPoint PointX="6.07921875" PointY="4.397450502354407" />
           <ConnectorPoint PointX="6.07921875" PointY="5.24573661170642" />
           <ConnectorPoint PointX="10.046875" PointY="5.24573661170642" />
-          <ConnectorPoint PointX="10.046875" PointY="3.739889322916667" />
+          <ConnectorPoint PointX="10.046875" PointY="3.5475878906249987" />
         </AssociationConnector>
+        <AssociationConnector Association="meuRestaurante.PessoaMorada" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
