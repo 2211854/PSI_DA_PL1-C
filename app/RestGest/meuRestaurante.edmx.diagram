@@ -25,10 +25,25 @@
         <AssociationConnector Association="meuRestaurante.CategoriaItemMenu" />
         <AssociationConnector Association="meuRestaurante.PedidoEstado" />
         <AssociationConnector Association="meuRestaurante.ItemMenuPedido" />
-        <AssociationConnector Association="meuRestaurante.RestaurantePedido" />
+        <AssociationConnector Association="meuRestaurante.RestaurantePedido" ManuallyRouted="true" >
+          <ConnectorPoint PointX="10.09375" PointY="3.7398893229166683" />
+          <ConnectorPoint PointX="10.09375" PointY="4.2767097352051069" />
+          <ConnectorPoint PointX="5.4433218750000005" PointY="4.2767097352051069" />
+          <ConnectorPoint PointX="5.4433218750000005" PointY="7.8458968098958328" />
+          <ConnectorPoint PointX="4.875" PointY="7.8458968098958328" />
+        </AssociationConnector>
         <AssociationConnector Association="meuRestaurante.ClientePedido" />
         <AssociationConnector Association="meuRestaurante.TrabalhadorPedido" />
         <AssociationConnector Association="meuRestaurante.PagamentoPedido" />
+        <AssociationConnector Association="meuRestaurante.TrabalhadorRestaurante" ManuallyRouted="true" >
+          <ConnectorPoint PointX="4.125" PointY="4.397450502354407" />
+          <ConnectorPoint PointX="5.3599885416666675" PointY="4.3974505023544062" />
+          <ConnectorPoint PointX="5.5266552083333336" PointY="4.397450502354407" />
+          <ConnectorPoint PointX="6.07921875" PointY="4.397450502354407" />
+          <ConnectorPoint PointX="6.07921875" PointY="5.24573661170642" />
+          <ConnectorPoint PointX="10.046875" PointY="5.24573661170642" />
+          <ConnectorPoint PointX="10.046875" PointY="3.739889322916667" />
+        </AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
