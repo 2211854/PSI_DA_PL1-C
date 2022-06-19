@@ -21,5 +21,10 @@ namespace RestGest
         {
 
         }
+
+        private void groupBoxAdcMenusPedidos_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

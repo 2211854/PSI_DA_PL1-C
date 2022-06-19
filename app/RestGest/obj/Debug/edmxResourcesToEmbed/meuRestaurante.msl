@@ -17,7 +17,6 @@
         <MappingFragment StoreEntitySet="PessoaSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
-          <ScalarProperty Name="IdMorada" ColumnName="IdMorada" />
           <ScalarProperty Name="Telemovel" ColumnName="Telemovel" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -31,7 +30,6 @@
       <EntityTypeMapping TypeName="IsTypeOf(meuRestaurante.Trabalhador)">
         <MappingFragment StoreEntitySet="PessoaSet_Trabalhador">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="IdRestaurante" ColumnName="IdRestaurante" />
           <ScalarProperty Name="Salario" ColumnName="Salario" />
           <ScalarProperty Name="Posicao" ColumnName="Posicao" />
           <ScalarProperty Name="email" ColumnName="email" />
@@ -44,7 +42,6 @@
         <MappingFragment StoreEntitySet="RestauranteSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
-          <ScalarProperty Name="IdMorada" ColumnName="IdMorada" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -109,14 +106,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="MoradaPessoa" TypeName="meuRestaurante.MoradaPessoa" StoreEntitySet="MoradaSet">
-      <EndProperty Name="Pessoa">
-        <ScalarProperty Name="Id" ColumnName="Pessoa_Id" />
-      </EndProperty>
-      <EndProperty Name="Morada">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
     <AssociationSetMapping Name="MoradaRestaurante" TypeName="meuRestaurante.MoradaRestaurante" StoreEntitySet="MoradaSet">
       <EndProperty Name="Restaurante">
         <ScalarProperty Name="Id" ColumnName="Restaurante_Id" />

@@ -53,13 +53,8 @@
             this.buttonAdicionarCategoria = new System.Windows.Forms.Button();
             this.tabControlGlobalRestaurantes = new System.Windows.Forms.TabControl();
             this.tabPageRestaurantes = new System.Windows.Forms.TabPage();
-            this.tabPageCategorias = new System.Windows.Forms.TabPage();
-            this.groupBoxListarClientes = new System.Windows.Forms.GroupBox();
-            this.buttonApagarRestaurantes = new System.Windows.Forms.Button();
-            this.listBoxRestaurantes = new System.Windows.Forms.ListBox();
             this.tabControlRestaurantes = new System.Windows.Forms.TabControl();
             this.tabPageInserirRestaurantes = new System.Windows.Forms.TabPage();
-            this.tabPageEditarRestaurantes = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -71,6 +66,7 @@
             this.textBoxInserirNomeRestaurante = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAdicionarRestaurantes = new System.Windows.Forms.Button();
+            this.tabPageEditarRestaurantes = new System.Windows.Forms.TabPage();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -82,6 +78,10 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.groupBoxListarClientes = new System.Windows.Forms.GroupBox();
+            this.buttonApagarRestaurantes = new System.Windows.Forms.Button();
+            this.listBoxRestaurantes = new System.Windows.Forms.ListBox();
+            this.tabPageCategorias = new System.Windows.Forms.TabPage();
             this.tabControlCategoria = new System.Windows.Forms.TabControl();
             this.tabPageInserirCategorias = new System.Windows.Forms.TabPage();
             this.tabPageEditarCategorias = new System.Windows.Forms.TabPage();
@@ -95,11 +95,11 @@
             this.groupBox6.SuspendLayout();
             this.tabControlGlobalRestaurantes.SuspendLayout();
             this.tabPageRestaurantes.SuspendLayout();
-            this.tabPageCategorias.SuspendLayout();
-            this.groupBoxListarClientes.SuspendLayout();
             this.tabControlRestaurantes.SuspendLayout();
             this.tabPageInserirRestaurantes.SuspendLayout();
             this.tabPageEditarRestaurantes.SuspendLayout();
+            this.groupBoxListarClientes.SuspendLayout();
+            this.tabPageCategorias.SuspendLayout();
             this.tabControlCategoria.SuspendLayout();
             this.tabPageInserirCategorias.SuspendLayout();
             this.tabPageEditarCategorias.SuspendLayout();
@@ -357,46 +357,6 @@
             this.tabPageRestaurantes.Text = "Restaurantes";
             this.tabPageRestaurantes.UseVisualStyleBackColor = true;
             // 
-            // tabPageCategorias
-            // 
-            this.tabPageCategorias.Controls.Add(this.tabControlCategoria);
-            this.tabPageCategorias.Controls.Add(this.groupBox6);
-            this.tabPageCategorias.Location = new System.Drawing.Point(4, 22);
-            this.tabPageCategorias.Name = "tabPageCategorias";
-            this.tabPageCategorias.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCategorias.Size = new System.Drawing.Size(931, 447);
-            this.tabPageCategorias.TabIndex = 1;
-            this.tabPageCategorias.Text = "Categorias";
-            this.tabPageCategorias.UseVisualStyleBackColor = true;
-            // 
-            // groupBoxListarClientes
-            // 
-            this.groupBoxListarClientes.Controls.Add(this.buttonApagarRestaurantes);
-            this.groupBoxListarClientes.Controls.Add(this.listBoxRestaurantes);
-            this.groupBoxListarClientes.Location = new System.Drawing.Point(6, 6);
-            this.groupBoxListarClientes.Name = "groupBoxListarClientes";
-            this.groupBoxListarClientes.Size = new System.Drawing.Size(363, 435);
-            this.groupBoxListarClientes.TabIndex = 17;
-            this.groupBoxListarClientes.TabStop = false;
-            this.groupBoxListarClientes.Text = "Listar Restaurantes:";
-            // 
-            // buttonApagarRestaurantes
-            // 
-            this.buttonApagarRestaurantes.Location = new System.Drawing.Point(141, 406);
-            this.buttonApagarRestaurantes.Name = "buttonApagarRestaurantes";
-            this.buttonApagarRestaurantes.Size = new System.Drawing.Size(75, 23);
-            this.buttonApagarRestaurantes.TabIndex = 1;
-            this.buttonApagarRestaurantes.Text = "Apagar";
-            this.buttonApagarRestaurantes.UseVisualStyleBackColor = true;
-            // 
-            // listBoxRestaurantes
-            // 
-            this.listBoxRestaurantes.FormattingEnabled = true;
-            this.listBoxRestaurantes.Location = new System.Drawing.Point(7, 20);
-            this.listBoxRestaurantes.Name = "listBoxRestaurantes";
-            this.listBoxRestaurantes.Size = new System.Drawing.Size(346, 368);
-            this.listBoxRestaurantes.TabIndex = 0;
-            // 
             // tabControlRestaurantes
             // 
             this.tabControlRestaurantes.Controls.Add(this.tabPageInserirRestaurantes);
@@ -427,27 +387,6 @@
             this.tabPageInserirRestaurantes.TabIndex = 0;
             this.tabPageInserirRestaurantes.Text = "Inserir";
             this.tabPageInserirRestaurantes.UseVisualStyleBackColor = true;
-            // 
-            // tabPageEditarRestaurantes
-            // 
-            this.tabPageEditarRestaurantes.Controls.Add(this.textBox7);
-            this.tabPageEditarRestaurantes.Controls.Add(this.label11);
-            this.tabPageEditarRestaurantes.Controls.Add(this.textBox8);
-            this.tabPageEditarRestaurantes.Controls.Add(this.label12);
-            this.tabPageEditarRestaurantes.Controls.Add(this.textBox9);
-            this.tabPageEditarRestaurantes.Controls.Add(this.label13);
-            this.tabPageEditarRestaurantes.Controls.Add(this.textBox10);
-            this.tabPageEditarRestaurantes.Controls.Add(this.label14);
-            this.tabPageEditarRestaurantes.Controls.Add(this.textBox11);
-            this.tabPageEditarRestaurantes.Controls.Add(this.label15);
-            this.tabPageEditarRestaurantes.Controls.Add(this.button1);
-            this.tabPageEditarRestaurantes.Location = new System.Drawing.Point(4, 22);
-            this.tabPageEditarRestaurantes.Name = "tabPageEditarRestaurantes";
-            this.tabPageEditarRestaurantes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEditarRestaurantes.Size = new System.Drawing.Size(539, 411);
-            this.tabPageEditarRestaurantes.TabIndex = 1;
-            this.tabPageEditarRestaurantes.Text = "Editar";
-            this.tabPageEditarRestaurantes.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -548,6 +487,27 @@
             this.buttonAdicionarRestaurantes.Text = "Adicionar";
             this.buttonAdicionarRestaurantes.UseVisualStyleBackColor = true;
             // 
+            // tabPageEditarRestaurantes
+            // 
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBox7);
+            this.tabPageEditarRestaurantes.Controls.Add(this.label11);
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBox8);
+            this.tabPageEditarRestaurantes.Controls.Add(this.label12);
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBox9);
+            this.tabPageEditarRestaurantes.Controls.Add(this.label13);
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBox10);
+            this.tabPageEditarRestaurantes.Controls.Add(this.label14);
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBox11);
+            this.tabPageEditarRestaurantes.Controls.Add(this.label15);
+            this.tabPageEditarRestaurantes.Controls.Add(this.button1);
+            this.tabPageEditarRestaurantes.Location = new System.Drawing.Point(4, 22);
+            this.tabPageEditarRestaurantes.Name = "tabPageEditarRestaurantes";
+            this.tabPageEditarRestaurantes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageEditarRestaurantes.Size = new System.Drawing.Size(539, 411);
+            this.tabPageEditarRestaurantes.TabIndex = 1;
+            this.tabPageEditarRestaurantes.Text = "Editar";
+            this.tabPageEditarRestaurantes.UseVisualStyleBackColor = true;
+            // 
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -646,6 +606,46 @@
             this.button1.TabIndex = 29;
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxListarClientes
+            // 
+            this.groupBoxListarClientes.Controls.Add(this.buttonApagarRestaurantes);
+            this.groupBoxListarClientes.Controls.Add(this.listBoxRestaurantes);
+            this.groupBoxListarClientes.Location = new System.Drawing.Point(6, 6);
+            this.groupBoxListarClientes.Name = "groupBoxListarClientes";
+            this.groupBoxListarClientes.Size = new System.Drawing.Size(363, 435);
+            this.groupBoxListarClientes.TabIndex = 17;
+            this.groupBoxListarClientes.TabStop = false;
+            this.groupBoxListarClientes.Text = "Listar Restaurantes:";
+            // 
+            // buttonApagarRestaurantes
+            // 
+            this.buttonApagarRestaurantes.Location = new System.Drawing.Point(141, 406);
+            this.buttonApagarRestaurantes.Name = "buttonApagarRestaurantes";
+            this.buttonApagarRestaurantes.Size = new System.Drawing.Size(75, 23);
+            this.buttonApagarRestaurantes.TabIndex = 1;
+            this.buttonApagarRestaurantes.Text = "Apagar";
+            this.buttonApagarRestaurantes.UseVisualStyleBackColor = true;
+            // 
+            // listBoxRestaurantes
+            // 
+            this.listBoxRestaurantes.FormattingEnabled = true;
+            this.listBoxRestaurantes.Location = new System.Drawing.Point(7, 20);
+            this.listBoxRestaurantes.Name = "listBoxRestaurantes";
+            this.listBoxRestaurantes.Size = new System.Drawing.Size(346, 368);
+            this.listBoxRestaurantes.TabIndex = 0;
+            // 
+            // tabPageCategorias
+            // 
+            this.tabPageCategorias.Controls.Add(this.tabControlCategoria);
+            this.tabPageCategorias.Controls.Add(this.groupBox6);
+            this.tabPageCategorias.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCategorias.Name = "tabPageCategorias";
+            this.tabPageCategorias.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCategorias.Size = new System.Drawing.Size(931, 447);
+            this.tabPageCategorias.TabIndex = 1;
+            this.tabPageCategorias.Text = "Categorias";
+            this.tabPageCategorias.UseVisualStyleBackColor = true;
             // 
             // tabControlCategoria
             // 
@@ -779,13 +779,13 @@
             this.groupBox6.ResumeLayout(false);
             this.tabControlGlobalRestaurantes.ResumeLayout(false);
             this.tabPageRestaurantes.ResumeLayout(false);
-            this.tabPageCategorias.ResumeLayout(false);
-            this.groupBoxListarClientes.ResumeLayout(false);
             this.tabControlRestaurantes.ResumeLayout(false);
             this.tabPageInserirRestaurantes.ResumeLayout(false);
             this.tabPageInserirRestaurantes.PerformLayout();
             this.tabPageEditarRestaurantes.ResumeLayout(false);
             this.tabPageEditarRestaurantes.PerformLayout();
+            this.groupBoxListarClientes.ResumeLayout(false);
+            this.tabPageCategorias.ResumeLayout(false);
             this.tabControlCategoria.ResumeLayout(false);
             this.tabPageInserirCategorias.ResumeLayout(false);
             this.tabPageInserirCategorias.PerformLayout();

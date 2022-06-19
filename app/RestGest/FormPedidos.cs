@@ -21,5 +21,20 @@ namespace RestGest
         {
 
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPageConsultar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBoxMenusPedidos_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
