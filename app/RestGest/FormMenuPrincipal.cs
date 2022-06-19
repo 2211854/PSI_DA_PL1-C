@@ -13,17 +13,17 @@ namespace RestGest
     public partial class FormMenuPrincipal : Form
     {
 
-        Trabalhador Funcionario;
+        //Trabalhador Funcionario;
 
-        public FormMenuPrincipal(Trabalhador funcionario)
+        public FormMenuPrincipal(/*Trabalhador funcionario*/)
         {
             InitializeComponent();
-            Funcionario = funcionario;
+            //Funcionario = funcionario;
         }
 
         private void FormMenuPrincipal_Load(object sender, EventArgs e)
         {
-                toolStripStatusLabelTrabalhador.Text = Funcionario.Nome;
+                //toolStripStatusLabelTrabalhador.Text = Funcionario.Nome;
         }
 
         private void toolStripSplitButtonSair_ButtonClick(object sender, EventArgs e)

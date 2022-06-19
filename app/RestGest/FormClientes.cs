@@ -28,13 +28,21 @@ namespace RestGest
         {
             if(textBoxNome.Text != "" && textBoxTelemovel.Text != "" && textBoxNumContribuinte.Text != "" && textBoxRua.Text != "" && textBoxCodPostal.Text != "" && textBoxCidade.Text != "" && textBoxPais.Text != "")
             {
-                Cliente cliente = new Cliente(textBoxNome.Text,Int32.Parse(textBoxTelemovel.Text), Int32.Parse(textBoxNumContribuinte.Text));
-                Morada clienteMorada = new Morada(textBoxRua.Text, textBoxCidade.Text, textBoxCodPostal.Text, textBoxPais.Text);
-                clienteMorada.Pessoa = cliente;
-                clienteMorada.Restaurante = null;
+                PessoaSet Pessoa = new PessoaSet();
+                Pessoa.Nome = textBoxNome.Text;
+                Pessoa.Telemovel = Int32.Parse(textBoxTelemovel.Text);
+                PessoaSet_Cliente cliente = new PessoaSet_Cliente();
+                cliente.PessoaSet = Pessoa;
+                cliente.NumContribuinte = Int32.Parse(textBoxNumContribuinte.Text);
+                MoradaSet clienteMorada = new MoradaSet();
+                clienteMorada.Rua = textBoxRua.Text;
+                clienteMorada.Cidade = textBoxCidade.Text;
+                clienteMorada.CodPostal = textBoxCodPostal.Text;
+                clienteMorada.Pais = textBoxPais.Text;
+                Pessoa.MoradaSet = clienteMorada;
 
 
-                meuRestaurante.PessoaSet.Add(cliente);
+                meuRestaurante.PessoaSet_Cliente.Add(cliente);
                 meuRestaurante.MoradaSet.Add(clienteMorada);
                 meuRestaurante.SaveChanges();
                 LerDadosCliente();
@@ -50,7 +58,7 @@ namespace RestGest
 
         private void LerDadosCliente()
         {
-            listBoxClientes.DataSource = meuRestaurante.PessoaSet.ToList<Pessoa>();
+            listBoxClientes.DataSource = meuRestaurante.PessoaSet_Cliente.OfType<PessoaSet_Cliente>().ToList();
         }
 
     }

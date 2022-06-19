@@ -12,13 +12,13 @@ namespace RestGest
     using System;
     using System.Collections.Generic;
     
-    public partial class Pedido
+    public partial class PedidoSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Pedido()
+        public PedidoSet()
         {
-            this.ItemMenu = new HashSet<ItemMenu>();
-            this.Pagamento = new HashSet<Pagamento>();
+            this.PagamentoSet = new HashSet<PagamentoSet>();
+            this.ItemMenuSet = new HashSet<ItemMenuSet>();
         }
     
         public int Id { get; set; }
@@ -28,13 +28,13 @@ namespace RestGest
         public int IdCliente { get; set; }
         public int IdTrabalhador { get; set; }
     
-        public virtual Estado Estado { get; set; }
+        public virtual EstadoSet EstadoSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ItemMenu> ItemMenu { get; set; }
-        public virtual Restaurante Restaurante { get; set; }
-        public virtual Cliente Cliente { get; set; }
-        public virtual Trabalhador Trabalhador { get; set; }
+        public virtual ICollection<PagamentoSet> PagamentoSet { get; set; }
+        public virtual PessoaSet_Cliente PessoaSet_Cliente { get; set; }
+        public virtual RestauranteSet RestauranteSet { get; set; }
+        public virtual PessoaSet_Trabalhador PessoaSet_Trabalhador { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pagamento> Pagamento { get; set; }
+        public virtual ICollection<ItemMenuSet> ItemMenuSet { get; set; }
     }
 }

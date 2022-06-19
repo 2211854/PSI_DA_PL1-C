@@ -25,14 +25,16 @@ namespace RestGest
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Morada> MoradaSet { get; set; }
-        public virtual DbSet<Pessoa> PessoaSet { get; set; }
-        public virtual DbSet<Restaurante> RestauranteSet { get; set; }
-        public virtual DbSet<ItemMenu> ItemMenuSet { get; set; }
-        public virtual DbSet<Categoria> CategoriaSet { get; set; }
-        public virtual DbSet<Pedido> PedidoSet { get; set; }
-        public virtual DbSet<Estado> EstadoSet { get; set; }
-        public virtual DbSet<Pagamento> PagamentoSet { get; set; }
-        public virtual DbSet<MetodoPagamento> MetodoPagamentoSet { get; set; }
+        public virtual DbSet<CategoriaSet> CategoriaSet { get; set; }
+        public virtual DbSet<EstadoSet> EstadoSet { get; set; }
+        public virtual DbSet<ItemMenuSet> ItemMenuSet { get; set; }
+        public virtual DbSet<MetodoPagamentoSet> MetodoPagamentoSet { get; set; }
+        public virtual DbSet<MoradaSet> MoradaSet { get; set; }
+        public virtual DbSet<PagamentoSet> PagamentoSet { get; set; }
+        public virtual DbSet<PedidoSet> PedidoSet { get; set; }
+        public virtual DbSet<PessoaSet> PessoaSet { get; set; }
+        public virtual DbSet<PessoaSet_Cliente> PessoaSet_Cliente { get; set; }
+        public virtual DbSet<PessoaSet_Trabalhador> PessoaSet_Trabalhador { get; set; }
+        public virtual DbSet<RestauranteSet> RestauranteSet { get; set; }
     }
 }

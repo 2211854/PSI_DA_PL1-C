@@ -12,26 +12,26 @@ namespace RestGest
     using System;
     using System.Collections.Generic;
     
-    public partial class Categoria
+    public partial class RestauranteSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Categoria(string nome, bool ativo = true)
+        public RestauranteSet()
         {
-            this.Nome = nome;
-            this.Ativo = ativo;
-            this.ItemMenu = new HashSet<ItemMenu>();
+            this.PedidoSet = new HashSet<PedidoSet>();
+            this.PessoaSet_Trabalhador = new HashSet<PessoaSet_Trabalhador>();
+            this.ItemMenuSet = new HashSet<ItemMenuSet>();
         }
     
         public int Id { get; set; }
         public string Nome { get; set; }
-        public bool Ativo { get; set; }
+        public int Morada_Id { get; set; }
     
+        public virtual MoradaSet MoradaSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ItemMenu> ItemMenu { get; set; }
-
-        public override string ToString()
-        {
-            return this.Nome;
-        }
+        public virtual ICollection<PedidoSet> PedidoSet { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PessoaSet_Trabalhador> PessoaSet_Trabalhador { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ItemMenuSet> ItemMenuSet { get; set; }
     }
 }

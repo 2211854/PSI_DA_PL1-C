@@ -11,29 +11,20 @@ namespace RestGest
 {
     using System;
     using System.Collections.Generic;
-
-    public partial class Trabalhador : Pessoa
+    
+    public partial class CategoriaSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Trabalhador(string nome, int telemovel, int salario, string posicao, string email, string password, int idRestaurante) : base(nome, telemovel)
+        public CategoriaSet()
         {
-            this.Email = email;
-            this.Password = password;
-            this.IdRestaurante = idRestaurante;
-            this.Salario = salario;
-
-            this.Pedido = new HashSet<Pedido>();
-
+            this.ItemMenuSet = new HashSet<ItemMenuSet>();
         }
-
-        public int Salario { get; set; }
-        public string Posicao { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public int IdRestaurante { get; set; }
-
+    
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public bool Ativo { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pedido> Pedido { get; set; }
-        public virtual Restaurante Restaurante { get; set; }
+        public virtual ICollection<ItemMenuSet> ItemMenuSet { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\wamp64\www\github\PSI_DA_PL1-C\app\RestGest\meuRestaurante.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\meuRestaurante.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

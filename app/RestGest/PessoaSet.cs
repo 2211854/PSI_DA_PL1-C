@@ -12,14 +12,19 @@ namespace RestGest
     using System;
     using System.Collections.Generic;
     
-    public partial class Pagamento
+    public partial class PessoaSet
     {
+        public PessoaSet()
+        {
+        }
+
         public int Id { get; set; }
-        public decimal Valor { get; set; }
-        public int IdMetodoPagamento { get; set; }
-        public int IdPedido { get; set; }
+        public string Nome { get; set; }
+        public int Telemovel { get; set; }
+        public int Morada_Id { get; set; }
     
-        public virtual MetodoPagamento MetodoPagamento { get; set; }
-        public virtual Pedido Pedido { get; set; }
+        public virtual MoradaSet MoradaSet { get; set; }
+        public virtual PessoaSet_Cliente PessoaSet_Cliente { get; set; }
+        public virtual PessoaSet_Trabalhador PessoaSet_Trabalhador { get; set; }
     }
 }
