@@ -15,6 +15,8 @@ namespace RestGest
         public FormLogin()
         {
             InitializeComponent();
+            FormClientes form = new FormClientes();
+            form.ShowDialog();
         }
 
         private void FormLogin_Load(object sender, EventArgs e)

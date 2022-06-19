@@ -64,10 +64,10 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Rua" Type="String" Nullable="false" />
-    <Property Name="Cidade" Type="String" Nullable="false" />
-    <Property Name="CodPostal" Type="String" Nullable="false" />
-    <Property Name="Pais" Type="String" Nullable="false" />
+    <Property Name="Rua" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Cidade" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CodPostal" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Pais" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Restaurante" Relationship="meuRestaurante.MoradaRestaurante" FromRole="Morada" ToRole="Restaurante" />
     <NavigationProperty Name="Pessoa" Relationship="meuRestaurante.PessoaMorada" FromRole="Morada" ToRole="Pessoa" />
   </EntityType>
@@ -76,21 +76,21 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
-    <Property Name="Telemovel" Type="String" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Telemovel" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Morada" Relationship="meuRestaurante.PessoaMorada" FromRole="Pessoa" ToRole="Morada" />
   </EntityType>
   <EntityType Name="Cliente" BaseType="meuRestaurante.Pessoa">
-    <Property Name="TotalGasto" Type="String" Nullable="false" />
-    <Property Name="NumContribuinte" Type="String" Nullable="false" />
+    <Property Name="TotalGasto" Type="Decimal" Nullable="false" />
+    <Property Name="NumContribuinte" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Pedido" Relationship="meuRestaurante.ClientePedido" FromRole="Cliente" ToRole="Pedido" />
   </EntityType>
   <EntityType Name="Trabalhador" BaseType="meuRestaurante.Pessoa">
-    <Property Name="Salario" Type="String" Nullable="false" />
-    <Property Name="Posicao" Type="String" Nullable="false" />
+    <Property Name="Salario" Type="Int32" Nullable="false" />
+    <Property Name="Posicao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Pedido" Relationship="meuRestaurante.TrabalhadorPedido" FromRole="Trabalhador" ToRole="Pedido" />
-    <Property Name="email" Type="String" Nullable="false" />
-    <Property Name="password" Type="String" Nullable="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Restaurante" Relationship="meuRestaurante.TrabalhadorRestaurante" FromRole="Trabalhador" ToRole="Restaurante" />
     <Property Name="IdRestaurante" Type="Int32" Nullable="false" />
   </EntityType>
@@ -99,7 +99,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Morada" Relationship="meuRestaurante.MoradaRestaurante" FromRole="Restaurante" ToRole="Morada" />
     <NavigationProperty Name="ItemMenu" Relationship="meuRestaurante.RestauranteItemMenu" FromRole="Restaurante" ToRole="ItemMenu" />
     <NavigationProperty Name="Pedido" Relationship="meuRestaurante.RestaurantePedido" FromRole="Restaurante" ToRole="Pedido" />
@@ -110,11 +110,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
-    <Property Name="Fotografia" Type="String" Nullable="false" />
-    <Property Name="Ingredientes" Type="String" Nullable="false" />
-    <Property Name="Preco" Type="String" Nullable="false" />
-    <Property Name="Ativo" Type="String" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Fotografia" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Ingredientes" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Preco" Type="Decimal" Nullable="false" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Restaurante" Relationship="meuRestaurante.RestauranteItemMenu" FromRole="ItemMenu" ToRole="Restaurante" />
     <NavigationProperty Name="Categoria" Relationship="meuRestaurante.CategoriaItemMenu" FromRole="ItemMenu" ToRole="Categoria" />
     <Property Name="IdCategoria" Type="Int32" Nullable="false" />
@@ -125,8 +125,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
-    <Property Name="Ativo" Type="String" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="ItemMenu" Relationship="meuRestaurante.CategoriaItemMenu" FromRole="Categoria" ToRole="ItemMenu" />
   </EntityType>
   <EntityType Name="Pedido">
@@ -134,7 +134,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ValorTotal" Type="String" Nullable="false" />
+    <Property Name="ValorTotal" Type="Decimal" Nullable="false" />
     <NavigationProperty Name="Estado" Relationship="meuRestaurante.PedidoEstado" FromRole="Pedido" ToRole="Estado" />
     <Property Name="IdEstado" Type="Int32" Nullable="false" />
     <NavigationProperty Name="ItemMenu" Relationship="meuRestaurante.ItemMenuPedido" FromRole="Pedido" ToRole="ItemMenu" />
@@ -151,7 +151,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="EstadoAtual" Type="String" Nullable="false" />
+    <Property Name="EstadoAtual" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Pedido" Relationship="meuRestaurante.PedidoEstado" FromRole="Estado" ToRole="Pedido" />
   </EntityType>
   <EntityType Name="Pagamento">
@@ -159,7 +159,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Valor" Type="String" Nullable="false" />
+    <Property Name="Valor" Type="Decimal" Nullable="false" />
     <NavigationProperty Name="MetodoPagamento" Relationship="meuRestaurante.MetodoPagamentoPagamento" FromRole="Pagamento" ToRole="MetodoPagamento" />
     <Property Name="IdMetodoPagamento" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Pedido" Relationship="meuRestaurante.PagamentoPedido" FromRole="Pagamento" ToRole="Pedido" />
@@ -170,8 +170,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TipoMetodoPagamento" Type="String" Nullable="false" />
-    <Property Name="Ativo" Type="String" Nullable="false" />
+    <Property Name="TipoMetodoPagamento" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Ativo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Pagamento" Relationship="meuRestaurante.MetodoPagamentoPagamento" FromRole="MetodoPagamento" ToRole="Pagamento" />
   </EntityType>
   <Association Name="MetodoPagamentoPagamento">

@@ -48,13 +48,6 @@
             this.buttonApagar = new System.Windows.Forms.Button();
             this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.groupBoxInserirCliente = new System.Windows.Forms.GroupBox();
-            this.textBoxNumContribuinte = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxTelemovel = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonAdicionarClientes = new System.Windows.Forms.Button();
             this.textBoxPais = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxCodPostal = new System.Windows.Forms.TextBox();
@@ -63,6 +56,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxRua = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBoxNumContribuinte = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxTelemovel = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonAdicionarClientes = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBoxListarClientes.SuspendLayout();
             this.groupBoxInserirCliente.SuspendLayout();
@@ -279,69 +279,6 @@
             this.groupBoxInserirCliente.TabStop = false;
             this.groupBoxInserirCliente.Text = "Inserir Cliente:";
             // 
-            // textBoxNumContribuinte
-            // 
-            this.textBoxNumContribuinte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNumContribuinte.Location = new System.Drawing.Point(151, 94);
-            this.textBoxNumContribuinte.Name = "textBoxNumContribuinte";
-            this.textBoxNumContribuinte.Size = new System.Drawing.Size(203, 26);
-            this.textBoxNumContribuinte.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Nº. Contribuinte:";
-            // 
-            // textBoxTelemovel
-            // 
-            this.textBoxTelemovel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTelemovel.Location = new System.Drawing.Point(151, 57);
-            this.textBoxTelemovel.Name = "textBoxTelemovel";
-            this.textBoxTelemovel.Size = new System.Drawing.Size(203, 26);
-            this.textBoxTelemovel.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(61, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Telemovel:";
-            // 
-            // textBoxNome
-            // 
-            this.textBoxNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNome.Location = new System.Drawing.Point(151, 19);
-            this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(203, 26);
-            this.textBoxNome.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(90, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nome:";
-            // 
-            // buttonAdicionarClientes
-            // 
-            this.buttonAdicionarClientes.Location = new System.Drawing.Point(467, 139);
-            this.buttonAdicionarClientes.Name = "buttonAdicionarClientes";
-            this.buttonAdicionarClientes.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdicionarClientes.TabIndex = 0;
-            this.buttonAdicionarClientes.Text = "Adicionar";
-            this.buttonAdicionarClientes.UseVisualStyleBackColor = true;
-            // 
             // textBoxPais
             // 
             this.textBoxPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -413,6 +350,70 @@
             this.label6.Size = new System.Drawing.Size(43, 20);
             this.label6.TabIndex = 10;
             this.label6.Text = "Rua:";
+            // 
+            // textBoxNumContribuinte
+            // 
+            this.textBoxNumContribuinte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNumContribuinte.Location = new System.Drawing.Point(151, 94);
+            this.textBoxNumContribuinte.Name = "textBoxNumContribuinte";
+            this.textBoxNumContribuinte.Size = new System.Drawing.Size(203, 26);
+            this.textBoxNumContribuinte.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(21, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Nº. Contribuinte:";
+            // 
+            // textBoxTelemovel
+            // 
+            this.textBoxTelemovel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTelemovel.Location = new System.Drawing.Point(151, 57);
+            this.textBoxTelemovel.Name = "textBoxTelemovel";
+            this.textBoxTelemovel.Size = new System.Drawing.Size(203, 26);
+            this.textBoxTelemovel.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(61, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Telemovel:";
+            // 
+            // textBoxNome
+            // 
+            this.textBoxNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNome.Location = new System.Drawing.Point(151, 19);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(203, 26);
+            this.textBoxNome.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(90, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Nome:";
+            // 
+            // buttonAdicionarClientes
+            // 
+            this.buttonAdicionarClientes.Location = new System.Drawing.Point(467, 139);
+            this.buttonAdicionarClientes.Name = "buttonAdicionarClientes";
+            this.buttonAdicionarClientes.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdicionarClientes.TabIndex = 0;
+            this.buttonAdicionarClientes.Text = "Adicionar";
+            this.buttonAdicionarClientes.UseVisualStyleBackColor = true;
+            this.buttonAdicionarClientes.Click += new System.EventHandler(this.buttonAdicionarClientes_Click);
             // 
             // FormClientes
             // 

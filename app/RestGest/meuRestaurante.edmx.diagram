@@ -19,7 +19,6 @@
         <EntityTypeShape EntityType="meuRestaurante.Pagamento" Width="1.5" PointX="0.625" PointY="8.25" />
         <EntityTypeShape EntityType="meuRestaurante.MetodoPagamento" Width="1.5" PointX="0.75" PointY="11.5" />
         <AssociationConnector Association="meuRestaurante.MetodoPagamentoPagamento" />
-        <AssociationConnector Association="meuRestaurante.MoradaRestaurante" />
         <AssociationConnector Association="meuRestaurante.RestauranteItemMenu" />
         <AssociationConnector Association="meuRestaurante.CategoriaItemMenu" />
         <AssociationConnector Association="meuRestaurante.PedidoEstado" />
@@ -43,7 +42,8 @@
           <ConnectorPoint PointX="10.046875" PointY="5.24573661170642" />
           <ConnectorPoint PointX="10.046875" PointY="3.5475878906249987" />
         </AssociationConnector>
-        <AssociationConnector Association="meuRestaurante.PessoaMorada" />
+        <AssociationConnector Association="meuRestaurante.MoradaPessoa" />
+        <AssociationConnector Association="meuRestaurante.MoradaRestaurante" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

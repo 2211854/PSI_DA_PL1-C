@@ -14,10 +14,6 @@
     <EntitySet Name="PessoaSet_Trabalhador" EntityType="meuRestaurante.Store.PessoaSet_Trabalhador" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RestauranteItemMenu" EntityType="meuRestaurante.Store.RestauranteItemMenu" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ItemMenuPedido" EntityType="meuRestaurante.Store.ItemMenuPedido" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="MoradaPessoa" Association="meuRestaurante.Store.MoradaPessoa">
-      <End Role="Morada" EntitySet="MoradaSet" />
-      <End Role="Pessoa" EntitySet="PessoaSet" />
-    </AssociationSet>
     <AssociationSet Name="MetodoPagamentoPagamento" Association="meuRestaurante.Store.MetodoPagamentoPagamento">
       <End Role="MetodoPagamento" EntitySet="MetodoPagamentoSet" />
       <End Role="Pagamento" EntitySet="PagamentoSet" />
@@ -66,6 +62,14 @@
       <End Role="Pagamento" EntitySet="PagamentoSet" />
       <End Role="Pedido" EntitySet="PedidoSet" />
     </AssociationSet>
+    <AssociationSet Name="TrabalhadorRestaurante" Association="meuRestaurante.Store.TrabalhadorRestaurante">
+      <End Role="Trabalhador" EntitySet="PessoaSet_Trabalhador" />
+      <End Role="Restaurante" EntitySet="RestauranteSet" />
+    </AssociationSet>
+    <AssociationSet Name="PessoaMorada" Association="meuRestaurante.Store.PessoaMorada">
+      <End Role="Pessoa" EntitySet="PessoaSet" />
+      <End Role="Morada" EntitySet="MoradaSet" />
+    </AssociationSet>
     <AssociationSet Name="FK_Cliente_inherits_Pessoa" Association="meuRestaurante.Store.FK_Cliente_inherits_Pessoa">
       <End Role="Pessoa" EntitySet="PessoaSet" />
       <End Role="Cliente" EntitySet="PessoaSet_Cliente" />
@@ -84,7 +88,6 @@
     <Property Name="Cidade" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CodPostal" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Pais" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Pessoa_Id" Type="int" Nullable="false" />
     <Property Name="Restaurante_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="PessoaSet">
@@ -93,8 +96,8 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="IdMorada" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Telemovel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telemovel" Type="int" Nullable="false" />
+    <Property Name="Morada_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="RestauranteSet">
     <Key>
@@ -102,7 +105,6 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="IdMorada" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="ItemMenuSet">
     <Key>
@@ -112,8 +114,8 @@
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Fotografia" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Ingredientes" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Preco" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Ativo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Preco" Type="decimal" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
     <Property Name="IdCategoria" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="CategoriaSet">
@@ -122,14 +124,14 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Ativo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="PedidoSet">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ValorTotal" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ValorTotal" Type="decimal" Nullable="false" />
     <Property Name="IdEstado" Type="int" Nullable="false" />
     <Property Name="IdRestaurante" Type="int" Nullable="false" />
     <Property Name="IdCliente" Type="int" Nullable="false" />
@@ -147,7 +149,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Valor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Nullable="false" />
     <Property Name="IdMetodoPagamento" Type="int" Nullable="false" />
     <Property Name="IdPedido" Type="int" Nullable="false" />
   </EntityType>
@@ -163,19 +165,19 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="TotalGasto" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="NumContribuinte" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TotalGasto" Type="decimal" Nullable="false" />
+    <Property Name="NumContribuinte" Type="int" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="PessoaSet_Trabalhador">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="IdRestaurante" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Salario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Salario" Type="int" Nullable="false" />
     <Property Name="Posicao" Type="nvarchar(max)" Nullable="false" />
     <Property Name="email" Type="nvarchar(max)" Nullable="false" />
     <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdRestaurante" Type="int" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="RestauranteItemMenu">
@@ -194,18 +196,6 @@
     <Property Name="ItemMenu_Id" Type="int" Nullable="false" />
     <Property Name="Pedido_Id" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="MoradaPessoa">
-    <End Role="Morada" Type="meuRestaurante.Store.MoradaSet" Multiplicity="*" />
-    <End Role="Pessoa" Type="meuRestaurante.Store.PessoaSet" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Pessoa">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Morada">
-        <PropertyRef Name="Pessoa_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="MetodoPagamentoPagamento">
     <End Role="MetodoPagamento" Type="meuRestaurante.Store.MetodoPagamentoSet" Multiplicity="1" />
     <End Role="Pagamento" Type="meuRestaurante.Store.PagamentoSet" Multiplicity="*" />
@@ -299,6 +289,30 @@
       </Principal>
       <Dependent Role="Pagamento">
         <PropertyRef Name="IdPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TrabalhadorRestaurante">
+    <End Role="Trabalhador" Type="meuRestaurante.Store.PessoaSet_Trabalhador" Multiplicity="*" />
+    <End Role="Restaurante" Type="meuRestaurante.Store.RestauranteSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurante">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Trabalhador">
+        <PropertyRef Name="IdRestaurante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PessoaMorada">
+    <End Role="Pessoa" Type="meuRestaurante.Store.PessoaSet" Multiplicity="*" />
+    <End Role="Morada" Type="meuRestaurante.Store.MoradaSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Morada">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pessoa">
+        <PropertyRef Name="Morada_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

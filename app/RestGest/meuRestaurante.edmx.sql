@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/18/2022 09:09:43
--- Generated from EDMX file: E:\IPL\S2\DA\projeto final\RestGest\meuRestaurante.edmx
+-- Date Created: 06/19/2022 21:14:22
+-- Generated from EDMX file: D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\meuRestaurante.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,14 +17,8 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_MoradaPessoa]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[MoradaSet] DROP CONSTRAINT [FK_MoradaPessoa];
-GO
 IF OBJECT_ID(N'[dbo].[FK_MetodoPagamentoPagamento]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[PagamentoSet] DROP CONSTRAINT [FK_MetodoPagamentoPagamento];
-GO
-IF OBJECT_ID(N'[dbo].[FK_MoradaRestaurante]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[MoradaSet] DROP CONSTRAINT [FK_MoradaRestaurante];
 GO
 IF OBJECT_ID(N'[dbo].[FK_RestauranteItemMenu_Restaurante]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RestauranteItemMenu] DROP CONSTRAINT [FK_RestauranteItemMenu_Restaurante];
@@ -55,6 +49,15 @@ IF OBJECT_ID(N'[dbo].[FK_TrabalhadorPedido]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_PagamentoPedido]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[PagamentoSet] DROP CONSTRAINT [FK_PagamentoPedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TrabalhadorRestaurante]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PessoaSet_Trabalhador] DROP CONSTRAINT [FK_TrabalhadorRestaurante];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MoradaPessoa]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PessoaSet] DROP CONSTRAINT [FK_MoradaPessoa];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MoradaRestaurante]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RestauranteSet] DROP CONSTRAINT [FK_MoradaRestaurante];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Cliente_inherits_Pessoa]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[PessoaSet_Cliente] DROP CONSTRAINT [FK_Cliente_inherits_Pessoa];
@@ -117,9 +120,7 @@ CREATE TABLE [dbo].[MoradaSet] (
     [Rua] nvarchar(max)  NOT NULL,
     [Cidade] nvarchar(max)  NOT NULL,
     [CodPostal] nvarchar(max)  NOT NULL,
-    [Pais] nvarchar(max)  NOT NULL,
-    [Pessoa_Id] int  NOT NULL,
-    [Restaurante_Id] int  NOT NULL
+    [Pais] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -127,8 +128,8 @@ GO
 CREATE TABLE [dbo].[PessoaSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(max)  NOT NULL,
-    [IdMorada] nvarchar(max)  NOT NULL,
-    [Telemovel] nvarchar(max)  NOT NULL
+    [Telemovel] int  NOT NULL,
+    [Morada_Id] int  NOT NULL
 );
 GO
 
@@ -136,7 +137,7 @@ GO
 CREATE TABLE [dbo].[RestauranteSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(max)  NOT NULL,
-    [IdMorada] nvarchar(max)  NOT NULL
+    [Morada_Id] int  NOT NULL
 );
 GO
 
@@ -146,8 +147,8 @@ CREATE TABLE [dbo].[ItemMenuSet] (
     [Nome] nvarchar(max)  NOT NULL,
     [Fotografia] nvarchar(max)  NOT NULL,
     [Ingredientes] nvarchar(max)  NOT NULL,
-    [Preco] nvarchar(max)  NOT NULL,
-    [Ativo] nvarchar(max)  NOT NULL,
+    [Preco] decimal(18,0)  NOT NULL,
+    [Ativo] bit  NOT NULL,
     [IdCategoria] int  NOT NULL
 );
 GO
@@ -156,14 +157,14 @@ GO
 CREATE TABLE [dbo].[CategoriaSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(max)  NOT NULL,
-    [Ativo] nvarchar(max)  NOT NULL
+    [Ativo] bit  NOT NULL
 );
 GO
 
 -- Creating table 'PedidoSet'
 CREATE TABLE [dbo].[PedidoSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [ValorTotal] nvarchar(max)  NOT NULL,
+    [ValorTotal] decimal(18,0)  NOT NULL,
     [IdEstado] int  NOT NULL,
     [IdRestaurante] int  NOT NULL,
     [IdCliente] int  NOT NULL,
@@ -181,7 +182,7 @@ GO
 -- Creating table 'PagamentoSet'
 CREATE TABLE [dbo].[PagamentoSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Valor] nvarchar(max)  NOT NULL,
+    [Valor] decimal(18,0)  NOT NULL,
     [IdMetodoPagamento] int  NOT NULL,
     [IdPedido] int  NOT NULL
 );
@@ -191,25 +192,25 @@ GO
 CREATE TABLE [dbo].[MetodoPagamentoSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [TipoMetodoPagamento] nvarchar(max)  NOT NULL,
-    [Ativo] nvarchar(max)  NOT NULL
+    [Ativo] bit  NOT NULL
 );
 GO
 
 -- Creating table 'PessoaSet_Cliente'
 CREATE TABLE [dbo].[PessoaSet_Cliente] (
-    [TotalGasto] nvarchar(max)  NOT NULL,
-    [NumContribuinte] nvarchar(max)  NOT NULL,
+    [TotalGasto] decimal(18,0)  NOT NULL,
+    [NumContribuinte] int  NOT NULL,
     [Id] int  NOT NULL
 );
 GO
 
 -- Creating table 'PessoaSet_Trabalhador'
 CREATE TABLE [dbo].[PessoaSet_Trabalhador] (
-    [IdRestaurante] nvarchar(max)  NOT NULL,
-    [Salario] nvarchar(max)  NOT NULL,
+    [Salario] int  NOT NULL,
     [Posicao] nvarchar(max)  NOT NULL,
-    [email] nvarchar(max)  NOT NULL,
-    [password] nvarchar(max)  NOT NULL,
+    [Email] nvarchar(max)  NOT NULL,
+    [Password] nvarchar(max)  NOT NULL,
+    [IdRestaurante] int  NOT NULL,
     [Id] int  NOT NULL
 );
 GO
@@ -314,21 +315,6 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [Pessoa_Id] in table 'MoradaSet'
-ALTER TABLE [dbo].[MoradaSet]
-ADD CONSTRAINT [FK_MoradaPessoa]
-    FOREIGN KEY ([Pessoa_Id])
-    REFERENCES [dbo].[PessoaSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_MoradaPessoa'
-CREATE INDEX [IX_FK_MoradaPessoa]
-ON [dbo].[MoradaSet]
-    ([Pessoa_Id]);
-GO
-
 -- Creating foreign key on [IdMetodoPagamento] in table 'PagamentoSet'
 ALTER TABLE [dbo].[PagamentoSet]
 ADD CONSTRAINT [FK_MetodoPagamentoPagamento]
@@ -342,21 +328,6 @@ GO
 CREATE INDEX [IX_FK_MetodoPagamentoPagamento]
 ON [dbo].[PagamentoSet]
     ([IdMetodoPagamento]);
-GO
-
--- Creating foreign key on [Restaurante_Id] in table 'MoradaSet'
-ALTER TABLE [dbo].[MoradaSet]
-ADD CONSTRAINT [FK_MoradaRestaurante]
-    FOREIGN KEY ([Restaurante_Id])
-    REFERENCES [dbo].[RestauranteSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_MoradaRestaurante'
-CREATE INDEX [IX_FK_MoradaRestaurante]
-ON [dbo].[MoradaSet]
-    ([Restaurante_Id]);
 GO
 
 -- Creating foreign key on [Restaurante_Id] in table 'RestauranteItemMenu'
@@ -495,6 +466,51 @@ GO
 CREATE INDEX [IX_FK_PagamentoPedido]
 ON [dbo].[PagamentoSet]
     ([IdPedido]);
+GO
+
+-- Creating foreign key on [IdRestaurante] in table 'PessoaSet_Trabalhador'
+ALTER TABLE [dbo].[PessoaSet_Trabalhador]
+ADD CONSTRAINT [FK_TrabalhadorRestaurante]
+    FOREIGN KEY ([IdRestaurante])
+    REFERENCES [dbo].[RestauranteSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_TrabalhadorRestaurante'
+CREATE INDEX [IX_FK_TrabalhadorRestaurante]
+ON [dbo].[PessoaSet_Trabalhador]
+    ([IdRestaurante]);
+GO
+
+-- Creating foreign key on [Morada_Id] in table 'PessoaSet'
+ALTER TABLE [dbo].[PessoaSet]
+ADD CONSTRAINT [FK_MoradaPessoa]
+    FOREIGN KEY ([Morada_Id])
+    REFERENCES [dbo].[MoradaSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_MoradaPessoa'
+CREATE INDEX [IX_FK_MoradaPessoa]
+ON [dbo].[PessoaSet]
+    ([Morada_Id]);
+GO
+
+-- Creating foreign key on [Morada_Id] in table 'RestauranteSet'
+ALTER TABLE [dbo].[RestauranteSet]
+ADD CONSTRAINT [FK_MoradaRestaurante]
+    FOREIGN KEY ([Morada_Id])
+    REFERENCES [dbo].[MoradaSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_MoradaRestaurante'
+CREATE INDEX [IX_FK_MoradaRestaurante]
+ON [dbo].[RestauranteSet]
+    ([Morada_Id]);
 GO
 
 -- Creating foreign key on [Id] in table 'PessoaSet_Cliente'
