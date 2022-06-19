@@ -11,19 +11,21 @@ namespace RestGest
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Cliente : Pessoa
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cliente()
+        public Cliente(string nome, int telemovel, int contribuinte) : base(nome, telemovel)
         {
+            this.NumContribuinte = contribuinte;
             this.Pedido = new HashSet<Pedido>();
         }
-    
+
         public decimal TotalGasto { get; set; }
         public int NumContribuinte { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }
+
     }
 }

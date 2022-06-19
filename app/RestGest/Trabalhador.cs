@@ -11,21 +11,27 @@ namespace RestGest
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Trabalhador : Pessoa
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Trabalhador()
+        public Trabalhador(string nome, int telemovel, int salario, string posicao, string email, string password, int idRestaurante) : base(nome, telemovel)
         {
+            this.Email = email;
+            this.Password = password;
+            this.IdRestaurante = idRestaurante;
+            this.Salario = salario;
+
             this.Pedido = new HashSet<Pedido>();
+
         }
-    
+
         public int Salario { get; set; }
         public string Posicao { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public int IdRestaurante { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }
         public virtual Restaurante Restaurante { get; set; }

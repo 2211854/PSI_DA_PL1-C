@@ -11,13 +11,26 @@ namespace RestGest
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Pessoa
     {
         public int Id { get; set; }
         public string Nome { get; set; }
         public int Telemovel { get; set; }
-    
+
         public virtual Morada Morada { get; set; }
+
+
+        public Pessoa(string nome, int telemovel)
+        {
+            this.Nome = nome;
+            this.Telemovel = telemovel;
+        }
+
+        public override string ToString()
+        {
+            return this.Id + ", " + this.Nome + " - " + this.Telemovel + " ( " + this.Morada + " )";
+        }
+
     }
 }

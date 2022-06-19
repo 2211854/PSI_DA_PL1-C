@@ -15,8 +15,10 @@ namespace RestGest
     public partial class Categoria
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Categoria()
+        public Categoria(string nome, bool ativo = true)
         {
+            this.Nome = nome;
+            this.Ativo = ativo;
             this.ItemMenu = new HashSet<ItemMenu>();
         }
     
@@ -26,5 +28,10 @@ namespace RestGest
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ItemMenu> ItemMenu { get; set; }
+
+        public override string ToString()
+        {
+            return this.Nome;
+        }
     }
 }
