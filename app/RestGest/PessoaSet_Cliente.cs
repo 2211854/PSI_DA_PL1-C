@@ -27,5 +27,9 @@ namespace RestGest
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PedidoSet> PedidoSet { get; set; }
         public virtual PessoaSet PessoaSet { get; set; }
+        
+        public override string ToString(){
+            return  this.PessoaSet.ToString()+" ("+this.NumContribuinte+")";
+        }
     }
 }

@@ -31,5 +31,10 @@ namespace RestGest
         public virtual ICollection<PedidoSet> PedidoSet { get; set; }
         public virtual PessoaSet PessoaSet { get; set; }
         public virtual RestauranteSet RestauranteSet { get; set; }
+        
+        public override string ToString(){
+            return this.Posicao" "+this.PessoaSet.ToString();
+        }
+        
     }
 }

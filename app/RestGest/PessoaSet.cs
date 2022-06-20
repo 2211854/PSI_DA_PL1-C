@@ -26,5 +26,9 @@ namespace RestGest
         public virtual MoradaSet MoradaSet { get; set; }
         public virtual PessoaSet_Cliente PessoaSet_Cliente { get; set; }
         public virtual PessoaSet_Trabalhador PessoaSet_Trabalhador { get; set; }
+
+        public override string ToString(){
+            return this.Nome;
+        }
     }
 }
