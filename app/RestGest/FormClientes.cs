@@ -22,6 +22,7 @@ namespace RestGest
         private void FormClientes_Load(object sender, EventArgs e)
         {
             meuRestaurante = new meuRestauranteContainer();
+            LerDadosCliente();
         }
 
         private void buttonAdicionarClientes_Click(object sender, EventArgs e)
@@ -46,10 +47,20 @@ namespace RestGest
                 meuRestaurante.MoradaSet.Add(clienteMorada);
                 meuRestaurante.SaveChanges();
                 LerDadosCliente();
+
+                //Limpar as textBoxes
+                textBoxNome.Text = "";
+                textBoxTelemovel.Text = "";
+                textBoxNumContribuinte.Text = "";
+                textBoxRua.Text = "";
+                textBoxCodPostal.Text = "";
+                textBoxCidade.Text = "";
+                textBoxPais.Text = "";
             }
             else
             {
                  MessageBox.Show("Preencha todos os dados solicitados!","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+
             }
             
 
@@ -61,5 +72,41 @@ namespace RestGest
             listBoxClientes.DataSource = meuRestaurante.PessoaSet_Cliente.OfType<PessoaSet_Cliente>().ToList();
         }
 
+        private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PessoaSet_Cliente cliente = (PessoaSet_Cliente)listBoxClientes.SelectedItem;
+            textBoxNomeAlterar.Text = cliente.PessoaSet.Nome;
+            textBoxTelemovelAlterar.Text = cliente.PessoaSet.Telemovel.ToString();
+            textBoxNumContribuinteAlterar.Text = cliente.NumContribuinte.ToString();
+            textBoxRuaAlterar.Text = cliente.PessoaSet.MoradaSet.Rua;
+            textBoxCodPostalAlterar.Text = cliente.PessoaSet.MoradaSet.CodPostal;
+            textBoxCidadeAlterar.Text = cliente.PessoaSet.MoradaSet.Cidade;
+            textBoxPaisAlterar.Text = cliente.PessoaSet.MoradaSet.Pais;
+
+        }
+
+        private void buttonAlterar_Click(object sender, EventArgs e)
+        {
+            PessoaSet_Cliente cliente = (PessoaSet_Cliente)listBoxClientes.SelectedItem;
+            cliente.PessoaSet.Nome = textBoxNomeAlterar.Text;
+            cliente.PessoaSet.Telemovel = Int32.Parse(textBoxTelemovelAlterar.Text);
+            cliente.NumContribuinte = Int32.Parse(textBoxNumContribuinteAlterar.Text);
+            cliente.PessoaSet.MoradaSet.Rua = textBoxRuaAlterar.Text;
+            cliente.PessoaSet.MoradaSet.CodPostal = textBoxCodPostalAlterar.Text;
+            cliente.PessoaSet.MoradaSet.Cidade = textBoxCidadeAlterar.Text;
+            cliente.PessoaSet.MoradaSet.Pais = textBoxPaisAlterar.Text;
+
+
+            meuRestaurante.SaveChanges();
+        }
+
+        private void buttonApagar_Click(object sender, EventArgs e)
+        {
+            PessoaSet_Cliente cliente = (PessoaSet_Cliente)listBoxClientes.SelectedItem;
+
+            meuRestaurante.PessoaSet_Cliente.Remove(cliente);
+            meuRestaurante.SaveChanges();
+            LerDadosCliente();
+        }
     }
 }
