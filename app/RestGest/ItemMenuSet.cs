@@ -34,5 +34,9 @@ namespace RestGest
         public virtual ICollection<PedidoSet> PedidoSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RestauranteSet> RestauranteSet { get; set; }
+
+        public override string ToString(){
+            return this.Nome+"  "this.Preco;
+        }
     }
 }

@@ -33,5 +33,9 @@ namespace RestGest
         public virtual ICollection<PessoaSet_Trabalhador> PessoaSet_Trabalhador { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ItemMenuSet> ItemMenuSet { get; set; }
+
+        public override string ToString(){
+            return this.Nome;
+        }
     }
 }
