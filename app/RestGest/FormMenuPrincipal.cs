@@ -13,7 +13,7 @@ namespace RestGest
     public partial class FormMenuPrincipal : Form
     {
 
-        //Trabalhador Funcionario;
+        //PessoaSet_Trabalhador Funcionario;
 
         public FormMenuPrincipal(/*Trabalhador funcionario*/)
         {
@@ -33,7 +33,10 @@ namespace RestGest
 
         private void buttonClientes_click(object sender, EventArgs e)
         {
-
+           FormClientes form = new FormClientes();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
     }
 }

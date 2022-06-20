@@ -15,7 +15,7 @@ namespace RestGest
         public FormLogin()
         {
             InitializeComponent();
-            FormClientes form = new FormClientes();
+            FormGlobalRestaurantes form = new FormGlobalRestaurantes();
             form.ShowDialog();
         }
 

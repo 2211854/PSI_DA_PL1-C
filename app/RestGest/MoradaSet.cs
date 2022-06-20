@@ -33,7 +33,7 @@ namespace RestGest
         public virtual ICollection<RestauranteSet> RestauranteSet { get; set; }
 
         public override string ToString(){
-            return this.rua+", "+this.CodPostal+" "+this.Cidade+" ("+this.Pais+")";
+            return this.Rua+", "+this.CodPostal+" "+this.Cidade+" ("+this.Pais+")";
         }
     }
 }

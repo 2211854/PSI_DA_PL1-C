@@ -28,56 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxInserirEstadoPagamento = new System.Windows.Forms.ComboBox();
+            this.comboBoxEstadoPagamento = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxInserirNomePagamento = new System.Windows.Forms.TextBox();
+            this.textBoxNomePagamento = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonAdicionarPagamento = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxEstadoPagamentoAlterar = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxNomePagamentoAlterar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonAlterarMetodosPagamento = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxEstadoCategoriaAlterar = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxNomeCategoriaAlterar = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.buttonAlterarCategoria = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.buttonApagarCategorias = new System.Windows.Forms.Button();
             this.listBoxCategorias = new System.Windows.Forms.ListBox();
-            this.comboBoxInserirEstadoCategoria = new System.Windows.Forms.ComboBox();
+            this.comboBoxEstadoCategoria = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBoxInserirNomeCategoria = new System.Windows.Forms.TextBox();
+            this.textBoxNomeCategoria = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.buttonAdicionarCategoria = new System.Windows.Forms.Button();
             this.tabControlGlobalRestaurantes = new System.Windows.Forms.TabControl();
             this.tabPageRestaurantes = new System.Windows.Forms.TabPage();
             this.tabControlRestaurantes = new System.Windows.Forms.TabControl();
             this.tabPageInserirRestaurantes = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPaisRestaurante = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxCodPostalRestaurante = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxCidadeRestaurante = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxRuaRestaurante = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBoxInserirNomeRestaurante = new System.Windows.Forms.TextBox();
+            this.textBoxNomeRestaurante = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAdicionarRestaurantes = new System.Windows.Forms.Button();
             this.tabPageEditarRestaurantes = new System.Windows.Forms.TabPage();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxPaisRestauranteAlterar = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBoxCodPostalRestauranteAlterar = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBoxCidadeRestauranteAlterar = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBoxRuaRestauranteAlterar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBoxNomeRestauranteAlterar = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAlterarRestaurante = new System.Windows.Forms.Button();
             this.groupBoxListarClientes = new System.Windows.Forms.GroupBox();
             this.buttonApagarRestaurantes = new System.Windows.Forms.Button();
             this.listBoxRestaurantes = new System.Windows.Forms.ListBox();
@@ -90,7 +90,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonApagarMetodosPagamentos = new System.Windows.Forms.Button();
             this.listBoxMetodosPagamento = new System.Windows.Forms.ListBox();
             this.groupBox6.SuspendLayout();
             this.tabControlGlobalRestaurantes.SuspendLayout();
@@ -110,17 +110,17 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBoxInserirEstadoPagamento
+            // comboBoxEstadoPagamento
             // 
-            this.comboBoxInserirEstadoPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxInserirEstadoPagamento.FormattingEnabled = true;
-            this.comboBoxInserirEstadoPagamento.Items.AddRange(new object[] {
+            this.comboBoxEstadoPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEstadoPagamento.FormattingEnabled = true;
+            this.comboBoxEstadoPagamento.Items.AddRange(new object[] {
             "Ativado",
             "Desativado"});
-            this.comboBoxInserirEstadoPagamento.Location = new System.Drawing.Point(201, 131);
-            this.comboBoxInserirEstadoPagamento.Name = "comboBoxInserirEstadoPagamento";
-            this.comboBoxInserirEstadoPagamento.Size = new System.Drawing.Size(202, 28);
-            this.comboBoxInserirEstadoPagamento.TabIndex = 11;
+            this.comboBoxEstadoPagamento.Location = new System.Drawing.Point(201, 131);
+            this.comboBoxEstadoPagamento.Name = "comboBoxEstadoPagamento";
+            this.comboBoxEstadoPagamento.Size = new System.Drawing.Size(202, 28);
+            this.comboBoxEstadoPagamento.TabIndex = 11;
             // 
             // label7
             // 
@@ -132,13 +132,13 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Estado:";
             // 
-            // textBoxInserirNomePagamento
+            // textBoxNomePagamento
             // 
-            this.textBoxInserirNomePagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInserirNomePagamento.Location = new System.Drawing.Point(200, 95);
-            this.textBoxInserirNomePagamento.Name = "textBoxInserirNomePagamento";
-            this.textBoxInserirNomePagamento.Size = new System.Drawing.Size(203, 26);
-            this.textBoxInserirNomePagamento.TabIndex = 2;
+            this.textBoxNomePagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNomePagamento.Location = new System.Drawing.Point(200, 95);
+            this.textBoxNomePagamento.Name = "textBoxNomePagamento";
+            this.textBoxNomePagamento.Size = new System.Drawing.Size(203, 26);
+            this.textBoxNomePagamento.TabIndex = 2;
             // 
             // label8
             // 
@@ -158,18 +158,19 @@
             this.buttonAdicionarPagamento.TabIndex = 0;
             this.buttonAdicionarPagamento.Text = "Adicionar";
             this.buttonAdicionarPagamento.UseVisualStyleBackColor = true;
+            this.buttonAdicionarPagamento.Click += new System.EventHandler(this.buttonAdicionarPagamento_Click);
             // 
-            // comboBox1
+            // comboBoxEstadoPagamentoAlterar
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxEstadoPagamentoAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEstadoPagamentoAlterar.FormattingEnabled = true;
+            this.comboBoxEstadoPagamentoAlterar.Items.AddRange(new object[] {
             "Ativado",
             "Desativado"});
-            this.comboBox1.Location = new System.Drawing.Point(199, 184);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(202, 28);
-            this.comboBox1.TabIndex = 11;
+            this.comboBoxEstadoPagamentoAlterar.Location = new System.Drawing.Point(199, 184);
+            this.comboBoxEstadoPagamentoAlterar.Name = "comboBoxEstadoPagamentoAlterar";
+            this.comboBoxEstadoPagamentoAlterar.Size = new System.Drawing.Size(202, 28);
+            this.comboBoxEstadoPagamentoAlterar.TabIndex = 11;
             // 
             // label4
             // 
@@ -181,13 +182,13 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Estado:";
             // 
-            // textBox5
+            // textBoxNomePagamentoAlterar
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(198, 148);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(203, 26);
-            this.textBox5.TabIndex = 2;
+            this.textBoxNomePagamentoAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNomePagamentoAlterar.Location = new System.Drawing.Point(198, 148);
+            this.textBoxNomePagamentoAlterar.Name = "textBoxNomePagamentoAlterar";
+            this.textBoxNomePagamentoAlterar.Size = new System.Drawing.Size(203, 26);
+            this.textBoxNomePagamentoAlterar.TabIndex = 2;
             // 
             // label5
             // 
@@ -207,18 +208,19 @@
             this.buttonAlterarMetodosPagamento.TabIndex = 0;
             this.buttonAlterarMetodosPagamento.Text = "Alterar";
             this.buttonAlterarMetodosPagamento.UseVisualStyleBackColor = true;
+            this.buttonAlterarMetodosPagamento.Click += new System.EventHandler(this.buttonAlterarMetodosPagamento_Click);
             // 
-            // comboBox2
+            // comboBoxEstadoCategoriaAlterar
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBoxEstadoCategoriaAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEstadoCategoriaAlterar.FormattingEnabled = true;
+            this.comboBoxEstadoCategoriaAlterar.Items.AddRange(new object[] {
             "Ativado",
             "Desativado"});
-            this.comboBox2.Location = new System.Drawing.Point(199, 160);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(202, 28);
-            this.comboBox2.TabIndex = 11;
+            this.comboBoxEstadoCategoriaAlterar.Location = new System.Drawing.Point(199, 160);
+            this.comboBoxEstadoCategoriaAlterar.Name = "comboBoxEstadoCategoriaAlterar";
+            this.comboBoxEstadoCategoriaAlterar.Size = new System.Drawing.Size(202, 28);
+            this.comboBoxEstadoCategoriaAlterar.TabIndex = 11;
             // 
             // label6
             // 
@@ -230,13 +232,13 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Estado:";
             // 
-            // textBox6
+            // textBoxNomeCategoriaAlterar
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(198, 124);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(203, 26);
-            this.textBox6.TabIndex = 2;
+            this.textBoxNomeCategoriaAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNomeCategoriaAlterar.Location = new System.Drawing.Point(198, 124);
+            this.textBoxNomeCategoriaAlterar.Name = "textBoxNomeCategoriaAlterar";
+            this.textBoxNomeCategoriaAlterar.Size = new System.Drawing.Size(203, 26);
+            this.textBoxNomeCategoriaAlterar.TabIndex = 2;
             // 
             // label9
             // 
@@ -256,6 +258,7 @@
             this.buttonAlterarCategoria.TabIndex = 0;
             this.buttonAlterarCategoria.Text = "Alterar";
             this.buttonAlterarCategoria.UseVisualStyleBackColor = true;
+            this.buttonAlterarCategoria.Click += new System.EventHandler(this.buttonAlterarCategoria_Click);
             // 
             // groupBox6
             // 
@@ -276,6 +279,7 @@
             this.buttonApagarCategorias.TabIndex = 1;
             this.buttonApagarCategorias.Text = "Apagar";
             this.buttonApagarCategorias.UseVisualStyleBackColor = true;
+            this.buttonApagarCategorias.Click += new System.EventHandler(this.buttonApagarCategorias_Click);
             // 
             // listBoxCategorias
             // 
@@ -284,18 +288,19 @@
             this.listBoxCategorias.Name = "listBoxCategorias";
             this.listBoxCategorias.Size = new System.Drawing.Size(350, 368);
             this.listBoxCategorias.TabIndex = 0;
+            this.listBoxCategorias.SelectedIndexChanged += new System.EventHandler(this.listBoxCategorias_SelectedIndexChanged);
             // 
-            // comboBoxInserirEstadoCategoria
+            // comboBoxEstadoCategoria
             // 
-            this.comboBoxInserirEstadoCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxInserirEstadoCategoria.FormattingEnabled = true;
-            this.comboBoxInserirEstadoCategoria.Items.AddRange(new object[] {
+            this.comboBoxEstadoCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEstadoCategoria.FormattingEnabled = true;
+            this.comboBoxEstadoCategoria.Items.AddRange(new object[] {
             "Ativado",
             "Desativado"});
-            this.comboBoxInserirEstadoCategoria.Location = new System.Drawing.Point(199, 175);
-            this.comboBoxInserirEstadoCategoria.Name = "comboBoxInserirEstadoCategoria";
-            this.comboBoxInserirEstadoCategoria.Size = new System.Drawing.Size(202, 28);
-            this.comboBoxInserirEstadoCategoria.TabIndex = 11;
+            this.comboBoxEstadoCategoria.Location = new System.Drawing.Point(199, 175);
+            this.comboBoxEstadoCategoria.Name = "comboBoxEstadoCategoria";
+            this.comboBoxEstadoCategoria.Size = new System.Drawing.Size(202, 28);
+            this.comboBoxEstadoCategoria.TabIndex = 11;
             // 
             // label10
             // 
@@ -307,13 +312,13 @@
             this.label10.TabIndex = 10;
             this.label10.Text = "Estado:";
             // 
-            // textBoxInserirNomeCategoria
+            // textBoxNomeCategoria
             // 
-            this.textBoxInserirNomeCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInserirNomeCategoria.Location = new System.Drawing.Point(198, 139);
-            this.textBoxInserirNomeCategoria.Name = "textBoxInserirNomeCategoria";
-            this.textBoxInserirNomeCategoria.Size = new System.Drawing.Size(203, 26);
-            this.textBoxInserirNomeCategoria.TabIndex = 2;
+            this.textBoxNomeCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNomeCategoria.Location = new System.Drawing.Point(198, 139);
+            this.textBoxNomeCategoria.Name = "textBoxNomeCategoria";
+            this.textBoxNomeCategoria.Size = new System.Drawing.Size(203, 26);
+            this.textBoxNomeCategoria.TabIndex = 2;
             // 
             // label18
             // 
@@ -333,6 +338,7 @@
             this.buttonAdicionarCategoria.TabIndex = 0;
             this.buttonAdicionarCategoria.Text = "Adicionar";
             this.buttonAdicionarCategoria.UseVisualStyleBackColor = true;
+            this.buttonAdicionarCategoria.Click += new System.EventHandler(this.buttonAdicionarCategoria_Click);
             // 
             // tabControlGlobalRestaurantes
             // 
@@ -369,15 +375,15 @@
             // 
             // tabPageInserirRestaurantes
             // 
-            this.tabPageInserirRestaurantes.Controls.Add(this.textBox1);
+            this.tabPageInserirRestaurantes.Controls.Add(this.textBoxPaisRestaurante);
             this.tabPageInserirRestaurantes.Controls.Add(this.label2);
-            this.tabPageInserirRestaurantes.Controls.Add(this.textBox2);
+            this.tabPageInserirRestaurantes.Controls.Add(this.textBoxCodPostalRestaurante);
             this.tabPageInserirRestaurantes.Controls.Add(this.label3);
-            this.tabPageInserirRestaurantes.Controls.Add(this.textBox3);
+            this.tabPageInserirRestaurantes.Controls.Add(this.textBoxCidadeRestaurante);
             this.tabPageInserirRestaurantes.Controls.Add(this.label16);
-            this.tabPageInserirRestaurantes.Controls.Add(this.textBox4);
+            this.tabPageInserirRestaurantes.Controls.Add(this.textBoxRuaRestaurante);
             this.tabPageInserirRestaurantes.Controls.Add(this.label17);
-            this.tabPageInserirRestaurantes.Controls.Add(this.textBoxInserirNomeRestaurante);
+            this.tabPageInserirRestaurantes.Controls.Add(this.textBoxNomeRestaurante);
             this.tabPageInserirRestaurantes.Controls.Add(this.label1);
             this.tabPageInserirRestaurantes.Controls.Add(this.buttonAdicionarRestaurantes);
             this.tabPageInserirRestaurantes.Location = new System.Drawing.Point(4, 22);
@@ -388,13 +394,13 @@
             this.tabPageInserirRestaurantes.Text = "Inserir";
             this.tabPageInserirRestaurantes.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxPaisRestaurante
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(194, 235);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 26);
-            this.textBox1.TabIndex = 28;
+            this.textBoxPaisRestaurante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPaisRestaurante.Location = new System.Drawing.Point(194, 235);
+            this.textBoxPaisRestaurante.Name = "textBoxPaisRestaurante";
+            this.textBoxPaisRestaurante.Size = new System.Drawing.Size(203, 26);
+            this.textBoxPaisRestaurante.TabIndex = 28;
             // 
             // label2
             // 
@@ -406,13 +412,13 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Pais:";
             // 
-            // textBox2
+            // textBoxCodPostalRestaurante
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(194, 165);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 26);
-            this.textBox2.TabIndex = 26;
+            this.textBoxCodPostalRestaurante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCodPostalRestaurante.Location = new System.Drawing.Point(194, 165);
+            this.textBoxCodPostalRestaurante.Name = "textBoxCodPostalRestaurante";
+            this.textBoxCodPostalRestaurante.Size = new System.Drawing.Size(203, 26);
+            this.textBoxCodPostalRestaurante.TabIndex = 26;
             // 
             // label3
             // 
@@ -424,13 +430,13 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "Cod. Postal:";
             // 
-            // textBox3
+            // textBoxCidadeRestaurante
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(194, 197);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 26);
-            this.textBox3.TabIndex = 24;
+            this.textBoxCidadeRestaurante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCidadeRestaurante.Location = new System.Drawing.Point(194, 197);
+            this.textBoxCidadeRestaurante.Name = "textBoxCidadeRestaurante";
+            this.textBoxCidadeRestaurante.Size = new System.Drawing.Size(203, 26);
+            this.textBoxCidadeRestaurante.TabIndex = 24;
             // 
             // label16
             // 
@@ -442,13 +448,13 @@
             this.label16.TabIndex = 23;
             this.label16.Text = "Cidade:";
             // 
-            // textBox4
+            // textBoxRuaRestaurante
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(193, 127);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(203, 26);
-            this.textBox4.TabIndex = 22;
+            this.textBoxRuaRestaurante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRuaRestaurante.Location = new System.Drawing.Point(193, 127);
+            this.textBoxRuaRestaurante.Name = "textBoxRuaRestaurante";
+            this.textBoxRuaRestaurante.Size = new System.Drawing.Size(203, 26);
+            this.textBoxRuaRestaurante.TabIndex = 22;
             // 
             // label17
             // 
@@ -460,13 +466,13 @@
             this.label17.TabIndex = 21;
             this.label17.Text = "Rua:";
             // 
-            // textBoxInserirNomeRestaurante
+            // textBoxNomeRestaurante
             // 
-            this.textBoxInserirNomeRestaurante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInserirNomeRestaurante.Location = new System.Drawing.Point(194, 95);
-            this.textBoxInserirNomeRestaurante.Name = "textBoxInserirNomeRestaurante";
-            this.textBoxInserirNomeRestaurante.Size = new System.Drawing.Size(203, 26);
-            this.textBoxInserirNomeRestaurante.TabIndex = 20;
+            this.textBoxNomeRestaurante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNomeRestaurante.Location = new System.Drawing.Point(194, 95);
+            this.textBoxNomeRestaurante.Name = "textBoxNomeRestaurante";
+            this.textBoxNomeRestaurante.Size = new System.Drawing.Size(203, 26);
+            this.textBoxNomeRestaurante.TabIndex = 20;
             // 
             // label1
             // 
@@ -486,20 +492,21 @@
             this.buttonAdicionarRestaurantes.TabIndex = 18;
             this.buttonAdicionarRestaurantes.Text = "Adicionar";
             this.buttonAdicionarRestaurantes.UseVisualStyleBackColor = true;
+            this.buttonAdicionarRestaurantes.Click += new System.EventHandler(this.buttonAdicionarRestaurantes_Click);
             // 
             // tabPageEditarRestaurantes
             // 
-            this.tabPageEditarRestaurantes.Controls.Add(this.textBox7);
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBoxPaisRestauranteAlterar);
             this.tabPageEditarRestaurantes.Controls.Add(this.label11);
-            this.tabPageEditarRestaurantes.Controls.Add(this.textBox8);
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBoxCodPostalRestauranteAlterar);
             this.tabPageEditarRestaurantes.Controls.Add(this.label12);
-            this.tabPageEditarRestaurantes.Controls.Add(this.textBox9);
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBoxCidadeRestauranteAlterar);
             this.tabPageEditarRestaurantes.Controls.Add(this.label13);
-            this.tabPageEditarRestaurantes.Controls.Add(this.textBox10);
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBoxRuaRestauranteAlterar);
             this.tabPageEditarRestaurantes.Controls.Add(this.label14);
-            this.tabPageEditarRestaurantes.Controls.Add(this.textBox11);
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBoxNomeRestauranteAlterar);
             this.tabPageEditarRestaurantes.Controls.Add(this.label15);
-            this.tabPageEditarRestaurantes.Controls.Add(this.button1);
+            this.tabPageEditarRestaurantes.Controls.Add(this.buttonAlterarRestaurante);
             this.tabPageEditarRestaurantes.Location = new System.Drawing.Point(4, 22);
             this.tabPageEditarRestaurantes.Name = "tabPageEditarRestaurantes";
             this.tabPageEditarRestaurantes.Padding = new System.Windows.Forms.Padding(3);
@@ -508,13 +515,13 @@
             this.tabPageEditarRestaurantes.Text = "Editar";
             this.tabPageEditarRestaurantes.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // textBoxPaisRestauranteAlterar
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(196, 235);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(203, 26);
-            this.textBox7.TabIndex = 39;
+            this.textBoxPaisRestauranteAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPaisRestauranteAlterar.Location = new System.Drawing.Point(196, 235);
+            this.textBoxPaisRestauranteAlterar.Name = "textBoxPaisRestauranteAlterar";
+            this.textBoxPaisRestauranteAlterar.Size = new System.Drawing.Size(203, 26);
+            this.textBoxPaisRestauranteAlterar.TabIndex = 39;
             // 
             // label11
             // 
@@ -526,13 +533,13 @@
             this.label11.TabIndex = 38;
             this.label11.Text = "Pais:";
             // 
-            // textBox8
+            // textBoxCodPostalRestauranteAlterar
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(196, 165);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(203, 26);
-            this.textBox8.TabIndex = 37;
+            this.textBoxCodPostalRestauranteAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCodPostalRestauranteAlterar.Location = new System.Drawing.Point(196, 165);
+            this.textBoxCodPostalRestauranteAlterar.Name = "textBoxCodPostalRestauranteAlterar";
+            this.textBoxCodPostalRestauranteAlterar.Size = new System.Drawing.Size(203, 26);
+            this.textBoxCodPostalRestauranteAlterar.TabIndex = 37;
             // 
             // label12
             // 
@@ -544,13 +551,13 @@
             this.label12.TabIndex = 36;
             this.label12.Text = "Cod. Postal:";
             // 
-            // textBox9
+            // textBoxCidadeRestauranteAlterar
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(196, 197);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(203, 26);
-            this.textBox9.TabIndex = 35;
+            this.textBoxCidadeRestauranteAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCidadeRestauranteAlterar.Location = new System.Drawing.Point(196, 197);
+            this.textBoxCidadeRestauranteAlterar.Name = "textBoxCidadeRestauranteAlterar";
+            this.textBoxCidadeRestauranteAlterar.Size = new System.Drawing.Size(203, 26);
+            this.textBoxCidadeRestauranteAlterar.TabIndex = 35;
             // 
             // label13
             // 
@@ -562,13 +569,13 @@
             this.label13.TabIndex = 34;
             this.label13.Text = "Cidade:";
             // 
-            // textBox10
+            // textBoxRuaRestauranteAlterar
             // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(195, 127);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(203, 26);
-            this.textBox10.TabIndex = 33;
+            this.textBoxRuaRestauranteAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRuaRestauranteAlterar.Location = new System.Drawing.Point(195, 127);
+            this.textBoxRuaRestauranteAlterar.Name = "textBoxRuaRestauranteAlterar";
+            this.textBoxRuaRestauranteAlterar.Size = new System.Drawing.Size(203, 26);
+            this.textBoxRuaRestauranteAlterar.TabIndex = 33;
             // 
             // label14
             // 
@@ -580,13 +587,13 @@
             this.label14.TabIndex = 32;
             this.label14.Text = "Rua:";
             // 
-            // textBox11
+            // textBoxNomeRestauranteAlterar
             // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(196, 95);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(203, 26);
-            this.textBox11.TabIndex = 31;
+            this.textBoxNomeRestauranteAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNomeRestauranteAlterar.Location = new System.Drawing.Point(196, 95);
+            this.textBoxNomeRestauranteAlterar.Name = "textBoxNomeRestauranteAlterar";
+            this.textBoxNomeRestauranteAlterar.Size = new System.Drawing.Size(203, 26);
+            this.textBoxNomeRestauranteAlterar.TabIndex = 31;
             // 
             // label15
             // 
@@ -598,14 +605,15 @@
             this.label15.TabIndex = 30;
             this.label15.Text = "Nome:";
             // 
-            // button1
+            // buttonAlterarRestaurante
             // 
-            this.button1.Location = new System.Drawing.Point(231, 292);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAlterarRestaurante.Location = new System.Drawing.Point(231, 292);
+            this.buttonAlterarRestaurante.Name = "buttonAlterarRestaurante";
+            this.buttonAlterarRestaurante.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlterarRestaurante.TabIndex = 29;
+            this.buttonAlterarRestaurante.Text = "Alterar";
+            this.buttonAlterarRestaurante.UseVisualStyleBackColor = true;
+            this.buttonAlterarRestaurante.Click += new System.EventHandler(this.buttonAlterarRestaurante_Click);
             // 
             // groupBoxListarClientes
             // 
@@ -626,6 +634,7 @@
             this.buttonApagarRestaurantes.TabIndex = 1;
             this.buttonApagarRestaurantes.Text = "Apagar";
             this.buttonApagarRestaurantes.UseVisualStyleBackColor = true;
+            this.buttonApagarRestaurantes.Click += new System.EventHandler(this.buttonApagarRestaurantes_Click);
             // 
             // listBoxRestaurantes
             // 
@@ -634,6 +643,7 @@
             this.listBoxRestaurantes.Name = "listBoxRestaurantes";
             this.listBoxRestaurantes.Size = new System.Drawing.Size(346, 368);
             this.listBoxRestaurantes.TabIndex = 0;
+            this.listBoxRestaurantes.SelectedIndexChanged += new System.EventHandler(this.listBoxRestaurantes_SelectedIndexChanged);
             // 
             // tabPageCategorias
             // 
@@ -659,11 +669,11 @@
             // 
             // tabPageInserirCategorias
             // 
-            this.tabPageInserirCategorias.Controls.Add(this.comboBoxInserirEstadoCategoria);
+            this.tabPageInserirCategorias.Controls.Add(this.comboBoxEstadoCategoria);
             this.tabPageInserirCategorias.Controls.Add(this.label18);
             this.tabPageInserirCategorias.Controls.Add(this.label10);
             this.tabPageInserirCategorias.Controls.Add(this.buttonAdicionarCategoria);
-            this.tabPageInserirCategorias.Controls.Add(this.textBoxInserirNomeCategoria);
+            this.tabPageInserirCategorias.Controls.Add(this.textBoxNomeCategoria);
             this.tabPageInserirCategorias.Location = new System.Drawing.Point(4, 22);
             this.tabPageInserirCategorias.Name = "tabPageInserirCategorias";
             this.tabPageInserirCategorias.Padding = new System.Windows.Forms.Padding(3);
@@ -674,8 +684,8 @@
             // 
             // tabPageEditarCategorias
             // 
-            this.tabPageEditarCategorias.Controls.Add(this.comboBox2);
-            this.tabPageEditarCategorias.Controls.Add(this.textBox6);
+            this.tabPageEditarCategorias.Controls.Add(this.comboBoxEstadoCategoriaAlterar);
+            this.tabPageEditarCategorias.Controls.Add(this.textBoxNomeCategoriaAlterar);
             this.tabPageEditarCategorias.Controls.Add(this.label6);
             this.tabPageEditarCategorias.Controls.Add(this.buttonAlterarCategoria);
             this.tabPageEditarCategorias.Controls.Add(this.label9);
@@ -711,8 +721,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.comboBoxInserirEstadoPagamento);
-            this.tabPage1.Controls.Add(this.textBoxInserirNomePagamento);
+            this.tabPage1.Controls.Add(this.comboBoxEstadoPagamento);
+            this.tabPage1.Controls.Add(this.textBoxNomePagamento);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.buttonAdicionarPagamento);
             this.tabPage1.Controls.Add(this.label8);
@@ -726,8 +736,8 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.comboBoxEstadoPagamentoAlterar);
+            this.tabPage2.Controls.Add(this.textBoxNomePagamentoAlterar);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.buttonAlterarMetodosPagamento);
             this.tabPage2.Controls.Add(this.label5);
@@ -741,7 +751,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.buttonApagarMetodosPagamentos);
             this.groupBox1.Controls.Add(this.listBoxMetodosPagamento);
             this.groupBox1.Location = new System.Drawing.Point(6, 5);
             this.groupBox1.Name = "groupBox1";
@@ -750,14 +760,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listar metodos de pagamentos:";
             // 
-            // button4
+            // buttonApagarMetodosPagamentos
             // 
-            this.button4.Location = new System.Drawing.Point(141, 406);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Apagar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonApagarMetodosPagamentos.Location = new System.Drawing.Point(141, 406);
+            this.buttonApagarMetodosPagamentos.Name = "buttonApagarMetodosPagamentos";
+            this.buttonApagarMetodosPagamentos.Size = new System.Drawing.Size(75, 23);
+            this.buttonApagarMetodosPagamentos.TabIndex = 1;
+            this.buttonApagarMetodosPagamentos.Text = "Apagar";
+            this.buttonApagarMetodosPagamentos.UseVisualStyleBackColor = true;
+            this.buttonApagarMetodosPagamentos.Click += new System.EventHandler(this.buttonApagarMetodosPagamentos_Click);
             // 
             // listBoxMetodosPagamento
             // 
@@ -766,6 +777,7 @@
             this.listBoxMetodosPagamento.Name = "listBoxMetodosPagamento";
             this.listBoxMetodosPagamento.Size = new System.Drawing.Size(350, 368);
             this.listBoxMetodosPagamento.TabIndex = 0;
+            this.listBoxMetodosPagamento.SelectedIndexChanged += new System.EventHandler(this.listBoxMetodosPagamento_SelectedIndexChanged);
             // 
             // FormGlobalRestaurantes
             // 
@@ -803,56 +815,56 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox comboBoxInserirEstadoPagamento;
+        private System.Windows.Forms.ComboBox comboBoxEstadoPagamento;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxInserirNomePagamento;
+        private System.Windows.Forms.TextBox textBoxNomePagamento;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonAdicionarPagamento;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxEstadoPagamentoAlterar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxNomePagamentoAlterar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonAlterarMetodosPagamento;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxEstadoCategoriaAlterar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxNomeCategoriaAlterar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonAlterarCategoria;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button buttonApagarCategorias;
         private System.Windows.Forms.ListBox listBoxCategorias;
-        private System.Windows.Forms.ComboBox comboBoxInserirEstadoCategoria;
+        private System.Windows.Forms.ComboBox comboBoxEstadoCategoria;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBoxInserirNomeCategoria;
+        private System.Windows.Forms.TextBox textBoxNomeCategoria;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button buttonAdicionarCategoria;
         private System.Windows.Forms.TabControl tabControlGlobalRestaurantes;
         private System.Windows.Forms.TabPage tabPageRestaurantes;
         private System.Windows.Forms.TabControl tabControlRestaurantes;
         private System.Windows.Forms.TabPage tabPageInserirRestaurantes;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPaisRestaurante;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxCodPostalRestaurante;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxCidadeRestaurante;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxRuaRestaurante;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBoxInserirNomeRestaurante;
+        private System.Windows.Forms.TextBox textBoxNomeRestaurante;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonAdicionarRestaurantes;
         private System.Windows.Forms.TabPage tabPageEditarRestaurantes;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBoxPaisRestauranteAlterar;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBoxCodPostalRestauranteAlterar;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBoxCidadeRestauranteAlterar;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBoxRuaRestauranteAlterar;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBoxNomeRestauranteAlterar;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAlterarRestaurante;
         private System.Windows.Forms.GroupBox groupBoxListarClientes;
         private System.Windows.Forms.Button buttonApagarRestaurantes;
         private System.Windows.Forms.ListBox listBoxRestaurantes;
@@ -865,7 +877,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonApagarMetodosPagamentos;
         private System.Windows.Forms.ListBox listBoxMetodosPagamento;
     }
 }
