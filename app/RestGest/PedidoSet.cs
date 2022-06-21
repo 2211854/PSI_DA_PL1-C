@@ -22,7 +22,7 @@ namespace RestGest
         }
     
         public int Id { get; set; }
-        public decimal ValorTotal { get; set; }
+        public float ValorTotal { get; set; }
         public int IdEstado { get; set; }
         public int IdRestaurante { get; set; }
         public int IdCliente { get; set; }

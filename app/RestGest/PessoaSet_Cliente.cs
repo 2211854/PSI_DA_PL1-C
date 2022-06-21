@@ -20,7 +20,7 @@ namespace RestGest
             this.PedidoSet = new HashSet<PedidoSet>();
         }
     
-        public decimal TotalGasto { get; set; }
+        public float TotalGasto { get; set; }
         public int NumContribuinte { get; set; }
         public int Id { get; set; }
     

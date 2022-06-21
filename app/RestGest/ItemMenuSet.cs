@@ -25,7 +25,7 @@ namespace RestGest
         public string Nome { get; set; }
         public string Fotografia { get; set; }
         public string Ingredientes { get; set; }
-        public decimal Preco { get; set; }
+        public float Preco { get; set; }
         public bool Ativo { get; set; }
         public int IdCategoria { get; set; }
     
