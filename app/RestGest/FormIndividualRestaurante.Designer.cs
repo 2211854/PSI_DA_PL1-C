@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIndividualRestaurante));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePainelDeControlo = new System.Windows.Forms.TabPage();
+            this.comboBoxRestaurantes = new System.Windows.Forms.ComboBox();
             this.labelTotalFaturado = new System.Windows.Forms.Label();
             this.labelNumeroPedidos = new System.Windows.Forms.Label();
             this.labelNumeroTrabalhadores = new System.Windows.Forms.Label();
@@ -38,10 +39,16 @@
             this.tabPageTrabalhadores = new System.Windows.Forms.TabPage();
             this.tabControlRestaurantes = new System.Windows.Forms.TabControl();
             this.tabPageInserirRestaurantes = new System.Windows.Forms.TabPage();
+            this.comboBoxEstadoTrabalhador = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxCidadeTrabalhador = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxPaisTrabalhador = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.buttonAdicionarTrabalhador = new System.Windows.Forms.Button();
-            this.textBoxEmailTrabalhador = new System.Windows.Forms.TextBox();
+            this.textBoxRuaTrabalhador = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBoxPasswordTrabalhador = new System.Windows.Forms.TextBox();
+            this.textBoxCodPostalTrabalhador = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.textBoxSalarioTrabalhador = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -50,10 +57,18 @@
             this.textBoxNomeTrabalhador = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.tabPageEditarRestaurantes = new System.Windows.Forms.TabPage();
-            this.textBoxEmailTrabalhadorAlterar = new System.Windows.Forms.TextBox();
+            this.textBoxTelemovelTrabalhadorAlterar = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBoxEstadoTrabalhadorAlterar = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxCidadeTrabalhadorAlterar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxPasswordTrabalhadorAlterar = new System.Windows.Forms.TextBox();
+            this.textBoxPaisTrabalhadorAlterar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBoxRuaTrabalhadorAlterar = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxCodPostalTrabalhadorAlterar = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.textBoxSalarioTrabalhadorAlterar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxPosicaoTrabalhadorAlterar = new System.Windows.Forms.TextBox();
@@ -73,7 +88,8 @@
             this.buttonAdicionarMenu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBoxMenus = new System.Windows.Forms.ListBox();
-            this.comboBoxRestaurantes = new System.Windows.Forms.ComboBox();
+            this.textBoxTelemovelTrabalhador = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPagePainelDeControlo.SuspendLayout();
             this.tabPageTrabalhadores.SuspendLayout();
@@ -110,6 +126,16 @@
             this.tabPagePainelDeControlo.TabIndex = 2;
             this.tabPagePainelDeControlo.Text = "Painel de Controlo";
             this.tabPagePainelDeControlo.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxRestaurantes
+            // 
+            this.comboBoxRestaurantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.comboBoxRestaurantes.FormattingEnabled = true;
+            this.comboBoxRestaurantes.Location = new System.Drawing.Point(335, 19);
+            this.comboBoxRestaurantes.Name = "comboBoxRestaurantes";
+            this.comboBoxRestaurantes.Size = new System.Drawing.Size(237, 33);
+            this.comboBoxRestaurantes.TabIndex = 4;
+            this.comboBoxRestaurantes.SelectedIndexChanged += new System.EventHandler(this.comboBoxRestaurantes_SelectedIndexChanged);
             // 
             // labelTotalFaturado
             // 
@@ -175,10 +201,18 @@
             // 
             // tabPageInserirRestaurantes
             // 
+            this.tabPageInserirRestaurantes.Controls.Add(this.textBoxTelemovelTrabalhador);
+            this.tabPageInserirRestaurantes.Controls.Add(this.label14);
+            this.tabPageInserirRestaurantes.Controls.Add(this.comboBoxEstadoTrabalhador);
+            this.tabPageInserirRestaurantes.Controls.Add(this.label11);
+            this.tabPageInserirRestaurantes.Controls.Add(this.textBoxCidadeTrabalhador);
+            this.tabPageInserirRestaurantes.Controls.Add(this.label3);
+            this.tabPageInserirRestaurantes.Controls.Add(this.textBoxPaisTrabalhador);
+            this.tabPageInserirRestaurantes.Controls.Add(this.label8);
             this.tabPageInserirRestaurantes.Controls.Add(this.buttonAdicionarTrabalhador);
-            this.tabPageInserirRestaurantes.Controls.Add(this.textBoxEmailTrabalhador);
+            this.tabPageInserirRestaurantes.Controls.Add(this.textBoxRuaTrabalhador);
             this.tabPageInserirRestaurantes.Controls.Add(this.label18);
-            this.tabPageInserirRestaurantes.Controls.Add(this.textBoxPasswordTrabalhador);
+            this.tabPageInserirRestaurantes.Controls.Add(this.textBoxCodPostalTrabalhador);
             this.tabPageInserirRestaurantes.Controls.Add(this.label19);
             this.tabPageInserirRestaurantes.Controls.Add(this.textBoxSalarioTrabalhador);
             this.tabPageInserirRestaurantes.Controls.Add(this.label20);
@@ -194,9 +228,67 @@
             this.tabPageInserirRestaurantes.Text = "Adicionar";
             this.tabPageInserirRestaurantes.UseVisualStyleBackColor = true;
             // 
+            // comboBoxEstadoTrabalhador
+            // 
+            this.comboBoxEstadoTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEstadoTrabalhador.FormattingEnabled = true;
+            this.comboBoxEstadoTrabalhador.Items.AddRange(new object[] {
+            "Ativado",
+            "Desativado"});
+            this.comboBoxEstadoTrabalhador.Location = new System.Drawing.Point(122, 299);
+            this.comboBoxEstadoTrabalhador.Name = "comboBoxEstadoTrabalhador";
+            this.comboBoxEstadoTrabalhador.Size = new System.Drawing.Size(152, 28);
+            this.comboBoxEstadoTrabalhador.TabIndex = 33;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(52, 302);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 20);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Estado:";
+            // 
+            // textBoxCidadeTrabalhador
+            // 
+            this.textBoxCidadeTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxCidadeTrabalhador.Location = new System.Drawing.Point(123, 235);
+            this.textBoxCidadeTrabalhador.Name = "textBoxCidadeTrabalhador";
+            this.textBoxCidadeTrabalhador.Size = new System.Drawing.Size(151, 26);
+            this.textBoxCidadeTrabalhador.TabIndex = 31;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Location = new System.Drawing.Point(53, 238);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 20);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Cidade:";
+            // 
+            // textBoxPaisTrabalhador
+            // 
+            this.textBoxPaisTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxPaisTrabalhador.Location = new System.Drawing.Point(123, 267);
+            this.textBoxPaisTrabalhador.Name = "textBoxPaisTrabalhador";
+            this.textBoxPaisTrabalhador.Size = new System.Drawing.Size(151, 26);
+            this.textBoxPaisTrabalhador.TabIndex = 29;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label8.Location = new System.Drawing.Point(73, 270);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 20);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Pais:";
+            // 
             // buttonAdicionarTrabalhador
             // 
-            this.buttonAdicionarTrabalhador.Location = new System.Drawing.Point(114, 277);
+            this.buttonAdicionarTrabalhador.Location = new System.Drawing.Point(123, 354);
             this.buttonAdicionarTrabalhador.Name = "buttonAdicionarTrabalhador";
             this.buttonAdicionarTrabalhador.Size = new System.Drawing.Size(75, 23);
             this.buttonAdicionarTrabalhador.TabIndex = 27;
@@ -204,46 +296,46 @@
             this.buttonAdicionarTrabalhador.UseVisualStyleBackColor = true;
             this.buttonAdicionarTrabalhador.Click += new System.EventHandler(this.buttonAdicionarTrabalhador_Click);
             // 
-            // textBoxEmailTrabalhador
+            // textBoxRuaTrabalhador
             // 
-            this.textBoxEmailTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxEmailTrabalhador.Location = new System.Drawing.Point(127, 188);
-            this.textBoxEmailTrabalhador.Name = "textBoxEmailTrabalhador";
-            this.textBoxEmailTrabalhador.Size = new System.Drawing.Size(151, 26);
-            this.textBoxEmailTrabalhador.TabIndex = 25;
+            this.textBoxRuaTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxRuaTrabalhador.Location = new System.Drawing.Point(123, 166);
+            this.textBoxRuaTrabalhador.Name = "textBoxRuaTrabalhador";
+            this.textBoxRuaTrabalhador.Size = new System.Drawing.Size(151, 26);
+            this.textBoxRuaTrabalhador.TabIndex = 25;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label18.Location = new System.Drawing.Point(68, 191);
+            this.label18.Location = new System.Drawing.Point(73, 169);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(52, 20);
+            this.label18.Size = new System.Drawing.Size(43, 20);
             this.label18.TabIndex = 24;
-            this.label18.Text = "Email:";
+            this.label18.Text = "Rua:";
             // 
-            // textBoxPasswordTrabalhador
+            // textBoxCodPostalTrabalhador
             // 
-            this.textBoxPasswordTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxPasswordTrabalhador.Location = new System.Drawing.Point(127, 225);
-            this.textBoxPasswordTrabalhador.Name = "textBoxPasswordTrabalhador";
-            this.textBoxPasswordTrabalhador.Size = new System.Drawing.Size(151, 26);
-            this.textBoxPasswordTrabalhador.TabIndex = 23;
+            this.textBoxCodPostalTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxCodPostalTrabalhador.Location = new System.Drawing.Point(123, 203);
+            this.textBoxCodPostalTrabalhador.Name = "textBoxCodPostalTrabalhador";
+            this.textBoxCodPostalTrabalhador.Size = new System.Drawing.Size(151, 26);
+            this.textBoxCodPostalTrabalhador.TabIndex = 23;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label19.Location = new System.Drawing.Point(38, 228);
+            this.label19.Location = new System.Drawing.Point(22, 206);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(82, 20);
+            this.label19.Size = new System.Drawing.Size(94, 20);
             this.label19.TabIndex = 22;
-            this.label19.Text = "Password:";
+            this.label19.Text = "Cod. Postal:";
             // 
             // textBoxSalarioTrabalhador
             // 
             this.textBoxSalarioTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxSalarioTrabalhador.Location = new System.Drawing.Point(127, 151);
+            this.textBoxSalarioTrabalhador.Location = new System.Drawing.Point(123, 129);
             this.textBoxSalarioTrabalhador.Name = "textBoxSalarioTrabalhador";
             this.textBoxSalarioTrabalhador.Size = new System.Drawing.Size(151, 26);
             this.textBoxSalarioTrabalhador.TabIndex = 21;
@@ -252,7 +344,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label20.Location = new System.Drawing.Point(58, 154);
+            this.label20.Location = new System.Drawing.Point(54, 132);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(62, 20);
             this.label20.TabIndex = 20;
@@ -261,7 +353,7 @@
             // textBoxPosicaoTrabalhador
             // 
             this.textBoxPosicaoTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxPosicaoTrabalhador.Location = new System.Drawing.Point(127, 114);
+            this.textBoxPosicaoTrabalhador.Location = new System.Drawing.Point(123, 92);
             this.textBoxPosicaoTrabalhador.Name = "textBoxPosicaoTrabalhador";
             this.textBoxPosicaoTrabalhador.Size = new System.Drawing.Size(151, 26);
             this.textBoxPosicaoTrabalhador.TabIndex = 19;
@@ -270,7 +362,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label21.Location = new System.Drawing.Point(51, 117);
+            this.label21.Location = new System.Drawing.Point(47, 95);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(69, 20);
             this.label21.TabIndex = 18;
@@ -279,7 +371,7 @@
             // textBoxNomeTrabalhador
             // 
             this.textBoxNomeTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxNomeTrabalhador.Location = new System.Drawing.Point(126, 77);
+            this.textBoxNomeTrabalhador.Location = new System.Drawing.Point(123, 28);
             this.textBoxNomeTrabalhador.Name = "textBoxNomeTrabalhador";
             this.textBoxNomeTrabalhador.Size = new System.Drawing.Size(151, 26);
             this.textBoxNomeTrabalhador.TabIndex = 17;
@@ -288,7 +380,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label22.Location = new System.Drawing.Point(65, 80);
+            this.label22.Location = new System.Drawing.Point(61, 31);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(55, 20);
             this.label22.TabIndex = 16;
@@ -296,10 +388,18 @@
             // 
             // tabPageEditarRestaurantes
             // 
-            this.tabPageEditarRestaurantes.Controls.Add(this.textBoxEmailTrabalhadorAlterar);
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBoxTelemovelTrabalhadorAlterar);
+            this.tabPageEditarRestaurantes.Controls.Add(this.label13);
+            this.tabPageEditarRestaurantes.Controls.Add(this.comboBoxEstadoTrabalhadorAlterar);
+            this.tabPageEditarRestaurantes.Controls.Add(this.label12);
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBoxCidadeTrabalhadorAlterar);
             this.tabPageEditarRestaurantes.Controls.Add(this.label2);
-            this.tabPageEditarRestaurantes.Controls.Add(this.textBoxPasswordTrabalhadorAlterar);
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBoxPaisTrabalhadorAlterar);
             this.tabPageEditarRestaurantes.Controls.Add(this.label4);
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBoxRuaTrabalhadorAlterar);
+            this.tabPageEditarRestaurantes.Controls.Add(this.label9);
+            this.tabPageEditarRestaurantes.Controls.Add(this.textBoxCodPostalTrabalhadorAlterar);
+            this.tabPageEditarRestaurantes.Controls.Add(this.label10);
             this.tabPageEditarRestaurantes.Controls.Add(this.textBoxSalarioTrabalhadorAlterar);
             this.tabPageEditarRestaurantes.Controls.Add(this.label5);
             this.tabPageEditarRestaurantes.Controls.Add(this.textBoxPosicaoTrabalhadorAlterar);
@@ -315,46 +415,122 @@
             this.tabPageEditarRestaurantes.Text = "Editar";
             this.tabPageEditarRestaurantes.UseVisualStyleBackColor = true;
             // 
-            // textBoxEmailTrabalhadorAlterar
+            // textBoxTelemovelTrabalhadorAlterar
             // 
-            this.textBoxEmailTrabalhadorAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxEmailTrabalhadorAlterar.Location = new System.Drawing.Point(123, 198);
-            this.textBoxEmailTrabalhadorAlterar.Name = "textBoxEmailTrabalhadorAlterar";
-            this.textBoxEmailTrabalhadorAlterar.Size = new System.Drawing.Size(151, 26);
-            this.textBoxEmailTrabalhadorAlterar.TabIndex = 39;
+            this.textBoxTelemovelTrabalhadorAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxTelemovelTrabalhadorAlterar.Location = new System.Drawing.Point(122, 70);
+            this.textBoxTelemovelTrabalhadorAlterar.Name = "textBoxTelemovelTrabalhadorAlterar";
+            this.textBoxTelemovelTrabalhadorAlterar.Size = new System.Drawing.Size(151, 26);
+            this.textBoxTelemovelTrabalhadorAlterar.TabIndex = 47;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label13.Location = new System.Drawing.Point(30, 73);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(84, 20);
+            this.label13.TabIndex = 46;
+            this.label13.Text = "Telemovel:";
+            // 
+            // comboBoxEstadoTrabalhadorAlterar
+            // 
+            this.comboBoxEstadoTrabalhadorAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEstadoTrabalhadorAlterar.FormattingEnabled = true;
+            this.comboBoxEstadoTrabalhadorAlterar.Items.AddRange(new object[] {
+            "Ativado",
+            "Desativado"});
+            this.comboBoxEstadoTrabalhadorAlterar.Location = new System.Drawing.Point(120, 304);
+            this.comboBoxEstadoTrabalhadorAlterar.Name = "comboBoxEstadoTrabalhadorAlterar";
+            this.comboBoxEstadoTrabalhadorAlterar.Size = new System.Drawing.Size(152, 28);
+            this.comboBoxEstadoTrabalhadorAlterar.TabIndex = 45;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(50, 307);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(64, 20);
+            this.label12.TabIndex = 44;
+            this.label12.Text = "Estado:";
+            // 
+            // textBoxCidadeTrabalhadorAlterar
+            // 
+            this.textBoxCidadeTrabalhadorAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxCidadeTrabalhadorAlterar.Location = new System.Drawing.Point(122, 240);
+            this.textBoxCidadeTrabalhadorAlterar.Name = "textBoxCidadeTrabalhadorAlterar";
+            this.textBoxCidadeTrabalhadorAlterar.Size = new System.Drawing.Size(151, 26);
+            this.textBoxCidadeTrabalhadorAlterar.TabIndex = 43;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(65, 201);
+            this.label2.Location = new System.Drawing.Point(52, 243);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 20);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Email:";
+            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "Cidade:";
             // 
-            // textBoxPasswordTrabalhadorAlterar
+            // textBoxPaisTrabalhadorAlterar
             // 
-            this.textBoxPasswordTrabalhadorAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxPasswordTrabalhadorAlterar.Location = new System.Drawing.Point(123, 235);
-            this.textBoxPasswordTrabalhadorAlterar.Name = "textBoxPasswordTrabalhadorAlterar";
-            this.textBoxPasswordTrabalhadorAlterar.Size = new System.Drawing.Size(151, 26);
-            this.textBoxPasswordTrabalhadorAlterar.TabIndex = 37;
+            this.textBoxPaisTrabalhadorAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxPaisTrabalhadorAlterar.Location = new System.Drawing.Point(122, 272);
+            this.textBoxPaisTrabalhadorAlterar.Name = "textBoxPaisTrabalhadorAlterar";
+            this.textBoxPaisTrabalhadorAlterar.Size = new System.Drawing.Size(151, 26);
+            this.textBoxPaisTrabalhadorAlterar.TabIndex = 41;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(35, 238);
+            this.label4.Location = new System.Drawing.Point(72, 275);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 20);
-            this.label4.TabIndex = 36;
-            this.label4.Text = "Password:";
+            this.label4.Size = new System.Drawing.Size(43, 20);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "Pais:";
+            // 
+            // textBoxRuaTrabalhadorAlterar
+            // 
+            this.textBoxRuaTrabalhadorAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxRuaTrabalhadorAlterar.Location = new System.Drawing.Point(122, 171);
+            this.textBoxRuaTrabalhadorAlterar.Name = "textBoxRuaTrabalhadorAlterar";
+            this.textBoxRuaTrabalhadorAlterar.Size = new System.Drawing.Size(151, 26);
+            this.textBoxRuaTrabalhadorAlterar.TabIndex = 39;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label9.Location = new System.Drawing.Point(72, 174);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 20);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Rua:";
+            // 
+            // textBoxCodPostalTrabalhadorAlterar
+            // 
+            this.textBoxCodPostalTrabalhadorAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxCodPostalTrabalhadorAlterar.Location = new System.Drawing.Point(122, 208);
+            this.textBoxCodPostalTrabalhadorAlterar.Name = "textBoxCodPostalTrabalhadorAlterar";
+            this.textBoxCodPostalTrabalhadorAlterar.Size = new System.Drawing.Size(151, 26);
+            this.textBoxCodPostalTrabalhadorAlterar.TabIndex = 37;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label10.Location = new System.Drawing.Point(21, 211);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(94, 20);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "Cod. Postal:";
             // 
             // textBoxSalarioTrabalhadorAlterar
             // 
             this.textBoxSalarioTrabalhadorAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxSalarioTrabalhadorAlterar.Location = new System.Drawing.Point(123, 161);
+            this.textBoxSalarioTrabalhadorAlterar.Location = new System.Drawing.Point(122, 139);
             this.textBoxSalarioTrabalhadorAlterar.Name = "textBoxSalarioTrabalhadorAlterar";
             this.textBoxSalarioTrabalhadorAlterar.Size = new System.Drawing.Size(151, 26);
             this.textBoxSalarioTrabalhadorAlterar.TabIndex = 35;
@@ -363,7 +539,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(55, 164);
+            this.label5.Location = new System.Drawing.Point(54, 142);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 20);
             this.label5.TabIndex = 34;
@@ -372,7 +548,7 @@
             // textBoxPosicaoTrabalhadorAlterar
             // 
             this.textBoxPosicaoTrabalhadorAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxPosicaoTrabalhadorAlterar.Location = new System.Drawing.Point(123, 124);
+            this.textBoxPosicaoTrabalhadorAlterar.Location = new System.Drawing.Point(122, 102);
             this.textBoxPosicaoTrabalhadorAlterar.Name = "textBoxPosicaoTrabalhadorAlterar";
             this.textBoxPosicaoTrabalhadorAlterar.Size = new System.Drawing.Size(151, 26);
             this.textBoxPosicaoTrabalhadorAlterar.TabIndex = 33;
@@ -381,7 +557,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(48, 127);
+            this.label6.Location = new System.Drawing.Point(47, 105);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 20);
             this.label6.TabIndex = 32;
@@ -390,7 +566,7 @@
             // textBoxNomeTrabalhadorAlterar
             // 
             this.textBoxNomeTrabalhadorAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxNomeTrabalhadorAlterar.Location = new System.Drawing.Point(122, 87);
+            this.textBoxNomeTrabalhadorAlterar.Location = new System.Drawing.Point(121, 38);
             this.textBoxNomeTrabalhadorAlterar.Name = "textBoxNomeTrabalhadorAlterar";
             this.textBoxNomeTrabalhadorAlterar.Size = new System.Drawing.Size(151, 26);
             this.textBoxNomeTrabalhadorAlterar.TabIndex = 31;
@@ -399,7 +575,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(62, 90);
+            this.label7.Location = new System.Drawing.Point(61, 41);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 20);
             this.label7.TabIndex = 30;
@@ -407,7 +583,7 @@
             // 
             // buttonEditarTrabalhador
             // 
-            this.buttonEditarTrabalhador.Location = new System.Drawing.Point(122, 279);
+            this.buttonEditarTrabalhador.Location = new System.Drawing.Point(122, 350);
             this.buttonEditarTrabalhador.Name = "buttonEditarTrabalhador";
             this.buttonEditarTrabalhador.Size = new System.Drawing.Size(75, 23);
             this.buttonEditarTrabalhador.TabIndex = 29;
@@ -463,6 +639,7 @@
             this.listBoxTrabalhadores.Name = "listBoxTrabalhadores";
             this.listBoxTrabalhadores.Size = new System.Drawing.Size(350, 264);
             this.listBoxTrabalhadores.TabIndex = 0;
+            this.listBoxTrabalhadores.SelectedIndexChanged += new System.EventHandler(this.listBoxTrabalhadores_SelectedIndexChanged);
             // 
             // tabPageMenus
             // 
@@ -486,6 +663,7 @@
             this.buttonRemoverMenu.TabIndex = 4;
             this.buttonRemoverMenu.Text = "←Remover";
             this.buttonRemoverMenu.UseVisualStyleBackColor = true;
+            this.buttonRemoverMenu.Click += new System.EventHandler(this.buttonRemoverMenu_Click);
             // 
             // groupBox2
             // 
@@ -513,6 +691,7 @@
             this.buttonAdicionarMenu.TabIndex = 3;
             this.buttonAdicionarMenu.Text = "Adicionar→";
             this.buttonAdicionarMenu.UseVisualStyleBackColor = true;
+            this.buttonAdicionarMenu.Click += new System.EventHandler(this.buttonAdicionarMenu_Click);
             // 
             // groupBox1
             // 
@@ -532,15 +711,23 @@
             this.listBoxMenus.Size = new System.Drawing.Size(259, 381);
             this.listBoxMenus.TabIndex = 1;
             // 
-            // comboBoxRestaurantes
+            // textBoxTelemovelTrabalhador
             // 
-            this.comboBoxRestaurantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.comboBoxRestaurantes.FormattingEnabled = true;
-            this.comboBoxRestaurantes.Location = new System.Drawing.Point(335, 19);
-            this.comboBoxRestaurantes.Name = "comboBoxRestaurantes";
-            this.comboBoxRestaurantes.Size = new System.Drawing.Size(237, 33);
-            this.comboBoxRestaurantes.TabIndex = 4;
-            this.comboBoxRestaurantes.SelectedIndexChanged += new System.EventHandler(this.comboBoxRestaurantes_SelectedIndexChanged);
+            this.textBoxTelemovelTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxTelemovelTrabalhador.Location = new System.Drawing.Point(123, 60);
+            this.textBoxTelemovelTrabalhador.Name = "textBoxTelemovelTrabalhador";
+            this.textBoxTelemovelTrabalhador.Size = new System.Drawing.Size(151, 26);
+            this.textBoxTelemovelTrabalhador.TabIndex = 35;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label14.Location = new System.Drawing.Point(32, 63);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(84, 20);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "Telemovel:";
             // 
             // FormIndividualRestaurante
             // 
@@ -579,9 +766,9 @@
         private System.Windows.Forms.TabControl tabControlRestaurantes;
         private System.Windows.Forms.TabPage tabPageInserirRestaurantes;
         private System.Windows.Forms.Button buttonAdicionarTrabalhador;
-        private System.Windows.Forms.TextBox textBoxEmailTrabalhador;
+        private System.Windows.Forms.TextBox textBoxRuaTrabalhador;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBoxPasswordTrabalhador;
+        private System.Windows.Forms.TextBox textBoxCodPostalTrabalhador;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBoxSalarioTrabalhador;
         private System.Windows.Forms.Label label20;
@@ -590,10 +777,6 @@
         private System.Windows.Forms.TextBox textBoxNomeTrabalhador;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TabPage tabPageEditarRestaurantes;
-        private System.Windows.Forms.TextBox textBoxEmailTrabalhadorAlterar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxPasswordTrabalhadorAlterar;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxSalarioTrabalhadorAlterar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxPosicaoTrabalhadorAlterar;
@@ -617,5 +800,25 @@
         private System.Windows.Forms.Button buttonAdicionarMenu;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBoxRestaurantes;
+        private System.Windows.Forms.TextBox textBoxCidadeTrabalhador;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxPaisTrabalhador;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxCidadeTrabalhadorAlterar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxPaisTrabalhadorAlterar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxRuaTrabalhadorAlterar;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBoxCodPostalTrabalhadorAlterar;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBoxEstadoTrabalhador;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBoxEstadoTrabalhadorAlterar;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxTelemovelTrabalhadorAlterar;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBoxTelemovelTrabalhador;
+        private System.Windows.Forms.Label label14;
     }
 }

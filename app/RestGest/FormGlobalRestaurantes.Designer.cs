@@ -44,7 +44,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.buttonAlterarCategoria = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.buttonApagarCategorias = new System.Windows.Forms.Button();
             this.listBoxCategorias = new System.Windows.Forms.ListBox();
             this.comboBoxEstadoCategoria = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -79,7 +78,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.buttonAlterarRestaurante = new System.Windows.Forms.Button();
             this.groupBoxListarClientes = new System.Windows.Forms.GroupBox();
-            this.buttonApagarRestaurantes = new System.Windows.Forms.Button();
             this.listBoxRestaurantes = new System.Windows.Forms.ListBox();
             this.tabPageCategorias = new System.Windows.Forms.TabPage();
             this.tabControlCategoria = new System.Windows.Forms.TabControl();
@@ -90,7 +88,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonApagarMetodosPagamentos = new System.Windows.Forms.Button();
             this.listBoxMetodosPagamento = new System.Windows.Forms.ListBox();
             this.groupBox6.SuspendLayout();
             this.tabControlGlobalRestaurantes.SuspendLayout();
@@ -262,7 +259,6 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.buttonApagarCategorias);
             this.groupBox6.Controls.Add(this.listBoxCategorias);
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
             this.groupBox6.Name = "groupBox6";
@@ -271,22 +267,12 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Listar categorias:";
             // 
-            // buttonApagarCategorias
-            // 
-            this.buttonApagarCategorias.Location = new System.Drawing.Point(141, 406);
-            this.buttonApagarCategorias.Name = "buttonApagarCategorias";
-            this.buttonApagarCategorias.Size = new System.Drawing.Size(75, 23);
-            this.buttonApagarCategorias.TabIndex = 1;
-            this.buttonApagarCategorias.Text = "Apagar";
-            this.buttonApagarCategorias.UseVisualStyleBackColor = true;
-            this.buttonApagarCategorias.Click += new System.EventHandler(this.buttonApagarCategorias_Click);
-            // 
             // listBoxCategorias
             // 
             this.listBoxCategorias.FormattingEnabled = true;
             this.listBoxCategorias.Location = new System.Drawing.Point(7, 20);
             this.listBoxCategorias.Name = "listBoxCategorias";
-            this.listBoxCategorias.Size = new System.Drawing.Size(350, 368);
+            this.listBoxCategorias.Size = new System.Drawing.Size(350, 407);
             this.listBoxCategorias.TabIndex = 0;
             this.listBoxCategorias.SelectedIndexChanged += new System.EventHandler(this.listBoxCategorias_SelectedIndexChanged);
             // 
@@ -617,7 +603,6 @@
             // 
             // groupBoxListarClientes
             // 
-            this.groupBoxListarClientes.Controls.Add(this.buttonApagarRestaurantes);
             this.groupBoxListarClientes.Controls.Add(this.listBoxRestaurantes);
             this.groupBoxListarClientes.Location = new System.Drawing.Point(6, 6);
             this.groupBoxListarClientes.Name = "groupBoxListarClientes";
@@ -626,22 +611,12 @@
             this.groupBoxListarClientes.TabStop = false;
             this.groupBoxListarClientes.Text = "Listar Restaurantes:";
             // 
-            // buttonApagarRestaurantes
-            // 
-            this.buttonApagarRestaurantes.Location = new System.Drawing.Point(141, 406);
-            this.buttonApagarRestaurantes.Name = "buttonApagarRestaurantes";
-            this.buttonApagarRestaurantes.Size = new System.Drawing.Size(75, 23);
-            this.buttonApagarRestaurantes.TabIndex = 1;
-            this.buttonApagarRestaurantes.Text = "Apagar";
-            this.buttonApagarRestaurantes.UseVisualStyleBackColor = true;
-            this.buttonApagarRestaurantes.Click += new System.EventHandler(this.buttonApagarRestaurantes_Click);
-            // 
             // listBoxRestaurantes
             // 
             this.listBoxRestaurantes.FormattingEnabled = true;
             this.listBoxRestaurantes.Location = new System.Drawing.Point(7, 20);
             this.listBoxRestaurantes.Name = "listBoxRestaurantes";
-            this.listBoxRestaurantes.Size = new System.Drawing.Size(346, 368);
+            this.listBoxRestaurantes.Size = new System.Drawing.Size(346, 407);
             this.listBoxRestaurantes.TabIndex = 0;
             this.listBoxRestaurantes.SelectedIndexChanged += new System.EventHandler(this.listBoxRestaurantes_SelectedIndexChanged);
             // 
@@ -751,7 +726,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.buttonApagarMetodosPagamentos);
             this.groupBox1.Controls.Add(this.listBoxMetodosPagamento);
             this.groupBox1.Location = new System.Drawing.Point(6, 5);
             this.groupBox1.Name = "groupBox1";
@@ -760,22 +734,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listar metodos de pagamentos:";
             // 
-            // buttonApagarMetodosPagamentos
-            // 
-            this.buttonApagarMetodosPagamentos.Location = new System.Drawing.Point(141, 406);
-            this.buttonApagarMetodosPagamentos.Name = "buttonApagarMetodosPagamentos";
-            this.buttonApagarMetodosPagamentos.Size = new System.Drawing.Size(75, 23);
-            this.buttonApagarMetodosPagamentos.TabIndex = 1;
-            this.buttonApagarMetodosPagamentos.Text = "Apagar";
-            this.buttonApagarMetodosPagamentos.UseVisualStyleBackColor = true;
-            this.buttonApagarMetodosPagamentos.Click += new System.EventHandler(this.buttonApagarMetodosPagamentos_Click);
-            // 
             // listBoxMetodosPagamento
             // 
             this.listBoxMetodosPagamento.FormattingEnabled = true;
             this.listBoxMetodosPagamento.Location = new System.Drawing.Point(7, 20);
             this.listBoxMetodosPagamento.Name = "listBoxMetodosPagamento";
-            this.listBoxMetodosPagamento.Size = new System.Drawing.Size(350, 368);
+            this.listBoxMetodosPagamento.Size = new System.Drawing.Size(350, 407);
             this.listBoxMetodosPagamento.TabIndex = 0;
             this.listBoxMetodosPagamento.SelectedIndexChanged += new System.EventHandler(this.listBoxMetodosPagamento_SelectedIndexChanged);
             // 
@@ -831,7 +795,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonAlterarCategoria;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button buttonApagarCategorias;
         private System.Windows.Forms.ListBox listBoxCategorias;
         private System.Windows.Forms.ComboBox comboBoxEstadoCategoria;
         private System.Windows.Forms.Label label10;
@@ -866,7 +829,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button buttonAlterarRestaurante;
         private System.Windows.Forms.GroupBox groupBoxListarClientes;
-        private System.Windows.Forms.Button buttonApagarRestaurantes;
         private System.Windows.Forms.ListBox listBoxRestaurantes;
         private System.Windows.Forms.TabPage tabPageCategorias;
         private System.Windows.Forms.TabControl tabControlCategoria;
@@ -877,7 +839,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonApagarMetodosPagamentos;
         private System.Windows.Forms.ListBox listBoxMetodosPagamento;
     }
 }

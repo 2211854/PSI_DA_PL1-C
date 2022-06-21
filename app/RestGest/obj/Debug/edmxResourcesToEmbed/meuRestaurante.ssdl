@@ -152,6 +152,7 @@
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Telemovel" Type="int" Nullable="false" />
     <Property Name="Morada_Id" Type="int" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="PessoaSet_Cliente">
     <Key>
@@ -167,8 +168,6 @@
     </Key>
     <Property Name="Salario" Type="int" Nullable="false" />
     <Property Name="Posicao" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
     <Property Name="IdRestaurante" Type="int" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
   </EntityType>

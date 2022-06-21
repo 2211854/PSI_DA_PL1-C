@@ -45,7 +45,6 @@
             this.textBoxNomeAlterar = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBoxListarClientes = new System.Windows.Forms.GroupBox();
-            this.buttonApagar = new System.Windows.Forms.Button();
             this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.groupBoxInserirCliente = new System.Windows.Forms.GroupBox();
             this.textBoxPais = new System.Windows.Forms.TextBox();
@@ -63,6 +62,8 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAdicionarClientes = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBoxEstadoAlterar = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBoxListarClientes.SuspendLayout();
             this.groupBoxInserirCliente.SuspendLayout();
@@ -70,6 +71,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBoxEstadoAlterar);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.buttonAlterar);
             this.groupBox1.Controls.Add(this.textBoxPaisAlterar);
             this.groupBox1.Controls.Add(this.label12);
@@ -94,7 +97,7 @@
             // 
             // buttonAlterar
             // 
-            this.buttonAlterar.Location = new System.Drawing.Point(264, 274);
+            this.buttonAlterar.Location = new System.Drawing.Point(494, 158);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
             this.buttonAlterar.TabIndex = 21;
@@ -230,7 +233,6 @@
             // 
             // groupBoxListarClientes
             // 
-            this.groupBoxListarClientes.Controls.Add(this.buttonApagar);
             this.groupBoxListarClientes.Controls.Add(this.listBoxClientes);
             this.groupBoxListarClientes.Location = new System.Drawing.Point(12, 205);
             this.groupBoxListarClientes.Name = "groupBoxListarClientes";
@@ -239,22 +241,12 @@
             this.groupBoxListarClientes.TabStop = false;
             this.groupBoxListarClientes.Text = "Listar Clientes";
             // 
-            // buttonApagar
-            // 
-            this.buttonApagar.Location = new System.Drawing.Point(151, 271);
-            this.buttonApagar.Name = "buttonApagar";
-            this.buttonApagar.Size = new System.Drawing.Size(75, 23);
-            this.buttonApagar.TabIndex = 1;
-            this.buttonApagar.Text = "Apagar";
-            this.buttonApagar.UseVisualStyleBackColor = true;
-            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
-            // 
             // listBoxClientes
             // 
             this.listBoxClientes.FormattingEnabled = true;
             this.listBoxClientes.Location = new System.Drawing.Point(7, 20);
             this.listBoxClientes.Name = "listBoxClientes";
-            this.listBoxClientes.Size = new System.Drawing.Size(360, 238);
+            this.listBoxClientes.Size = new System.Drawing.Size(360, 277);
             this.listBoxClientes.TabIndex = 0;
             this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
             // 
@@ -418,6 +410,28 @@
             this.buttonAdicionarClientes.UseVisualStyleBackColor = true;
             this.buttonAdicionarClientes.Click += new System.EventHandler(this.buttonAdicionarClientes_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(194, 260);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 20);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Estado:";
+            // 
+            // comboBoxEstadoAlterar
+            // 
+            this.comboBoxEstadoAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboBoxEstadoAlterar.FormattingEnabled = true;
+            this.comboBoxEstadoAlterar.Items.AddRange(new object[] {
+            "Ativado",
+            "Desativado"});
+            this.comboBoxEstadoAlterar.Location = new System.Drawing.Point(265, 257);
+            this.comboBoxEstadoAlterar.Name = "comboBoxEstadoAlterar";
+            this.comboBoxEstadoAlterar.Size = new System.Drawing.Size(202, 28);
+            this.comboBoxEstadoAlterar.TabIndex = 23;
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -457,7 +471,6 @@
         private System.Windows.Forms.TextBox textBoxNomeAlterar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBoxListarClientes;
-        private System.Windows.Forms.Button buttonApagar;
         private System.Windows.Forms.ListBox listBoxClientes;
         private System.Windows.Forms.GroupBox groupBoxInserirCliente;
         private System.Windows.Forms.TextBox textBoxNumContribuinte;
@@ -475,5 +488,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxRua;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBoxEstadoAlterar;
+        private System.Windows.Forms.Label label8;
     }
 }

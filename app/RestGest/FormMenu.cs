@@ -27,7 +27,7 @@ namespace RestGest
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            if (textBoxNome.Text != "" && comboBoxEstado.SelectedIndex >= 0)
+            if (textBoxNome.Text != "" && textBoxImageString.Text != "" && textBoxIngredientes.Text != "" && textBoxPreco.Text != "" && comboBoxEstado.SelectedIndex >= 0 )
             {
                 CategoriaSet categoria = (CategoriaSet)comboBoxCategoria.SelectedItem;
 
@@ -45,6 +45,13 @@ namespace RestGest
                     itemMenu.Preco =  float.Parse(textBoxPreco.Text);
                     meuRestaurante.ItemMenuSet.Add(itemMenu);
                     meuRestaurante.SaveChanges();
+
+                    textBoxNome.Text = "";
+                    textBoxImageString.Text = "";
+                    comboBoxEstado.SelectedIndex = 0;
+                    textBoxIngredientes.Text = "";
+                    textBoxPreco.Text = "";
+                    pictureBoxItem.Image = null;
 
                     LerDadosMenu();
                 }
@@ -64,7 +71,7 @@ namespace RestGest
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
 
-            if (textBoxNomeAlterar.Text != "" && comboBoxEstadoAlterar.SelectedIndex >= 0)
+            if (textBoxNomeAlterar.Text != "" && comboBoxEstadoAlterar.SelectedIndex >= 0 && listBoxItens.SelectedItem != null)
             {
                 CategoriaSet categoria = (CategoriaSet)comboBoxCategoria.SelectedItem;
 
@@ -90,7 +97,7 @@ namespace RestGest
             }
             else
             {
-                MessageBox.Show("Preencha todos os dados solicitados para proceder a alteração!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Preencha e selecione todos os dados solicitados para proceder a alteração!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -157,8 +164,21 @@ namespace RestGest
 
         public void LerCategorias()
         {
-            comboBoxCategoria.DataSource = meuRestaurante.CategoriaSet.OfType<CategoriaSet>().ToList();
-            comboBoxCategoriaAlterar.DataSource = meuRestaurante.CategoriaSet.OfType<CategoriaSet>().ToList();
+
+            List<CategoriaSet> listaCategorias = meuRestaurante.CategoriaSet.OfType<CategoriaSet>().ToList();
+
+            List<CategoriaSet> listaCategoriasSelecionadas = new List<CategoriaSet>();
+            
+            foreach (CategoriaSet categoria in listaCategorias)
+            {
+                if (categoria.Ativo)
+                {
+                    listaCategoriasSelecionadas.Add(categoria);
+                }
+            }
+            
+            comboBoxCategoria.DataSource = listaCategoriasSelecionadas;
+            comboBoxCategoriaAlterar.DataSource = listaCategoriasSelecionadas;
         }
 
         private void listBoxItens_SelectedIndexChanged(object sender, EventArgs e)

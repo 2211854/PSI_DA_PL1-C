@@ -71,7 +71,7 @@ namespace RestGest
 
         private void buttonAlterarRestaurante_Click(object sender, EventArgs e)
         {
-            if (textBoxNomeRestauranteAlterar.Text != "" && textBoxRuaRestauranteAlterar.Text != "" && textBoxCidadeRestauranteAlterar.Text != "" && textBoxCodPostalRestauranteAlterar.Text != "" && textBoxPaisRestauranteAlterar.Text != "")
+            if (textBoxNomeRestauranteAlterar.Text != "" && textBoxRuaRestauranteAlterar.Text != "" && textBoxCidadeRestauranteAlterar.Text != "" && textBoxCodPostalRestauranteAlterar.Text != "" && textBoxPaisRestauranteAlterar.Text != "" && listBoxRestaurantes.SelectedItem != null)
             {
 
                 RestauranteSet restaurante = (RestauranteSet)listBoxRestaurantes.SelectedItem;
@@ -140,7 +140,7 @@ namespace RestGest
 
         private void buttonAlterarMetodosPagamento_Click(object sender, EventArgs e)
         {
-            if (textBoxNomePagamentoAlterar.Text != "" && comboBoxEstadoPagamentoAlterar.SelectedIndex >= 0 && listBoxMetodosPagamento.SelectedIndex >= 0)
+            if (textBoxNomePagamentoAlterar.Text != "" && comboBoxEstadoPagamentoAlterar.SelectedIndex >= 0 && listBoxMetodosPagamento.SelectedItem != null )
             {
                 MetodoPagamentoSet metodoPagamento = (MetodoPagamentoSet)listBoxMetodosPagamento.SelectedItem;
                 metodoPagamento.TipoMetodoPagamento = textBoxNomePagamentoAlterar.Text;
@@ -209,7 +209,7 @@ namespace RestGest
 
         private void buttonAlterarCategoria_Click(object sender, EventArgs e)
         {
-            if(textBoxNomeCategoriaAlterar.Text != "" && comboBoxEstadoCategoriaAlterar.SelectedIndex >=0) { 
+            if(textBoxNomeCategoriaAlterar.Text != "" && comboBoxEstadoCategoriaAlterar.SelectedIndex >=0 && listBoxCategorias.SelectedItem != null) { 
                 CategoriaSet categoria = (CategoriaSet)listBoxCategorias.SelectedItem;
                 categoria.Nome = textBoxNomeCategoriaAlterar.Text;
                 categoria.Ativo = (comboBoxEstadoCategoriaAlterar.Text == "Ativado") ? true : false;
@@ -218,7 +218,7 @@ namespace RestGest
             }
             else
             {
-                MessageBox.Show("Não selecionaste nenhuma categoria", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Preencha e selecione os dados solicitados!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
 

@@ -161,6 +161,7 @@
     <NavigationProperty Name="MoradaSet" Relationship="meuRestaurante.FK_MoradaPessoa" FromRole="PessoaSet" ToRole="MoradaSet" />
     <NavigationProperty Name="PessoaSet_Cliente" Relationship="meuRestaurante.FK_Cliente_inherits_Pessoa" FromRole="PessoaSet" ToRole="PessoaSet_Cliente" />
     <NavigationProperty Name="PessoaSet_Trabalhador" Relationship="meuRestaurante.FK_Trabalhador_inherits_Pessoa" FromRole="PessoaSet" ToRole="PessoaSet_Trabalhador" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="PessoaSet_Cliente">
     <Key>
@@ -178,8 +179,6 @@
     </Key>
     <Property Name="Salario" Type="Int32" Nullable="false" />
     <Property Name="Posicao" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="IdRestaurante" Type="Int32" Nullable="false" />
     <Property Name="Id" Type="Int32" Nullable="false" />
     <NavigationProperty Name="PedidoSet" Relationship="meuRestaurante.FK_TrabalhadorPedido" FromRole="PessoaSet_Trabalhador" ToRole="PedidoSet" />

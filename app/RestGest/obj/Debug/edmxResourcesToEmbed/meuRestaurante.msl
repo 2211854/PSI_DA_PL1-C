@@ -80,6 +80,7 @@
           <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="Telemovel" ColumnName="Telemovel" />
           <ScalarProperty Name="Morada_Id" ColumnName="Morada_Id" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -98,8 +99,6 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Salario" ColumnName="Salario" />
           <ScalarProperty Name="Posicao" ColumnName="Posicao" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="IdRestaurante" ColumnName="IdRestaurante" />
         </MappingFragment>
       </EntityTypeMapping>

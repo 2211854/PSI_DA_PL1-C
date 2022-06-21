@@ -32,6 +32,7 @@ namespace RestGest
                 PessoaSet Pessoa = new PessoaSet();
                 Pessoa.Nome = textBoxNome.Text;
                 Pessoa.Telemovel = Int32.Parse(textBoxTelemovel.Text);
+                Pessoa.Ativo = true;
                 PessoaSet_Cliente cliente = new PessoaSet_Cliente();
                 cliente.PessoaSet = Pessoa;
                 cliente.NumContribuinte = Int32.Parse(textBoxNumContribuinte.Text);
@@ -87,7 +88,7 @@ namespace RestGest
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            if (textBoxNomeAlterar.Text != "" && textBoxTelemovelAlterar.Text != "" && textBoxNumContribuinteAlterar.Text != "" && textBoxRuaAlterar.Text != "" && textBoxCodPostalAlterar.Text != "" && textBoxCidadeAlterar.Text != "" && textBoxPaisAlterar.Text != "")
+            if (textBoxNomeAlterar.Text != "" && textBoxTelemovelAlterar.Text != "" && textBoxNumContribuinteAlterar.Text != "" && textBoxRuaAlterar.Text != "" && textBoxCodPostalAlterar.Text != "" && textBoxCidadeAlterar.Text != "" && textBoxPaisAlterar.Text != "" && listBoxClientes.SelectedItem != null && comboBoxEstadoAlterar.SelectedIndex >= 0)
             {
                 PessoaSet_Cliente cliente = (PessoaSet_Cliente)listBoxClientes.SelectedItem;
                 cliente.PessoaSet.Nome = textBoxNomeAlterar.Text;
@@ -97,24 +98,17 @@ namespace RestGest
                 cliente.PessoaSet.MoradaSet.CodPostal = textBoxCodPostalAlterar.Text;
                 cliente.PessoaSet.MoradaSet.Cidade = textBoxCidadeAlterar.Text;
                 cliente.PessoaSet.MoradaSet.Pais = textBoxPaisAlterar.Text;
+                cliente.PessoaSet.Ativo = (comboBoxEstadoAlterar.Text == "Ativado") ? true : false;
 
 
                 meuRestaurante.SaveChanges();
             }
             else
             {
-                MessageBox.Show("Preencha todos os dados solicitados para proceder a alteração!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Preencha e selecione todos os dados solicitados para proceder a alteração!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
         }
 
-        private void buttonApagar_Click(object sender, EventArgs e)
-        {
-            PessoaSet_Cliente cliente = (PessoaSet_Cliente)listBoxClientes.SelectedItem;
-
-            meuRestaurante.PessoaSet_Cliente.Remove(cliente);
-            meuRestaurante.SaveChanges();
-            LerDadosCliente();
-        }
     }
 }

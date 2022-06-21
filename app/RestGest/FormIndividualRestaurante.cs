@@ -20,6 +20,8 @@ namespace RestGest
             meuRestaurante = new meuRestauranteContainer();
             InitializeComponent();
             LerDadosRestaurantes();
+            LerDadosTrabalhadores();
+            LerDadosMenus();
         }
 
         private void FormIndividualRestaurante_Load(object sender, EventArgs e)
@@ -34,11 +36,9 @@ namespace RestGest
 
         private void comboBoxRestaurantes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RestauranteSet restaurante = (RestauranteSet)comboBoxRestaurantes.SelectedItem;
-            labelNumeroTrabalhadores.Text = "Nº Trabalhadores: " + restaurante.GetNumeroTrabalhadores();
-            labelNumeroPedidos.Text = "Nº Pedidos: " + restaurante.GetNumeroPedidos();
-            labelTotalFaturado.Text = "Total Faturado: " + restaurante.GetTotalFaturado();
-            labelTotalSalarios.Text = restaurante.GetTotalSalarios() + " €";
+            LerDadosTrabalhadores();
+            LerInformacoesRestaurante();
+            LerDadosMenus();
         }
 
 
@@ -47,30 +47,175 @@ namespace RestGest
             comboBoxRestaurantes.DataSource = meuRestaurante.RestauranteSet.OfType<RestauranteSet>().ToList();
         }
 
-        private void buttonAdicionarTrabalhador_Click(object sender, EventArgs e)
+        private void LerInformacoesRestaurante()
+        {
+            if(comboBoxRestaurantes.SelectedItem != null)
+            { 
+                RestauranteSet restaurante = (RestauranteSet)comboBoxRestaurantes.SelectedItem;
+                labelNumeroTrabalhadores.Text = "Nº Trabalhadores: " + restaurante.GetNumeroTrabalhadores();
+                labelNumeroPedidos.Text = "Nº Pedidos: " + restaurante.GetNumeroPedidos();
+                labelTotalFaturado.Text = "Total Faturado: " + restaurante.GetTotalFaturado();
+                labelTotalSalarios.Text = restaurante.GetTotalSalarios() + " €";
+            }
+        }
+
+        private void LerDadosTrabalhadores()
         {
 
-            //nome salario posicao email password
+            RestauranteSet restaurante = (RestauranteSet)comboBoxRestaurantes.SelectedItem;
+            List < PessoaSet_Trabalhador > listaTrabalhadores = meuRestaurante.PessoaSet_Trabalhador.OfType<PessoaSet_Trabalhador>().ToList();
+            List<PessoaSet_Trabalhador> listaTrabalhadoresSelecionados = new List<PessoaSet_Trabalhador>();
+            foreach (PessoaSet_Trabalhador  trabalhador in listaTrabalhadores)
+            {
+                if(trabalhador.RestauranteSet == restaurante)
+                {
+                    listaTrabalhadoresSelecionados.Add(trabalhador);
+                }
+            }
+            
+                listBoxTrabalhadores.DataSource = listaTrabalhadoresSelecionados;
+            LerInformacoesRestaurante();
+        }
 
-            PessoaSet pessoa = new PessoaSet();
-            pessoa.Nome = textBoxNomeTrabalhador.Text;
-           /* pessoa.
+        private void buttonAdicionarTrabalhador_Click(object sender, EventArgs e)
+        {
+            if(textBoxNomeTrabalhador.Text != "" && textBoxNomeTrabalhador.Text != "" && textBoxTelemovelTrabalhador.Text != "" && textBoxPosicaoTrabalhador.Text != "" && textBoxSalarioTrabalhador.Text != "" && textBoxCidadeTrabalhador.Text != "" && textBoxCodPostalTrabalhador.Text!= "" && textBoxPaisTrabalhador.Text != "" && textBoxRuaTrabalhador.Text != "" && comboBoxEstadoTrabalhador.SelectedIndex >= 0)
+            { 
+                PessoaSet Pessoa = new PessoaSet();
+                Pessoa.Nome = textBoxNomeTrabalhador.Text;
+                Pessoa.Telemovel = Int32.Parse(textBoxTelemovelTrabalhador.Text);
+                Pessoa.Ativo = (comboBoxEstadoTrabalhador.Text == "Ativado") ? true : false;
+                PessoaSet_Trabalhador trabalhador = new PessoaSet_Trabalhador();
+                trabalhador.PessoaSet = Pessoa;
+                trabalhador.RestauranteSet = (RestauranteSet)comboBoxRestaurantes.SelectedItem;
+                trabalhador.Salario = Int32.Parse(textBoxSalarioTrabalhador.Text);
+                trabalhador.Posicao = textBoxPosicaoTrabalhador.Text;
+                MoradaSet trabalhadorMorada = new MoradaSet();
+                trabalhadorMorada.Rua = textBoxRuaTrabalhador.Text;
+                trabalhadorMorada.Cidade = textBoxCidadeTrabalhador.Text;
+                trabalhadorMorada.CodPostal = textBoxCodPostalTrabalhador.Text;
+                trabalhadorMorada.Pais = textBoxPaisTrabalhador.Text;
+                Pessoa.MoradaSet = trabalhadorMorada;
 
-            PessoaSet_Trabalhador trabalhador = new PessoaSet_Trabalhador();
-            trabalhador.nome = textBoxNomePagamento.Text;
-            metodoPagamento.Ativo = (comboBoxEstadoPagamento.Text == "Ativado") ? true : false;
 
-            meuRestaurante.MetodoPagamentoSet.Add(metodoPagamento);
-            meuRestaurante.SaveChanges();
+                meuRestaurante.PessoaSet_Trabalhador.Add(trabalhador);
+                meuRestaurante.MoradaSet.Add(trabalhadorMorada);
+                meuRestaurante.SaveChanges();
+                LerDadosTrabalhadores();
 
-            LerDadosMetodosPagamento();
-
-            textBoxNomePagamento.Text = "";
-            comboBoxEstadoPagamento.SelectedIndex = -1;*/
+                //Limpar as textBoxes
+                textBoxNomeTrabalhador.Text = "";
+                textBoxTelemovelTrabalhador.Text = "";
+                comboBoxEstadoTrabalhador.SelectedIndex = 0;
+                textBoxSalarioTrabalhador.Text = "";
+                textBoxPosicaoTrabalhador.Text = "";
+                textBoxRuaTrabalhador.Text = "";
+                textBoxCidadeTrabalhador.Text = "";
+                textBoxCodPostalTrabalhador.Text = "";
+                textBoxPaisTrabalhador.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os dados solicitados!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void buttonEditarTrabalhador_Click(object sender, EventArgs e)
         {
+            if (textBoxNomeTrabalhadorAlterar.Text != "" && textBoxNomeTrabalhadorAlterar.Text != "" && textBoxTelemovelTrabalhadorAlterar.Text != "" && textBoxPosicaoTrabalhadorAlterar.Text != "" && textBoxSalarioTrabalhadorAlterar.Text != "" && textBoxRuaTrabalhadorAlterar.Text != "" && textBoxCodPostalTrabalhadorAlterar.Text != "" && textBoxCidadeTrabalhadorAlterar.Text != "" && textBoxPaisTrabalhadorAlterar.Text != "" && comboBoxEstadoTrabalhadorAlterar.SelectedIndex >= 0 && listBoxTrabalhadores.SelectedItem != null)
+            {
+
+                PessoaSet_Trabalhador trabalhador = (PessoaSet_Trabalhador)listBoxTrabalhadores.SelectedItem;
+                trabalhador.PessoaSet.Nome = textBoxNomeTrabalhadorAlterar.Text;
+                trabalhador.PessoaSet.Telemovel = Int32.Parse(textBoxTelemovelTrabalhadorAlterar.Text);
+                trabalhador.Posicao = textBoxPosicaoTrabalhadorAlterar.Text;
+                trabalhador.Salario = Int32.Parse(textBoxSalarioTrabalhadorAlterar.Text);
+                trabalhador.PessoaSet.MoradaSet.Rua = textBoxRuaTrabalhadorAlterar.Text;
+                trabalhador.PessoaSet.MoradaSet.CodPostal = textBoxCodPostalTrabalhadorAlterar.Text;
+                trabalhador.PessoaSet.MoradaSet.Cidade = textBoxCidadeTrabalhadorAlterar.Text;
+                trabalhador.PessoaSet.MoradaSet.Pais = textBoxPaisTrabalhadorAlterar.Text;
+                trabalhador.PessoaSet.Ativo = (comboBoxEstadoTrabalhadorAlterar.Text == "Ativado") ? true : false;
+                meuRestaurante.SaveChanges();
+                LerDadosTrabalhadores();
+
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os dados solicitados!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void listBoxTrabalhadores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PessoaSet_Trabalhador trabalhador = (PessoaSet_Trabalhador)listBoxTrabalhadores.SelectedItem;
+            textBoxNomeTrabalhadorAlterar.Text = trabalhador.PessoaSet.Nome;
+            textBoxTelemovelTrabalhadorAlterar.Text = trabalhador.PessoaSet.Telemovel.ToString();
+            textBoxPosicaoTrabalhadorAlterar.Text = trabalhador.Posicao;
+            textBoxSalarioTrabalhadorAlterar.Text = trabalhador.Salario.ToString();
+            textBoxRuaTrabalhadorAlterar.Text = trabalhador.PessoaSet.MoradaSet.Rua;
+            textBoxCodPostalTrabalhadorAlterar.Text = trabalhador.PessoaSet.MoradaSet.CodPostal;
+            textBoxCidadeTrabalhadorAlterar.Text = trabalhador.PessoaSet.MoradaSet.Cidade;
+            textBoxPaisTrabalhadorAlterar.Text = trabalhador.PessoaSet.MoradaSet.Pais;
+            comboBoxEstadoTrabalhadorAlterar.SelectedIndex = trabalhador.PessoaSet.Ativo ? 0 : 1;
+        }
+
+        private void buttonAdicionarMenu_Click(object sender, EventArgs e)
+        {
+            if (listBoxMenus.SelectedItem != null && comboBoxRestaurantes.SelectedItem != null)
+            {
+                RestauranteSet restaurante = (RestauranteSet)comboBoxRestaurantes.SelectedItem;
+                ItemMenuSet itemMenu = (ItemMenuSet)listBoxMenus.SelectedItem;
+                itemMenu.RestauranteSet.Add(restaurante);
+                meuRestaurante.SaveChanges();
+                LerDadosMenus();
+            }
+            else
+            {
+                MessageBox.Show("Selecione o Menu e o respeitvo restaurante onde pretende que seja adicionado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void buttonRemoverMenu_Click(object sender, EventArgs e)
+        {
+            if (listBoxMenuRestaurante.SelectedItem != null && comboBoxRestaurantes.SelectedItem != null)
+            {
+                RestauranteSet restaurante = (RestauranteSet)comboBoxRestaurantes.SelectedItem;
+                ItemMenuSet itemMenu = (ItemMenuSet)listBoxMenuRestaurante.SelectedItem;
+                itemMenu.RestauranteSet.Remove(restaurante);
+                meuRestaurante.SaveChanges();
+                LerDadosMenus();
+            }
+            else
+            {
+                MessageBox.Show("Selecione o Menu e o respeitvo restaurante onde pretende que seja removido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        public void LerDadosMenus()
+        {
+
+            RestauranteSet restaurante = (RestauranteSet)comboBoxRestaurantes.SelectedItem;
+            List<ItemMenuSet> listaMenus = meuRestaurante.ItemMenuSet.OfType<ItemMenuSet>().ToList();
+
+            List<ItemMenuSet> listaMenusSelecionados = new List<ItemMenuSet>();
+            List<ItemMenuSet> listaMenusNaoSelecionados = new List<ItemMenuSet>();
+            foreach (ItemMenuSet menu in listaMenus)
+            {
+                if (menu.RestauranteSet.Contains(restaurante))
+                {
+                        listaMenusSelecionados.Add(menu);
+                }
+                else
+                {
+                    listaMenusNaoSelecionados.Add(menu);
+                }
+
+
+            }
+
+            listBoxMenus.DataSource = listaMenusNaoSelecionados;
+            listBoxMenuRestaurante.DataSource = listaMenusSelecionados;
         }
     }
 }
