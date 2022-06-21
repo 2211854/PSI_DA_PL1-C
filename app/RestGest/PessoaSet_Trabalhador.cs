@@ -22,8 +22,6 @@ namespace RestGest
     
         public int Salario { get; set; }
         public string Posicao { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
         public int IdRestaurante { get; set; }
         public int Id { get; set; }
     

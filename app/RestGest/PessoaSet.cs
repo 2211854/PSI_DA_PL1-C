@@ -22,6 +22,7 @@ namespace RestGest
         public string Nome { get; set; }
         public int Telemovel { get; set; }
         public int Morada_Id { get; set; }
+        public bool Ativo { get; set; }
     
         public virtual MoradaSet MoradaSet { get; set; }
         public virtual PessoaSet_Cliente PessoaSet_Cliente { get; set; }
