@@ -11,7 +11,8 @@ namespace RestGest
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class RestauranteSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -33,6 +34,43 @@ namespace RestGest
         public virtual ICollection<PessoaSet_Trabalhador> PessoaSet_Trabalhador { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ItemMenuSet> ItemMenuSet { get; set; }
+
+        public int GetNumeroTrabalhadores()
+        {
+            int numero = 0;
+            numero = PessoaSet_Trabalhador.Count();
+            return numero;
+        }
+
+        public int GetNumeroPedidos()
+        {
+            int numero = 0;
+            numero = PedidoSet.Count();
+            return numero;
+        }
+
+        public float GetTotalFaturado()
+        {
+            float valor = 0;
+            foreach(PedidoSet pedido in this.PedidoSet)
+            {
+
+                valor = valor + pedido.ValorTotal;
+            }
+            return valor;
+        }
+
+        public int GetTotalSalarios()
+        {
+            int valor = 0;
+            foreach (PessoaSet_Trabalhador trabalhador in this.PessoaSet_Trabalhador)
+            {
+
+                valor = valor + trabalhador.Salario;
+            }
+            return valor;
+        }
+
 
         public override string ToString(){
             return this.Nome;

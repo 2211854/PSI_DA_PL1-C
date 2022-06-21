@@ -13,17 +13,14 @@ namespace RestGest
     public partial class FormMenuPrincipal : Form
     {
 
-        //PessoaSet_Trabalhador Funcionario;
 
-        public FormMenuPrincipal(/*Trabalhador funcionario*/)
+        public FormMenuPrincipal()
         {
             InitializeComponent();
-            //Funcionario = funcionario;
         }
 
         private void FormMenuPrincipal_Load(object sender, EventArgs e)
         {
-                //toolStripStatusLabelTrabalhador.Text = Funcionario.Nome;
         }
 
         private void toolStripSplitButtonSair_ButtonClick(object sender, EventArgs e)
@@ -34,6 +31,31 @@ namespace RestGest
         private void buttonClientes_click(object sender, EventArgs e)
         {
            FormClientes form = new FormClientes();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void buttonGlobalRestaurantes_Click(object sender, EventArgs e)
+        {
+            FormGlobalRestaurantes form = new FormGlobalRestaurantes();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void buttonMenus_Click(object sender, EventArgs e)
+        {
+            FormMenu form = new FormMenu();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void buttonIndividualRestaurante_Click(object sender, EventArgs e)
+        {
+
+            FormIndividualRestaurante form = new FormIndividualRestaurante();
             this.Hide();
             form.ShowDialog();
             this.Show();

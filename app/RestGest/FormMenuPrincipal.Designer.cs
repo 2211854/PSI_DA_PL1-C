@@ -34,7 +34,6 @@
             this.toolStripSplitButtonSair = new System.Windows.Forms.ToolStripSplitButton();
             this.pictureBoxBanner = new System.Windows.Forms.PictureBox();
             this.buttonMenus = new System.Windows.Forms.Button();
-            this.buttonPedidos = new System.Windows.Forms.Button();
             this.buttonIndividualRestaurante = new System.Windows.Forms.Button();
             this.buttonGlobalRestaurantes = new System.Windows.Forms.Button();
             this.buttonClientes = new System.Windows.Forms.Button();
@@ -73,7 +72,7 @@
             // pictureBoxBanner
             // 
             this.pictureBoxBanner.Image = global::RestGest.Properties.Resources.RestGestLogo256;
-            this.pictureBoxBanner.Location = new System.Drawing.Point(50, 25);
+            this.pictureBoxBanner.Location = new System.Drawing.Point(256, 231);
             this.pictureBoxBanner.Name = "pictureBoxBanner";
             this.pictureBoxBanner.Size = new System.Drawing.Size(200, 200);
             this.pictureBoxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -92,19 +91,7 @@
             this.buttonMenus.Text = "Menus";
             this.buttonMenus.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonMenus.UseVisualStyleBackColor = true;
-            // 
-            // buttonPedidos
-            // 
-            this.buttonPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPedidos.Image = global::RestGest.Properties.Resources.receipt_solid;
-            this.buttonPedidos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonPedidos.Location = new System.Drawing.Point(256, 231);
-            this.buttonPedidos.Name = "buttonPedidos";
-            this.buttonPedidos.Size = new System.Drawing.Size(200, 200);
-            this.buttonPedidos.TabIndex = 5;
-            this.buttonPedidos.Text = "Pedidos";
-            this.buttonPedidos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonPedidos.UseVisualStyleBackColor = true;
+            this.buttonMenus.Click += new System.EventHandler(this.buttonMenus_Click);
             // 
             // buttonIndividualRestaurante
             // 
@@ -118,6 +105,7 @@
             this.buttonIndividualRestaurante.Text = "Individual Restaurante";
             this.buttonIndividualRestaurante.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonIndividualRestaurante.UseVisualStyleBackColor = true;
+            this.buttonIndividualRestaurante.Click += new System.EventHandler(this.buttonIndividualRestaurante_Click);
             // 
             // buttonGlobalRestaurantes
             // 
@@ -133,6 +121,7 @@
             this.buttonGlobalRestaurantes.Text = "Global Restaurantes";
             this.buttonGlobalRestaurantes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonGlobalRestaurantes.UseVisualStyleBackColor = true;
+            this.buttonGlobalRestaurantes.Click += new System.EventHandler(this.buttonGlobalRestaurantes_Click);
             // 
             // buttonClientes
             // 
@@ -156,7 +145,6 @@
             this.Controls.Add(this.pictureBoxBanner);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.buttonMenus);
-            this.Controls.Add(this.buttonPedidos);
             this.Controls.Add(this.buttonIndividualRestaurante);
             this.Controls.Add(this.buttonGlobalRestaurantes);
             this.Controls.Add(this.buttonClientes);
@@ -176,7 +164,6 @@
         private System.Windows.Forms.Button buttonClientes;
         private System.Windows.Forms.Button buttonGlobalRestaurantes;
         private System.Windows.Forms.Button buttonIndividualRestaurante;
-        private System.Windows.Forms.Button buttonPedidos;
         private System.Windows.Forms.Button buttonMenus;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelTrabalhador;
