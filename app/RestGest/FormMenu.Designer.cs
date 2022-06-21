@@ -31,487 +31,484 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnFileExplorer = new System.Windows.Forms.Button();
-            this.imagePath = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBoxItem = new System.Windows.Forms.PictureBox();
+            this.comboBoxEstado = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
+            this.buttonUpload = new System.Windows.Forms.Button();
+            this.textBoxImageString = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonAdicionar = new System.Windows.Forms.Button();
+            this.textBoxPreco = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxIngredientes = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.pictureBoxItemAlterar = new System.Windows.Forms.PictureBox();
+            this.comboBoxEstadoAlterar = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBoxCategoriaAlterar = new System.Windows.Forms.ComboBox();
+            this.buttonUploadAlterar = new System.Windows.Forms.Button();
+            this.textBoxImageStringAlterar = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.buttonAlterar = new System.Windows.Forms.Button();
+            this.textBoxPrecoAlterar = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxIngredientesAlterar = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBoxNomeAlterar = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listBoxItens = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItemAlterar)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(11, 11);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.tabControl1.Location = new System.Drawing.Point(359, 11);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(859, 388);
+            this.tabControl1.Size = new System.Drawing.Size(627, 384);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(851, 362);
+            this.tabPage1.Size = new System.Drawing.Size(619, 358);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Adicionar";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Location = new System.Drawing.Point(581, 21);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(236, 324);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Items";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(16, 28);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(206, 277);
-            this.listBox1.TabIndex = 2;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.listBox2);
-            this.groupBox3.Location = new System.Drawing.Point(340, 21);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(236, 324);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Categorias";
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(16, 28);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(206, 277);
-            this.listBox2.TabIndex = 2;
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnFileExplorer);
-            this.groupBox2.Controls.Add(this.imagePath);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.pictureBoxItem);
+            this.groupBox2.Controls.Add(this.comboBoxEstado);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(18, 21);
+            this.groupBox2.Controls.Add(this.comboBoxCategoria);
+            this.groupBox2.Controls.Add(this.buttonUpload);
+            this.groupBox2.Controls.Add(this.textBoxImageString);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.buttonAdicionar);
+            this.groupBox2.Controls.Add(this.textBoxPreco);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.textBoxIngredientes);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.textBoxNome);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Location = new System.Drawing.Point(4, 4);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(308, 324);
+            this.groupBox2.Size = new System.Drawing.Size(611, 326);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Adicionar Item";
             // 
-            // btnFileExplorer
+            // pictureBoxItem
             // 
-            this.btnFileExplorer.Location = new System.Drawing.Point(239, 134);
-            this.btnFileExplorer.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFileExplorer.Name = "btnFileExplorer";
-            this.btnFileExplorer.Size = new System.Drawing.Size(59, 19);
-            this.btnFileExplorer.TabIndex = 11;
-            this.btnFileExplorer.Text = "Upload";
-            this.btnFileExplorer.UseVisualStyleBackColor = true;
-            this.btnFileExplorer.Click += new System.EventHandler(this.btnFileExplorer_Click);
+            this.pictureBoxItem.Location = new System.Drawing.Point(324, 18);
+            this.pictureBoxItem.Name = "pictureBoxItem";
+            this.pictureBoxItem.Size = new System.Drawing.Size(269, 218);
+            this.pictureBoxItem.TabIndex = 32;
+            this.pictureBoxItem.TabStop = false;
             // 
-            // imagePath
+            // comboBoxEstado
             // 
-            this.imagePath.Location = new System.Drawing.Point(88, 133);
-            this.imagePath.Margin = new System.Windows.Forms.Padding(2);
-            this.imagePath.Name = "imagePath";
-            this.imagePath.Size = new System.Drawing.Size(147, 20);
-            this.imagePath.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 133);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 17);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Fotografia:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(79, 219);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 19);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(88, 104);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(206, 20);
-            this.textBox4.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(40, 104);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Preço:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(88, 79);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 20);
-            this.textBox3.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 79);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Ingredientes:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(88, 28);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 20);
-            this.textBox2.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 28);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Categoria:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(88, 56);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 20);
-            this.textBox1.TabIndex = 1;
+            this.comboBoxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEstado.FormattingEnabled = true;
+            this.comboBoxEstado.Items.AddRange(new object[] {
+            "Ativado",
+            "Desativado"});
+            this.comboBoxEstado.Location = new System.Drawing.Point(115, 208);
+            this.comboBoxEstado.Name = "comboBoxEstado";
+            this.comboBoxEstado.Size = new System.Drawing.Size(204, 28);
+            this.comboBoxEstado.TabIndex = 31;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 56);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(40, 211);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nome:";
+            this.label1.Size = new System.Drawing.Size(64, 20);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Estado:";
+            // 
+            // comboBoxCategoria
+            // 
+            this.comboBoxCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCategoria.FormattingEnabled = true;
+            this.comboBoxCategoria.Location = new System.Drawing.Point(113, 18);
+            this.comboBoxCategoria.Name = "comboBoxCategoria";
+            this.comboBoxCategoria.Size = new System.Drawing.Size(204, 28);
+            this.comboBoxCategoria.TabIndex = 29;
+            // 
+            // buttonUpload
+            // 
+            this.buttonUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonUpload.Location = new System.Drawing.Point(244, 141);
+            this.buttonUpload.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUpload.Name = "buttonUpload";
+            this.buttonUpload.Size = new System.Drawing.Size(75, 62);
+            this.buttonUpload.TabIndex = 28;
+            this.buttonUpload.Text = "Upload";
+            this.buttonUpload.UseVisualStyleBackColor = true;
+            this.buttonUpload.Click += new System.EventHandler(this.buttonUpload_Click);
+            // 
+            // textBoxImageString
+            // 
+            this.textBoxImageString.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxImageString.Location = new System.Drawing.Point(113, 141);
+            this.textBoxImageString.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxImageString.Multiline = true;
+            this.textBoxImageString.Name = "textBoxImageString";
+            this.textBoxImageString.ReadOnly = true;
+            this.textBoxImageString.Size = new System.Drawing.Size(125, 62);
+            this.textBoxImageString.TabIndex = 27;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(22, 144);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Fotografia:";
+            // 
+            // buttonAdicionar
+            // 
+            this.buttonAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonAdicionar.Location = new System.Drawing.Point(244, 273);
+            this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAdicionar.Name = "buttonAdicionar";
+            this.buttonAdicionar.Size = new System.Drawing.Size(163, 44);
+            this.buttonAdicionar.TabIndex = 25;
+            this.buttonAdicionar.Text = "Adicionar";
+            this.buttonAdicionar.UseVisualStyleBackColor = true;
+            this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
+            // 
+            // textBoxPreco
+            // 
+            this.textBoxPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPreco.Location = new System.Drawing.Point(113, 111);
+            this.textBoxPreco.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPreco.Name = "textBoxPreco";
+            this.textBoxPreco.Size = new System.Drawing.Size(206, 26);
+            this.textBoxPreco.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(53, 114);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 20);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Preço:";
+            // 
+            // textBoxIngredientes
+            // 
+            this.textBoxIngredientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIngredientes.Location = new System.Drawing.Point(112, 81);
+            this.textBoxIngredientes.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxIngredientes.Name = "textBoxIngredientes";
+            this.textBoxIngredientes.Size = new System.Drawing.Size(206, 26);
+            this.textBoxIngredientes.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 84);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 20);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Ingredientes:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(22, 21);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 20);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Categoria:";
+            // 
+            // textBoxNome
+            // 
+            this.textBoxNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNome.Location = new System.Drawing.Point(112, 51);
+            this.textBoxNome.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(206, 26);
+            this.textBoxNome.TabIndex = 19;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(52, 54);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(55, 20);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Nome:";
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(851, 362);
+            this.tabPage2.Size = new System.Drawing.Size(619, 358);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Editar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.listBox3);
-            this.groupBox5.Location = new System.Drawing.Point(339, 21);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(501, 324);
-            this.groupBox5.TabIndex = 6;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Items";
-            // 
-            // listBox3
-            // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(16, 28);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(472, 277);
-            this.listBox3.TabIndex = 2;
-            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.comboBox1);
-            this.groupBox4.Controls.Add(this.groupBox6);
-            this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Controls.Add(this.textBox5);
+            this.groupBox4.Controls.Add(this.pictureBoxItemAlterar);
+            this.groupBox4.Controls.Add(this.comboBoxEstadoAlterar);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.comboBoxCategoriaAlterar);
+            this.groupBox4.Controls.Add(this.buttonUploadAlterar);
+            this.groupBox4.Controls.Add(this.textBoxImageStringAlterar);
             this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.textBox6);
+            this.groupBox4.Controls.Add(this.buttonAlterar);
+            this.groupBox4.Controls.Add(this.textBoxPrecoAlterar);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.textBox7);
+            this.groupBox4.Controls.Add(this.textBoxIngredientesAlterar);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Controls.Add(this.textBox9);
+            this.groupBox4.Controls.Add(this.textBoxNomeAlterar);
             this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Location = new System.Drawing.Point(18, 21);
+            this.groupBox4.Location = new System.Drawing.Point(4, 4);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(308, 324);
+            this.groupBox4.Size = new System.Drawing.Size(611, 326);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Editar Items";
             // 
-            // groupBox6
+            // pictureBoxItemAlterar
             // 
-            this.groupBox6.Controls.Add(this.radioButton2);
-            this.groupBox6.Controls.Add(this.radioButton1);
-            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(10, 167);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox6.Size = new System.Drawing.Size(283, 69);
-            this.groupBox6.TabIndex = 13;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Estado do Item";
+            this.pictureBoxItemAlterar.Location = new System.Drawing.Point(326, 18);
+            this.pictureBoxItemAlterar.Name = "pictureBoxItemAlterar";
+            this.pictureBoxItemAlterar.Size = new System.Drawing.Size(269, 218);
+            this.pictureBoxItemAlterar.TabIndex = 17;
+            this.pictureBoxItemAlterar.TabStop = false;
             // 
-            // radioButton2
+            // comboBoxEstadoAlterar
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(167, 30);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(86, 21);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Desativar";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.comboBoxEstadoAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEstadoAlterar.FormattingEnabled = true;
+            this.comboBoxEstadoAlterar.Items.AddRange(new object[] {
+            "Ativado",
+            "Desativado"});
+            this.comboBoxEstadoAlterar.Location = new System.Drawing.Point(117, 208);
+            this.comboBoxEstadoAlterar.Name = "comboBoxEstadoAlterar";
+            this.comboBoxEstadoAlterar.Size = new System.Drawing.Size(204, 28);
+            this.comboBoxEstadoAlterar.TabIndex = 16;
             // 
-            // radioButton1
+            // label11
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(69, 30);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(62, 21);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Ativar";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(42, 211);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 20);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Estado:";
             // 
-            // button4
+            // comboBoxCategoriaAlterar
             // 
-            this.button4.Location = new System.Drawing.Point(79, 276);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(163, 19);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Delete";
-            this.button4.UseVisualStyleBackColor = true;
+            this.comboBoxCategoriaAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCategoriaAlterar.FormattingEnabled = true;
+            this.comboBoxCategoriaAlterar.Location = new System.Drawing.Point(115, 18);
+            this.comboBoxCategoriaAlterar.Name = "comboBoxCategoriaAlterar";
+            this.comboBoxCategoriaAlterar.Size = new System.Drawing.Size(204, 28);
+            this.comboBoxCategoriaAlterar.TabIndex = 14;
             // 
-            // button2
+            // buttonUploadAlterar
             // 
-            this.button2.Location = new System.Drawing.Point(233, 133);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(59, 19);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Upload";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonUploadAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonUploadAlterar.Location = new System.Drawing.Point(246, 141);
+            this.buttonUploadAlterar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUploadAlterar.Name = "buttonUploadAlterar";
+            this.buttonUploadAlterar.Size = new System.Drawing.Size(75, 62);
+            this.buttonUploadAlterar.TabIndex = 11;
+            this.buttonUploadAlterar.Text = "Upload";
+            this.buttonUploadAlterar.UseVisualStyleBackColor = true;
+            this.buttonUploadAlterar.Click += new System.EventHandler(this.buttonUploadAlterar_Click);
             // 
-            // textBox5
+            // textBoxImageStringAlterar
             // 
-            this.textBox5.Location = new System.Drawing.Point(88, 133);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(147, 20);
-            this.textBox5.TabIndex = 10;
+            this.textBoxImageStringAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxImageStringAlterar.Location = new System.Drawing.Point(115, 141);
+            this.textBoxImageStringAlterar.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxImageStringAlterar.Multiline = true;
+            this.textBoxImageStringAlterar.Name = "textBoxImageStringAlterar";
+            this.textBoxImageStringAlterar.ReadOnly = true;
+            this.textBoxImageStringAlterar.Size = new System.Drawing.Size(125, 62);
+            this.textBoxImageStringAlterar.TabIndex = 10;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 133);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(24, 144);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 17);
+            this.label6.Size = new System.Drawing.Size(86, 20);
             this.label6.TabIndex = 9;
             this.label6.Text = "Fotografia:";
             // 
-            // button3
+            // buttonAlterar
             // 
-            this.button3.Location = new System.Drawing.Point(79, 253);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(163, 19);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Alterar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonAlterar.Location = new System.Drawing.Point(246, 273);
+            this.buttonAlterar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAlterar.Name = "buttonAlterar";
+            this.buttonAlterar.Size = new System.Drawing.Size(163, 44);
+            this.buttonAlterar.TabIndex = 8;
+            this.buttonAlterar.Text = "Alterar";
+            this.buttonAlterar.UseVisualStyleBackColor = true;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
-            // textBox6
+            // textBoxPrecoAlterar
             // 
-            this.textBox6.Location = new System.Drawing.Point(88, 104);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(206, 20);
-            this.textBox6.TabIndex = 7;
+            this.textBoxPrecoAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPrecoAlterar.Location = new System.Drawing.Point(115, 111);
+            this.textBoxPrecoAlterar.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPrecoAlterar.Name = "textBoxPrecoAlterar";
+            this.textBoxPrecoAlterar.Size = new System.Drawing.Size(206, 26);
+            this.textBoxPrecoAlterar.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(40, 104);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(55, 114);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 17);
+            this.label7.Size = new System.Drawing.Size(54, 20);
             this.label7.TabIndex = 6;
             this.label7.Text = "Preço:";
             // 
-            // textBox7
+            // textBoxIngredientesAlterar
             // 
-            this.textBox7.Location = new System.Drawing.Point(88, 79);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(206, 20);
-            this.textBox7.TabIndex = 5;
+            this.textBoxIngredientesAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIngredientesAlterar.Location = new System.Drawing.Point(114, 81);
+            this.textBoxIngredientesAlterar.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxIngredientesAlterar.Name = "textBoxIngredientesAlterar";
+            this.textBoxIngredientesAlterar.Size = new System.Drawing.Size(206, 26);
+            this.textBoxIngredientesAlterar.TabIndex = 5;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(7, 79);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(8, 84);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 17);
+            this.label8.Size = new System.Drawing.Size(102, 20);
             this.label8.TabIndex = 4;
             this.label8.Text = "Ingredientes:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(21, 28);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(24, 21);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 17);
+            this.label9.Size = new System.Drawing.Size(82, 20);
             this.label9.TabIndex = 2;
             this.label9.Text = "Categoria:";
             // 
-            // textBox9
+            // textBoxNomeAlterar
             // 
-            this.textBox9.Location = new System.Drawing.Point(88, 56);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(206, 20);
-            this.textBox9.TabIndex = 1;
+            this.textBoxNomeAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNomeAlterar.Location = new System.Drawing.Point(114, 51);
+            this.textBoxNomeAlterar.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNomeAlterar.Name = "textBoxNomeAlterar";
+            this.textBoxNomeAlterar.Size = new System.Drawing.Size(206, 26);
+            this.textBoxNomeAlterar.TabIndex = 1;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(40, 56);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(54, 54);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 17);
+            this.label10.Size = new System.Drawing.Size(55, 20);
             this.label10.TabIndex = 0;
             this.label10.Text = "Nome:";
             // 
-            // comboBox1
+            // groupBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(88, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(204, 21);
-            this.comboBox1.TabIndex = 14;
+            this.groupBox1.Controls.Add(this.listBoxItens);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(11, 11);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(344, 384);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Items";
+            // 
+            // listBoxItens
+            // 
+            this.listBoxItens.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.listBoxItens.FormattingEnabled = true;
+            this.listBoxItens.ItemHeight = 20;
+            this.listBoxItens.Location = new System.Drawing.Point(16, 28);
+            this.listBoxItens.Margin = new System.Windows.Forms.Padding(2);
+            this.listBoxItens.Name = "listBoxItens";
+            this.listBoxItens.Size = new System.Drawing.Size(312, 324);
+            this.listBoxItens.TabIndex = 2;
+            this.listBoxItens.SelectedIndexChanged += new System.EventHandler(this.listBoxItens_SelectedIndexChanged);
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 410);
+            this.ClientSize = new System.Drawing.Size(993, 404);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -519,16 +516,14 @@
             this.Text = "Menus";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItemAlterar)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -537,42 +532,40 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button btnFileExplorer;
-        private System.Windows.Forms.TextBox imagePath;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button buttonUploadAlterar;
+        private System.Windows.Forms.TextBox textBoxImageStringAlterar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button buttonAlterar;
+        private System.Windows.Forms.TextBox textBoxPrecoAlterar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBoxIngredientesAlterar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBoxNomeAlterar;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxCategoriaAlterar;
+        private System.Windows.Forms.ComboBox comboBoxEstadoAlterar;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListBox listBoxItens;
+        private System.Windows.Forms.PictureBox pictureBoxItem;
+        private System.Windows.Forms.ComboBox comboBoxEstado;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxCategoria;
+        private System.Windows.Forms.Button buttonUpload;
+        private System.Windows.Forms.TextBox textBoxImageString;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonAdicionar;
+        private System.Windows.Forms.TextBox textBoxPreco;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxIngredientes;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxNome;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox pictureBoxItemAlterar;
     }
 }

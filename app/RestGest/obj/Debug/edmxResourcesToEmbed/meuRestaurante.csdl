@@ -94,7 +94,7 @@
     <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Fotografia" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Ingredientes" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Preco" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Preco" Type="Single" Nullable="false" />
     <Property Name="Ativo" Type="Boolean" Nullable="false" />
     <Property Name="IdCategoria" Type="Int32" Nullable="false" />
     <NavigationProperty Name="CategoriaSet" Relationship="meuRestaurante.FK_CategoriaItemMenu" FromRole="ItemMenuSet" ToRole="CategoriaSet" />
