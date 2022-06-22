@@ -29,7 +29,7 @@ namespace RestGest
         public virtual PessoaSet PessoaSet { get; set; }
         
         public override string ToString(){
-            return  this.PessoaSet.ToString()+" ("+this.NumContribuinte+")";
+            return  this.PessoaSet.ToString()+" ( NIF: "+this.NumContribuinte+")";
         }
     }
 }

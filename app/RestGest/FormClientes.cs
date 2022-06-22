@@ -83,6 +83,7 @@ namespace RestGest
             textBoxCodPostalAlterar.Text = cliente.PessoaSet.MoradaSet.CodPostal;
             textBoxCidadeAlterar.Text = cliente.PessoaSet.MoradaSet.Cidade;
             textBoxPaisAlterar.Text = cliente.PessoaSet.MoradaSet.Pais;
+            comboBoxEstadoAlterar.SelectedIndex = cliente.PessoaSet.Ativo ? 0 : 1;
 
         }
 

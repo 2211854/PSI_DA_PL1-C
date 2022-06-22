@@ -229,6 +229,8 @@
       <LastGenOutput>meuRestaurante.cs</LastGenOutput>
       <DependentUpon>meuRestaurante.edmx</DependentUpon>
     </Content>
+    <None Include="Resources\txtdownload.png" />
+    <None Include="Resources\pdfdownload.png" />
     <Content Include="RestGestLogo96.ico" />
     <None Include="Resources\globe.png" />
     <None Include="Resources\sair.png" />

@@ -39,6 +39,8 @@
             this.tabPageTrabalhadores = new System.Windows.Forms.TabPage();
             this.tabControlRestaurantes = new System.Windows.Forms.TabControl();
             this.tabPageInserirRestaurantes = new System.Windows.Forms.TabPage();
+            this.textBoxTelemovelTrabalhador = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.comboBoxEstadoTrabalhador = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxCidadeTrabalhador = new System.Windows.Forms.TextBox();
@@ -88,8 +90,7 @@
             this.buttonAdicionarMenu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBoxMenus = new System.Windows.Forms.ListBox();
-            this.textBoxTelemovelTrabalhador = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.buttonPedidos = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPagePainelDeControlo.SuspendLayout();
             this.tabPageTrabalhadores.SuspendLayout();
@@ -115,6 +116,7 @@
             // 
             // tabPagePainelDeControlo
             // 
+            this.tabPagePainelDeControlo.Controls.Add(this.buttonPedidos);
             this.tabPagePainelDeControlo.Controls.Add(this.comboBoxRestaurantes);
             this.tabPagePainelDeControlo.Controls.Add(this.labelTotalFaturado);
             this.tabPagePainelDeControlo.Controls.Add(this.labelNumeroPedidos);
@@ -227,6 +229,24 @@
             this.tabPageInserirRestaurantes.TabIndex = 0;
             this.tabPageInserirRestaurantes.Text = "Adicionar";
             this.tabPageInserirRestaurantes.UseVisualStyleBackColor = true;
+            // 
+            // textBoxTelemovelTrabalhador
+            // 
+            this.textBoxTelemovelTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxTelemovelTrabalhador.Location = new System.Drawing.Point(123, 60);
+            this.textBoxTelemovelTrabalhador.Name = "textBoxTelemovelTrabalhador";
+            this.textBoxTelemovelTrabalhador.Size = new System.Drawing.Size(151, 26);
+            this.textBoxTelemovelTrabalhador.TabIndex = 35;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label14.Location = new System.Drawing.Point(32, 63);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(84, 20);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "Telemovel:";
             // 
             // comboBoxEstadoTrabalhador
             // 
@@ -711,23 +731,19 @@
             this.listBoxMenus.Size = new System.Drawing.Size(259, 381);
             this.listBoxMenus.TabIndex = 1;
             // 
-            // textBoxTelemovelTrabalhador
+            // buttonPedidos
             // 
-            this.textBoxTelemovelTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxTelemovelTrabalhador.Location = new System.Drawing.Point(123, 60);
-            this.textBoxTelemovelTrabalhador.Name = "textBoxTelemovelTrabalhador";
-            this.textBoxTelemovelTrabalhador.Size = new System.Drawing.Size(151, 26);
-            this.textBoxTelemovelTrabalhador.TabIndex = 35;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label14.Location = new System.Drawing.Point(32, 63);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(84, 20);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "Telemovel:";
+            this.buttonPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPedidos.Image = global::RestGest.Properties.Resources.receipt_solid;
+            this.buttonPedidos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonPedidos.Location = new System.Drawing.Point(429, 78);
+            this.buttonPedidos.Name = "buttonPedidos";
+            this.buttonPedidos.Size = new System.Drawing.Size(143, 165);
+            this.buttonPedidos.TabIndex = 29;
+            this.buttonPedidos.Text = "Pedidos";
+            this.buttonPedidos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonPedidos.UseVisualStyleBackColor = true;
+            this.buttonPedidos.Click += new System.EventHandler(this.buttonPedidos_Click);
             // 
             // FormIndividualRestaurante
             // 
@@ -820,5 +836,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBoxTelemovelTrabalhador;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button buttonPedidos;
     }
 }

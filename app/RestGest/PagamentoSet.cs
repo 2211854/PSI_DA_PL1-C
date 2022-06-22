@@ -23,7 +23,7 @@ namespace RestGest
         public virtual PedidoSet PedidoSet { get; set; }
 
         public override string ToString(){
-            return "["+this.IdPedido+"]"+this.MetodoPagamentoSet.ToString() +" : "+this.Valor+"€";
+            return this.MetodoPagamentoSet.ToString() +" : "+this.Valor+"€";
         }
     }
 }

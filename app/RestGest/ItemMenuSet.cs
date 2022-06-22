@@ -36,7 +36,7 @@ namespace RestGest
         public virtual ICollection<RestauranteSet> RestauranteSet { get; set; }
 
         public override string ToString(){
-            return this.Nome+"  "+this.Preco;
+            return this.Nome+" - "+this.Preco+ "€";
         }
     }
 }

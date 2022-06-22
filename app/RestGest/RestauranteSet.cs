@@ -38,7 +38,13 @@ namespace RestGest
         public int GetNumeroTrabalhadores()
         {
             int numero = 0;
-            numero = PessoaSet_Trabalhador.Count();
+            foreach (PessoaSet_Trabalhador trabalhador in this.PessoaSet_Trabalhador)
+            {
+                if (trabalhador.PessoaSet.Ativo)
+                {
+                    numero++;
+                }
+            }
             return numero;
         }
 
@@ -65,8 +71,10 @@ namespace RestGest
             int valor = 0;
             foreach (PessoaSet_Trabalhador trabalhador in this.PessoaSet_Trabalhador)
             {
-
-                valor = valor + trabalhador.Salario;
+                if (trabalhador.PessoaSet.Ativo)
+                {
+                    valor = valor + trabalhador.Salario;
+                }
             }
             return valor;
         }

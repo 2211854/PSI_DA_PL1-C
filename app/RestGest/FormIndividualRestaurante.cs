@@ -217,5 +217,14 @@ namespace RestGest
             listBoxMenus.DataSource = listaMenusNaoSelecionados;
             listBoxMenuRestaurante.DataSource = listaMenusSelecionados;
         }
+
+        private void buttonPedidos_Click(object sender, EventArgs e)
+        {
+
+            FormPedidos form = new FormPedidos((RestauranteSet)comboBoxRestaurantes.SelectedItem);
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
     }
 }
