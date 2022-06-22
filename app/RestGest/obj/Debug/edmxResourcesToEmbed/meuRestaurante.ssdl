@@ -132,7 +132,7 @@
     <Property Name="Valor" Type="real" Nullable="false" />
     <Property Name="IdMetodoPagamento" Type="int" Nullable="false" />
     <Property Name="IdPedido" Type="int" Nullable="false" />
-    <Property Name="PedidoSetId" Type="int" Nullable="true" />
+    <Property Name="PedidoSetId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="PedidoSet">
     <Key>
@@ -333,7 +333,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="PedidoSetPagamentoSet">
-    <End Role="PedidoSet" Type="meuRestaurante.Store.PedidoSet" Multiplicity="0..1" />
+    <End Role="PedidoSet" Type="meuRestaurante.Store.PedidoSet" Multiplicity="1" />
     <End Role="PagamentoSet" Type="meuRestaurante.Store.PagamentoSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PedidoSet">

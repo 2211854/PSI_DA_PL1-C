@@ -80,7 +80,7 @@ namespace RestGest
 
         private void buttonAdicionarTrabalhador_Click(object sender, EventArgs e)
         {
-            if(textBoxNomeTrabalhador.Text != "" && textBoxNomeTrabalhador.Text != "" && textBoxTelemovelTrabalhador.Text != "" && textBoxPosicaoTrabalhador.Text != "" && textBoxSalarioTrabalhador.Text != "" && textBoxCidadeTrabalhador.Text != "" && textBoxCodPostalTrabalhador.Text!= "" && textBoxPaisTrabalhador.Text != "" && textBoxRuaTrabalhador.Text != "" && comboBoxEstadoTrabalhador.SelectedIndex >= 0)
+            if(textBoxNomeTrabalhador.Text != "" && textBoxNomeTrabalhador.Text != "" && textBoxTelemovelTrabalhador.Text != "" && textBoxPosicaoTrabalhador.Text != "" && textBoxSalarioTrabalhador.Text != "" && textBoxCidadeTrabalhador.Text != "" && textBoxCodPostalTrabalhador.Text!= "" && textBoxPaisTrabalhador.Text != "" && textBoxRuaTrabalhador.Text != "" && comboBoxEstadoTrabalhador.SelectedIndex >= 0 && comboBoxRestaurantes.SelectedItem != null)
             { 
                 PessoaSet Pessoa = new PessoaSet();
                 Pessoa.Nome = textBoxNomeTrabalhador.Text;
@@ -222,11 +222,18 @@ namespace RestGest
 
         private void buttonPedidos_Click(object sender, EventArgs e)
         {
-
-            FormPedidos form = new FormPedidos((RestauranteSet)comboBoxRestaurantes.SelectedItem);
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
+            if(comboBoxRestaurantes.SelectedItem != null)
+            {
+                FormPedidos form = new FormPedidos((RestauranteSet)comboBoxRestaurantes.SelectedItem);
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Tem que selecionar um restaurante!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void textBoxCodPostalTrabalhador_KeyPress(object sender, KeyPressEventArgs e)
@@ -291,6 +298,11 @@ namespace RestGest
             {
                 e.Handled = true;
             }
+
+        }
+
+        private void buttonApagarRestaurantes_Click(object sender, EventArgs e)
+        {
 
         }
     }

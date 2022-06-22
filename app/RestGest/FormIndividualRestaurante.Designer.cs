@@ -82,7 +82,6 @@
             this.groupBoxListaTrabalhadores = new System.Windows.Forms.GroupBox();
             this.labelTotalSalarios = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.buttonApagarRestaurantes = new System.Windows.Forms.Button();
             this.listBoxTrabalhadores = new System.Windows.Forms.ListBox();
             this.tabPageMenus = new System.Windows.Forms.TabPage();
             this.buttonRemoverMenu = new System.Windows.Forms.Button();
@@ -639,7 +638,6 @@
             // 
             this.groupBoxListaTrabalhadores.Controls.Add(this.labelTotalSalarios);
             this.groupBoxListaTrabalhadores.Controls.Add(this.label);
-            this.groupBoxListaTrabalhadores.Controls.Add(this.buttonApagarRestaurantes);
             this.groupBoxListaTrabalhadores.Controls.Add(this.listBoxTrabalhadores);
             this.groupBoxListaTrabalhadores.Location = new System.Drawing.Point(6, 6);
             this.groupBoxListaTrabalhadores.Name = "groupBoxListaTrabalhadores";
@@ -652,7 +650,7 @@
             // 
             this.labelTotalSalarios.AutoSize = true;
             this.labelTotalSalarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalSalarios.Location = new System.Drawing.Point(93, 339);
+            this.labelTotalSalarios.Location = new System.Drawing.Point(89, 376);
             this.labelTotalSalarios.Name = "labelTotalSalarios";
             this.labelTotalSalarios.Size = new System.Drawing.Size(152, 25);
             this.labelTotalSalarios.TabIndex = 26;
@@ -661,27 +659,18 @@
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(118, 302);
+            this.label.Location = new System.Drawing.Point(114, 339);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(101, 26);
             this.label.TabIndex = 25;
             this.label.Text = "TOTAL SALARIOS:\r\n(mensalmente)";
-            // 
-            // buttonApagarRestaurantes
-            // 
-            this.buttonApagarRestaurantes.Location = new System.Drawing.Point(135, 383);
-            this.buttonApagarRestaurantes.Name = "buttonApagarRestaurantes";
-            this.buttonApagarRestaurantes.Size = new System.Drawing.Size(75, 23);
-            this.buttonApagarRestaurantes.TabIndex = 1;
-            this.buttonApagarRestaurantes.Text = "Apagar";
-            this.buttonApagarRestaurantes.UseVisualStyleBackColor = true;
             // 
             // listBoxTrabalhadores
             // 
             this.listBoxTrabalhadores.FormattingEnabled = true;
             this.listBoxTrabalhadores.Location = new System.Drawing.Point(7, 20);
             this.listBoxTrabalhadores.Name = "listBoxTrabalhadores";
-            this.listBoxTrabalhadores.Size = new System.Drawing.Size(350, 264);
+            this.listBoxTrabalhadores.Size = new System.Drawing.Size(350, 303);
             this.listBoxTrabalhadores.TabIndex = 0;
             this.listBoxTrabalhadores.SelectedIndexChanged += new System.EventHandler(this.listBoxTrabalhadores_SelectedIndexChanged);
             // 
@@ -813,7 +802,6 @@
         private System.Windows.Forms.GroupBox groupBoxListaTrabalhadores;
         private System.Windows.Forms.Label labelTotalSalarios;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Button buttonApagarRestaurantes;
         private System.Windows.Forms.ListBox listBoxTrabalhadores;
         private System.Windows.Forms.ListBox listBoxMenus;
         private System.Windows.Forms.Label labelTotalFaturado;
