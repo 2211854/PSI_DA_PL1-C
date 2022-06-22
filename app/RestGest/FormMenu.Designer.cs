@@ -128,6 +128,7 @@
             // 
             // pictureBoxItem
             // 
+            this.pictureBoxItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBoxItem.Location = new System.Drawing.Point(324, 18);
             this.pictureBoxItem.Name = "pictureBoxItem";
             this.pictureBoxItem.Size = new System.Drawing.Size(269, 218);
@@ -324,6 +325,7 @@
             // 
             // pictureBoxItemAlterar
             // 
+            this.pictureBoxItemAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBoxItemAlterar.Location = new System.Drawing.Point(326, 18);
             this.pictureBoxItemAlterar.Name = "pictureBoxItemAlterar";
             this.pictureBoxItemAlterar.Size = new System.Drawing.Size(269, 218);

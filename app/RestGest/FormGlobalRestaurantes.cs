@@ -84,6 +84,7 @@ namespace RestGest
 
                 meuRestaurante.SaveChanges();
                 LerDadosRestaurantes();
+                listBoxRestaurantes.SelectedItem = restaurante;
             }
             else
             {
@@ -150,6 +151,7 @@ namespace RestGest
                 comboBoxEstadoPagamentoAlterar.SelectedIndex = -1;
                 meuRestaurante.SaveChanges();
                 LerDadosMetodosPagamento();
+                listBoxMetodosPagamento.SelectedItem = metodoPagamento;
             }
             else
             {
@@ -215,6 +217,7 @@ namespace RestGest
                 categoria.Ativo = (comboBoxEstadoCategoriaAlterar.Text == "Ativado") ? true : false;
                 meuRestaurante.SaveChanges();
                 LerDadosCategorias();
+                listBoxCategorias.SelectedItem = categoria;
             }
             else
             {

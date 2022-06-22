@@ -32,12 +32,21 @@ namespace RestGest
         {
 
             meuRestaurante = new meuRestauranteContainer();
+
             restaurante = meuRestaurante.RestauranteSet.Find(restauranteId);
             LerDadosCliente();
-            LerDadosMetodos();
             LerDadosTrabalhador();
             LerDadosPedido();
             LerDadosEstados();
+            comboBoxEstadoAtual.Enabled = false;
+            buttonExportarTxt.Enabled = false;
+            buttonExportarPdf.Enabled = false;
+            buttonAdicionarItem.Enabled = false;
+            buttonRemoverItem.Enabled = false;
+            buttonAdicionarMetodoPagamento.Enabled = false;
+            buttonRemoverMetodoPagamento.Enabled = false;
+            buttonRestanteMetodoPagamento.Enabled = false;
+
         }
         private float CalcularTotalPago()
         {
@@ -121,7 +130,12 @@ namespace RestGest
         public void LerDadosEstados()
         {
             comboBoxEstadoAtual.DataSource = meuRestaurante.EstadoSet.OfType<EstadoSet>().ToList();
-            comboBoxFiltro.DataSource = meuRestaurante.EstadoSet.OfType<EstadoSet>().ToList();
+            List< EstadoSet > listaEstados = meuRestaurante.EstadoSet.OfType<EstadoSet>().ToList();
+            EstadoSet estadoTodos = new EstadoSet();
+            estadoTodos.EstadoAtual = "Todos";
+            listaEstados.Add(estadoTodos);
+
+            comboBoxFiltro.DataSource = listaEstados;
         }
 
         public void LerDadosMetodosPagamento()
@@ -294,6 +308,8 @@ namespace RestGest
                 meuRestaurante.SaveChanges();
 
                 LerDadosPedido();
+                comboBoxFiltro.SelectedIndex = comboBoxFiltro.Items.Count - 1;
+                listBoxPedidos.SelectedItem = pedido;
                 LerDadosMetodosPagamento();
                 LerDadosPagamentos();
             }
@@ -312,18 +328,30 @@ namespace RestGest
                 List<PedidoSet> Pedidos = meuRestaurante.PedidoSet.OfType<PedidoSet>().ToList();
                 EstadoSet estado = (EstadoSet)comboBoxFiltro.SelectedItem;
 
-                List<PedidoSet> PedidosSelecionados = new List<PedidoSet>();
-
-                foreach (PedidoSet pedido in Pedidos)
+                if(estado.EstadoAtual != "Todos")
                 {
-                    if (pedido.EstadoSet == estado && pedido.RestauranteSet == restaurante)
+                    List<PedidoSet> PedidosSelecionados = new List<PedidoSet>();
+                    foreach (PedidoSet pedido in Pedidos)
                     {
-                        PedidosSelecionados.Add(pedido);
+                        if (pedido.EstadoSet == estado && pedido.RestauranteSet == restaurante)
+                        {
+                            PedidosSelecionados.Add(pedido);
+                        }
                     }
-                };
-
-                listBoxPedidos.DataSource = PedidosSelecionados;
-
+                    listBoxPedidos.DataSource = PedidosSelecionados;
+                }
+                else
+                {
+                    List<PedidoSet> PedidosSelecionados = new List<PedidoSet>();
+                    foreach (PedidoSet pedido in Pedidos)
+                    {
+                        if ( pedido.RestauranteSet == restaurante)
+                        {
+                            PedidosSelecionados.Add(pedido);
+                        }
+                    }
+                    listBoxPedidos.DataSource = PedidosSelecionados;
+                }
             }
         }
 
@@ -342,6 +370,8 @@ namespace RestGest
                 } else if (estado.EstadoAtual == "Concluido" && pedido.ValorTotal.ToString() == valor)
                 {
                     pedido.EstadoSet = estado;
+                    comboBoxFiltro.SelectedItem = estado;
+                    listBoxPedidos.SelectedItem = pedido;
                 }else if(estado.EstadoAtual == "Concluido" && pedido.ValorTotal != CalcularTotalPago())
                 {
                     comboBoxEstadoAtual.SelectedItem = pedido.EstadoSet;
@@ -350,6 +380,8 @@ namespace RestGest
                 else
                 {
                     pedido.EstadoSet = estado;
+                    comboBoxFiltro.SelectedItem = estado;
+                    listBoxPedidos.SelectedItem = pedido;
                 }
 
                 meuRestaurante.SaveChanges();
@@ -458,15 +490,11 @@ namespace RestGest
             if(listBoxPedidos.SelectedItem != null && listBoxMetodoPagamentoUtilizado.SelectedItem != null)
             {
 
-                PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
-
                 PagamentoSet pagamento = (PagamentoSet)listBoxMetodoPagamentoUtilizado.SelectedItem;
-                pagamento.PedidoSet = pedido;
 
                 meuRestaurante.PagamentoSet.Remove(pagamento);
                 meuRestaurante.SaveChanges();
 
-                LerDadosPedido();
                 LerDadosMetodosPagamento();
                 LerDadosPagamentos();
             }
@@ -483,11 +511,8 @@ namespace RestGest
             try { 
                 CriarPasta();
                 PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
-            
-
 
                 path = "./faturas/fatura_" + pedido.Id + ".txt";
-                File.Create(path);
                 File.AppendAllText(path, Environment.NewLine + "Restaurante: " + pedido.RestauranteSet.Nome + Environment.NewLine);
                 File.AppendAllText(path, Environment.NewLine + "--------------------------------------------" + Environment.NewLine);
                 File.AppendAllText(path, Environment.NewLine + "Fatura Nº: "+ pedido.Id + Environment.NewLine);
@@ -596,13 +621,12 @@ namespace RestGest
             try
             {
                 // Determine whether the directory exists.
-                if (Directory.Exists(path))
+                if (!Directory.Exists(path))
                 {
-                    return;
+                    // Try to create the directory.
+                    DirectoryInfo di = Directory.CreateDirectory(path);
                 }
 
-                // Try to create the directory.
-                DirectoryInfo di = Directory.CreateDirectory(path);
             }
             catch (Exception ex)
             {

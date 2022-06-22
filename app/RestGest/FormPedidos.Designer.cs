@@ -310,6 +310,7 @@
             // 
             this.buttonExportarPdf.BackgroundImage = global::RestGest.Properties.Resources.pdfdownload;
             this.buttonExportarPdf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonExportarPdf.Enabled = false;
             this.buttonExportarPdf.Location = new System.Drawing.Point(735, 529);
             this.buttonExportarPdf.Name = "buttonExportarPdf";
             this.buttonExportarPdf.Size = new System.Drawing.Size(37, 33);
@@ -321,6 +322,7 @@
             // 
             this.buttonExportarTxt.BackgroundImage = global::RestGest.Properties.Resources.txtdownload;
             this.buttonExportarTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonExportarTxt.Enabled = false;
             this.buttonExportarTxt.Location = new System.Drawing.Point(688, 529);
             this.buttonExportarTxt.Name = "buttonExportarTxt";
             this.buttonExportarTxt.Size = new System.Drawing.Size(37, 33);
@@ -350,6 +352,7 @@
             // 
             // buttonRestanteMetodoPagamento
             // 
+            this.buttonRestanteMetodoPagamento.Enabled = false;
             this.buttonRestanteMetodoPagamento.Location = new System.Drawing.Point(167, 179);
             this.buttonRestanteMetodoPagamento.Name = "buttonRestanteMetodoPagamento";
             this.buttonRestanteMetodoPagamento.Size = new System.Drawing.Size(65, 23);
@@ -377,6 +380,7 @@
             // 
             // buttonAdicionarMetodoPagamento
             // 
+            this.buttonAdicionarMetodoPagamento.Enabled = false;
             this.buttonAdicionarMetodoPagamento.Location = new System.Drawing.Point(78, 207);
             this.buttonAdicionarMetodoPagamento.Name = "buttonAdicionarMetodoPagamento";
             this.buttonAdicionarMetodoPagamento.Size = new System.Drawing.Size(75, 23);
@@ -431,6 +435,7 @@
             // 
             // buttonRemoverMetodoPagamento
             // 
+            this.buttonRemoverMetodoPagamento.Enabled = false;
             this.buttonRemoverMetodoPagamento.Location = new System.Drawing.Point(86, 383);
             this.buttonRemoverMetodoPagamento.Name = "buttonRemoverMetodoPagamento";
             this.buttonRemoverMetodoPagamento.Size = new System.Drawing.Size(75, 23);
@@ -461,6 +466,7 @@
             // 
             // buttonAdicionarItem
             // 
+            this.buttonAdicionarItem.Enabled = false;
             this.buttonAdicionarItem.Location = new System.Drawing.Point(83, 380);
             this.buttonAdicionarItem.Name = "buttonAdicionarItem";
             this.buttonAdicionarItem.Size = new System.Drawing.Size(75, 23);
@@ -502,6 +508,7 @@
             this.comboBoxEstadoAtual.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxEstadoAtual.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxEstadoAtual.DisplayMember = "0";
+            this.comboBoxEstadoAtual.Enabled = false;
             this.comboBoxEstadoAtual.FormattingEnabled = true;
             this.comboBoxEstadoAtual.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.comboBoxEstadoAtual.Items.AddRange(new object[] {
@@ -528,6 +535,7 @@
             // 
             // buttonRemoverItem
             // 
+            this.buttonRemoverItem.Enabled = false;
             this.buttonRemoverItem.Location = new System.Drawing.Point(77, 331);
             this.buttonRemoverItem.Name = "buttonRemoverItem";
             this.buttonRemoverItem.Size = new System.Drawing.Size(75, 23);

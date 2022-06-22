@@ -31,7 +31,7 @@ namespace RestGest
         public virtual RestauranteSet RestauranteSet { get; set; }
         
         public override string ToString(){
-            return this.Posicao+" "+this.PessoaSet.ToString();
+            return this.PessoaSet.ToString() + ", " + this.Posicao;
         }
         
     }

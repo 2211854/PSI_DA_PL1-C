@@ -89,6 +89,7 @@ namespace RestGest
                     itemMenu.Preco = float.Parse(textBoxPrecoAlterar.Text);
                     meuRestaurante.SaveChanges();
                     LerDadosMenu();
+                    listBoxItens.SelectedItem = itemMenu;
                 }
                 catch(Exception ex)
                 {

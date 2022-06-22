@@ -138,6 +138,7 @@ namespace RestGest
                 trabalhador.PessoaSet.Ativo = (comboBoxEstadoTrabalhadorAlterar.Text == "Ativado") ? true : false;
                 meuRestaurante.SaveChanges();
                 LerDadosTrabalhadores();
+                listBoxTrabalhadores.SelectedItem = trabalhador;
 
             }
             else
