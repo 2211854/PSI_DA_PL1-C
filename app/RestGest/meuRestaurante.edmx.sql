@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/21/2022 20:02:40
+-- Date Created: 06/22/2022 05:42:12
 -- Generated from EDMX file: D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\meuRestaurante.edmx
 -- --------------------------------------------------
 
@@ -164,7 +164,8 @@ CREATE TABLE [dbo].[PagamentoSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Valor] real  NOT NULL,
     [IdMetodoPagamento] int  NOT NULL,
-    [IdPedido] int  NOT NULL
+    [IdPedido] int  NOT NULL,
+    [PedidoSetId] int  NULL
 );
 GO
 
@@ -389,21 +390,6 @@ ON [dbo].[RestauranteSet]
     ([Morada_Id]);
 GO
 
--- Creating foreign key on [IdPedido] in table 'PagamentoSet'
-ALTER TABLE [dbo].[PagamentoSet]
-ADD CONSTRAINT [FK_PagamentoPedido]
-    FOREIGN KEY ([IdPedido])
-    REFERENCES [dbo].[PedidoSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_PagamentoPedido'
-CREATE INDEX [IX_FK_PagamentoPedido]
-ON [dbo].[PagamentoSet]
-    ([IdPedido]);
-GO
-
 -- Creating foreign key on [IdCliente] in table 'PedidoSet'
 ALTER TABLE [dbo].[PedidoSet]
 ADD CONSTRAINT [FK_ClientePedido]
@@ -528,6 +514,21 @@ GO
 CREATE INDEX [IX_FK_RestauranteItemMenu_RestauranteSet]
 ON [dbo].[RestauranteItemMenu]
     ([RestauranteSet_Id]);
+GO
+
+-- Creating foreign key on [PedidoSetId] in table 'PagamentoSet'
+ALTER TABLE [dbo].[PagamentoSet]
+ADD CONSTRAINT [FK_PedidoSetPagamentoSet]
+    FOREIGN KEY ([PedidoSetId])
+    REFERENCES [dbo].[PedidoSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PedidoSetPagamentoSet'
+CREATE INDEX [IX_FK_PedidoSetPagamentoSet]
+ON [dbo].[PagamentoSet]
+    ([PedidoSetId]);
 GO
 
 -- --------------------------------------------------

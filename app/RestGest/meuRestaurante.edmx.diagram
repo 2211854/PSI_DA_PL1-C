@@ -21,7 +21,6 @@
         <AssociationConnector Association="meuRestaurante.FK_MetodoPagamentoPagamento" />
         <AssociationConnector Association="meuRestaurante.FK_MoradaPessoa" />
         <AssociationConnector Association="meuRestaurante.FK_MoradaRestaurante" />
-        <AssociationConnector Association="meuRestaurante.FK_PagamentoPedido" />
         <AssociationConnector Association="meuRestaurante.FK_ClientePedido" />
         <AssociationConnector Association="meuRestaurante.FK_RestaurantePedido" />
         <AssociationConnector Association="meuRestaurante.FK_TrabalhadorPedido" />
@@ -30,6 +29,7 @@
         <AssociationConnector Association="meuRestaurante.FK_TrabalhadorRestaurante" />
         <AssociationConnector Association="meuRestaurante.ItemMenuPedido" />
         <AssociationConnector Association="meuRestaurante.RestauranteItemMenu" />
+        <AssociationConnector Association="meuRestaurante.PedidoSetPagamentoSet" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

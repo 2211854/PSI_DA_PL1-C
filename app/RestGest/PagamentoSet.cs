@@ -18,6 +18,7 @@ namespace RestGest
         public float Valor { get; set; }
         public int IdMetodoPagamento { get; set; }
         public int IdPedido { get; set; }
+        public Nullable<int> PedidoSetId { get; set; }
     
         public virtual MetodoPagamentoSet MetodoPagamentoSet { get; set; }
         public virtual PedidoSet PedidoSet { get; set; }

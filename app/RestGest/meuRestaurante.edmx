@@ -39,10 +39,6 @@
       <End Role="MoradaSet" EntitySet="MoradaSet" />
       <End Role="RestauranteSet" EntitySet="RestauranteSet" />
     </AssociationSet>
-    <AssociationSet Name="FK_PagamentoPedido" Association="meuRestaurante.Store.FK_PagamentoPedido">
-      <End Role="PedidoSet" EntitySet="PedidoSet" />
-      <End Role="PagamentoSet" EntitySet="PagamentoSet" />
-    </AssociationSet>
     <AssociationSet Name="FK_ClientePedido" Association="meuRestaurante.Store.FK_ClientePedido">
       <End Role="PessoaSet_Cliente" EntitySet="PessoaSet_Cliente" />
       <End Role="PedidoSet" EntitySet="PedidoSet" />
@@ -82,6 +78,10 @@
     <AssociationSet Name="FK_RestauranteItemMenu_RestauranteSet" Association="meuRestaurante.Store.FK_RestauranteItemMenu_RestauranteSet">
       <End Role="RestauranteSet" EntitySet="RestauranteSet" />
       <End Role="RestauranteItemMenu" EntitySet="RestauranteItemMenu" />
+    </AssociationSet>
+    <AssociationSet Name="PedidoSetPagamentoSet" Association="meuRestaurante.Store.PedidoSetPagamentoSet">
+      <End Role="PedidoSet" EntitySet="PedidoSet" />
+      <End Role="PagamentoSet" EntitySet="PagamentoSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="CategoriaSet">
@@ -137,6 +137,7 @@
     <Property Name="Valor" Type="real" Nullable="false" />
     <Property Name="IdMetodoPagamento" Type="int" Nullable="false" />
     <Property Name="IdPedido" Type="int" Nullable="false" />
+    <Property Name="PedidoSetId" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="PedidoSet">
     <Key>
@@ -260,18 +261,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_PagamentoPedido">
-    <End Role="PedidoSet" Type="meuRestaurante.Store.PedidoSet" Multiplicity="1" />
-    <End Role="PagamentoSet" Type="meuRestaurante.Store.PagamentoSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PedidoSet">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PagamentoSet">
-        <PropertyRef Name="IdPedido" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_ClientePedido">
     <End Role="PessoaSet_Cliente" Type="meuRestaurante.Store.PessoaSet_Cliente" Multiplicity="1" />
     <End Role="PedidoSet" Type="meuRestaurante.Store.PedidoSet" Multiplicity="*" />
@@ -345,6 +334,18 @@
       </Principal>
       <Dependent Role="PessoaSet_Trabalhador">
         <PropertyRef Name="IdRestaurante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PedidoSetPagamentoSet">
+    <End Role="PedidoSet" Type="meuRestaurante.Store.PedidoSet" Multiplicity="0..1" />
+    <End Role="PagamentoSet" Type="meuRestaurante.Store.PagamentoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PedidoSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PagamentoSet">
+        <PropertyRef Name="PedidoSetId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -432,10 +433,6 @@
             <End Role="MoradaSet" EntitySet="MoradaSet" />
             <End Role="RestauranteSet" EntitySet="RestauranteSet" />
           </AssociationSet>
-          <AssociationSet Name="FK_PagamentoPedido" Association="meuRestaurante.FK_PagamentoPedido">
-            <End Role="PedidoSet" EntitySet="PedidoSet" />
-            <End Role="PagamentoSet" EntitySet="PagamentoSet" />
-          </AssociationSet>
           <AssociationSet Name="FK_ClientePedido" Association="meuRestaurante.FK_ClientePedido">
             <End Role="PessoaSet_Cliente" EntitySet="PessoaSet_Cliente" />
             <End Role="PedidoSet" EntitySet="PedidoSet" />
@@ -467,6 +464,10 @@
           <AssociationSet Name="RestauranteItemMenu" Association="meuRestaurante.RestauranteItemMenu">
             <End Role="ItemMenuSet" EntitySet="ItemMenuSet" />
             <End Role="RestauranteSet" EntitySet="RestauranteSet" />
+          </AssociationSet>
+          <AssociationSet Name="PedidoSetPagamentoSet" Association="meuRestaurante.PedidoSetPagamentoSet">
+            <End Role="PedidoSet" EntitySet="PedidoSet" />
+            <End Role="PagamentoSet" EntitySet="PagamentoSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="CategoriaSet">
@@ -531,7 +532,8 @@
           <Property Name="IdMetodoPagamento" Type="Int32" Nullable="false" />
           <Property Name="IdPedido" Type="Int32" Nullable="false" />
           <NavigationProperty Name="MetodoPagamentoSet" Relationship="meuRestaurante.FK_MetodoPagamentoPagamento" FromRole="PagamentoSet" ToRole="MetodoPagamentoSet" />
-          <NavigationProperty Name="PedidoSet" Relationship="meuRestaurante.FK_PagamentoPedido" FromRole="PagamentoSet" ToRole="PedidoSet" />
+          <NavigationProperty Name="PedidoSet" Relationship="meuRestaurante.PedidoSetPagamentoSet" FromRole="PagamentoSet" ToRole="PedidoSet" />
+          <Property Name="PedidoSetId" Type="Int32" Nullable="true" />
         </EntityType>
         <EntityType Name="PedidoSet">
           <Key>
@@ -544,11 +546,11 @@
           <Property Name="IdCliente" Type="Int32" Nullable="false" />
           <Property Name="IdTrabalhador" Type="Int32" Nullable="false" />
           <NavigationProperty Name="EstadoSet" Relationship="meuRestaurante.FK_PedidoEstado" FromRole="PedidoSet" ToRole="EstadoSet" />
-          <NavigationProperty Name="PagamentoSet" Relationship="meuRestaurante.FK_PagamentoPedido" FromRole="PedidoSet" ToRole="PagamentoSet" />
           <NavigationProperty Name="PessoaSet_Cliente" Relationship="meuRestaurante.FK_ClientePedido" FromRole="PedidoSet" ToRole="PessoaSet_Cliente" />
           <NavigationProperty Name="RestauranteSet" Relationship="meuRestaurante.FK_RestaurantePedido" FromRole="PedidoSet" ToRole="RestauranteSet" />
           <NavigationProperty Name="PessoaSet_Trabalhador" Relationship="meuRestaurante.FK_TrabalhadorPedido" FromRole="PedidoSet" ToRole="PessoaSet_Trabalhador" />
           <NavigationProperty Name="ItemMenuSet" Relationship="meuRestaurante.ItemMenuPedido" FromRole="PedidoSet" ToRole="ItemMenuSet" />
+          <NavigationProperty Name="PagamentoSet" Relationship="meuRestaurante.PedidoSetPagamentoSet" FromRole="PedidoSet" ToRole="PagamentoSet" />
         </EntityType>
         <EntityType Name="PessoaSet">
           <Key>
@@ -657,18 +659,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PagamentoPedido">
-          <End Type="meuRestaurante.PedidoSet" Role="PedidoSet" Multiplicity="1" />
-          <End Type="meuRestaurante.PagamentoSet" Role="PagamentoSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PedidoSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PagamentoSet">
-              <PropertyRef Name="IdPedido" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ClientePedido">
           <End Type="meuRestaurante.PessoaSet_Cliente" Role="PessoaSet_Cliente" Multiplicity="1" />
           <End Type="meuRestaurante.PedidoSet" Role="PedidoSet" Multiplicity="*" />
@@ -753,6 +743,18 @@
           <End Type="meuRestaurante.ItemMenuSet" Role="ItemMenuSet" Multiplicity="*" />
           <End Type="meuRestaurante.RestauranteSet" Role="RestauranteSet" Multiplicity="*" />
         </Association>
+        <Association Name="PedidoSetPagamentoSet">
+          <End Type="meuRestaurante.PedidoSet" Role="PedidoSet" Multiplicity="0..1" />
+          <End Type="meuRestaurante.PagamentoSet" Role="PagamentoSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PedidoSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagamentoSet">
+              <PropertyRef Name="PedidoSetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -816,6 +818,7 @@
           <ScalarProperty Name="Valor" ColumnName="Valor" />
           <ScalarProperty Name="IdMetodoPagamento" ColumnName="IdMetodoPagamento" />
           <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+          <ScalarProperty Name="PedidoSetId" ColumnName="PedidoSetId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
