@@ -356,11 +356,9 @@
             // 
             // listBoxMetodoPagamentoUtilizado
             // 
-            this.listBoxMetodoPagamentoUtilizado.Enabled = false;
             this.listBoxMetodoPagamentoUtilizado.FormattingEnabled = true;
             this.listBoxMetodoPagamentoUtilizado.Location = new System.Drawing.Point(19, 269);
             this.listBoxMetodoPagamentoUtilizado.Name = "listBoxMetodoPagamentoUtilizado";
-            this.listBoxMetodoPagamentoUtilizado.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxMetodoPagamentoUtilizado.Size = new System.Drawing.Size(213, 108);
             this.listBoxMetodoPagamentoUtilizado.TabIndex = 18;
             // 

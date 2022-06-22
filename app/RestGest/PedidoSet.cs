@@ -38,7 +38,7 @@ namespace RestGest
         public virtual ICollection<ItemMenuSet> ItemMenuSet { get; set; }
 
         public override string ToString(){
-            return "[#"+this.Id+"] "+this.ValorTotal+"€"+this.RestauranteSet.ToString();
+            return "Pedido Nº"+this.Id+", "+this.ValorTotal+"€, "+this.PessoaSet_Cliente.PessoaSet.Nome;
         }
     }
 }

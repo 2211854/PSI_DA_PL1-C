@@ -8,6 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StreamReader;
+using Document;
+using PdfWriter;
+
+
 
 namespace RestGest
 {
@@ -34,8 +39,6 @@ namespace RestGest
             LerDadosTrabalhador();
             LerDadosPedido();
             LerDadosEstados();
-            LerDadosMetodosPagamento();
-            LerDadosPagamentos();
         }
 
         private void LerDadosCliente()
@@ -55,6 +58,17 @@ namespace RestGest
         public void LerDadosPedido()
         {
             listBoxPedidos.DataSource = meuRestaurante.PedidoSet.OfType<PedidoSet>().ToList();
+
+            List<PedidoSet> listaPedidos = meuRestaurante.PedidoSet.OfType<PedidoSet>().ToList();
+            List<PedidoSet> listaPedidosSelecionados = new List<PedidoSet>();
+            foreach (PedidoSet pedido in listaPedidos)
+            {
+                if (pedido.RestauranteSet == restaurante)
+                {
+                    listaPedidosSelecionados.Add(pedido);
+                }
+            }
+            listBoxPedidos.DataSource = listaPedidosSelecionados;
         }
 
         public void LerDadosTrabalhador()
@@ -80,23 +94,43 @@ namespace RestGest
 
         public void LerDadosMetodosPagamento()
         {
-            List<MetodoPagamentoSet> metodosPagamento = meuRestaurante.MetodoPagamentoSet.OfType<MetodoPagamentoSet>().ToList();
+            /*if(listBoxPedidos.SelectedItem != null)
+            { */
+                try
+                { 
+                    List<MetodoPagamentoSet> metodosPagamento = meuRestaurante.MetodoPagamentoSet.OfType<MetodoPagamentoSet>().ToList();
 
-            List<MetodoPagamentoSet> metodosPagamentoNaoSelecionados = new List<MetodoPagamentoSet>();
+                    List<MetodoPagamentoSet> metodosPagamentoNaoSelecionados = new List<MetodoPagamentoSet>();
+                    List<MetodoPagamentoSet> metodosPagamentoUtilizados = new List<MetodoPagamentoSet>();
+
+                    PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
+
+                    List < PagamentoSet> pagamentos = pedido.PagamentoSet.ToList();
+                    foreach(PagamentoSet pagamento in pagamentos)
+                    {
+                        metodosPagamentoUtilizados.Add(pagamento.MetodoPagamentoSet);
+                    }
 
 
-            foreach (MetodoPagamentoSet metodo in metodosPagamento){
-                if(metodo.Ativo)
-                {
-                    metodosPagamentoNaoSelecionados.Add(metodo);
+                    foreach (MetodoPagamentoSet metodo in metodosPagamento){
+                        if(metodo.Ativo &&  !(metodosPagamentoUtilizados.Contains(metodo)))
+                        {
+                            metodosPagamentoNaoSelecionados.Add(metodo);
+                        }
+                    };
+
+                    listBoxMetodoPagamento.DataSource = metodosPagamentoNaoSelecionados;
                 }
-            };
+                catch(Exception ex)
+                {
 
-            listBoxMetodoPagamento.DataSource = metodosPagamentoNaoSelecionados;
+                }
+            //}
         }
 
         public void LerDadosPagamentos()
         {
+            listBoxMetodoPagamentoUtilizado.DataSource = null;
             if(listBoxPedidos.SelectedItem != null)
             {
                 PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
@@ -199,7 +233,7 @@ namespace RestGest
 
                 foreach (PedidoSet pedido in Pedidos)
                 {
-                    if (pedido.EstadoSet == estado)
+                    if (pedido.EstadoSet == estado && pedido.RestauranteSet == restaurante)
                     {
                         PedidosSelecionados.Add(pedido);
                     }
@@ -212,11 +246,19 @@ namespace RestGest
 
         private void comboBoxEstadoAtual_SelectedIndexChanged(object sender, EventArgs e)
         {
-            EstadoSet estado = (EstadoSet)comboBoxEstadoAtual.SelectedItem;
-            PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
-            //pedido.EstadoSet = estado;
+            if(listBoxPedidos.SelectedItem != null)
+            {
+                EstadoSet estado = (EstadoSet)comboBoxEstadoAtual.SelectedItem;
+                PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
+                pedido.EstadoSet = estado;
 
-            //meuRestaurante.SaveChanges();
+                meuRestaurante.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show("Selecione todos os dados solicitados!");
+            }
+            
         }
 
         private void listBoxPedidos_SelectedIndexChanged(object sender, EventArgs e)
@@ -231,6 +273,46 @@ namespace RestGest
             LerDadosMetodosPagamento();
             LerDadosPagamentos();
             labelTotal.Text = pedido.ValorTotal.ToString();
+            if(pedido.EstadoSet.EstadoAtual == "Recebido")
+            {
+                comboBoxEstadoAtual.Enabled = true;
+                buttonExportarTxt.Enabled = false;
+                buttonExportarPdf.Enabled = false;
+                buttonAdicionarItem.Enabled = false;
+                buttonRemoverItem.Enabled = false;
+                buttonAdicionarMetodoPagamento.Enabled = false;
+                buttonRemoverMetodoPagamento.Enabled = false;
+
+            }else if(pedido.EstadoSet.EstadoAtual == "Em processamento")
+            {
+                comboBoxEstadoAtual.Enabled = true;
+                buttonExportarTxt.Enabled = false;
+                buttonExportarPdf.Enabled = false;
+                buttonAdicionarItem.Enabled = true;
+                buttonRemoverItem.Enabled = true;
+                buttonAdicionarMetodoPagamento.Enabled = true;
+                buttonRemoverMetodoPagamento.Enabled = true;
+            }
+            else if (pedido.EstadoSet.EstadoAtual == "Cancelado")
+            {
+                comboBoxEstadoAtual.Enabled = false;
+                buttonExportarTxt.Enabled = false;
+                buttonExportarPdf.Enabled = false;
+                buttonAdicionarItem.Enabled = true;
+                buttonRemoverItem.Enabled = true;
+                buttonAdicionarMetodoPagamento.Enabled = true;
+                buttonRemoverMetodoPagamento.Enabled = true;
+            }
+            else if (pedido.EstadoSet.EstadoAtual == "Concluido")
+            {
+                comboBoxEstadoAtual.Enabled = false;
+                buttonExportarTxt.Enabled = true;
+                buttonExportarPdf.Enabled = true;
+                buttonAdicionarItem.Enabled = true;
+                buttonRemoverItem.Enabled = true;
+                buttonAdicionarMetodoPagamento.Enabled = true;
+                buttonRemoverMetodoPagamento.Enabled = true;
+            }
 
         }
 
@@ -239,11 +321,17 @@ namespace RestGest
             if(listBoxPedidos.SelectedItem != null && listBoxMenuRestaurante.SelectedItem != null)
             {
                 PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
-                pedido.ItemMenuSet.Add((ItemMenuSet)listBoxMenuRestaurante.SelectedItem);
+                ItemMenuSet item = (ItemMenuSet)listBoxMenuRestaurante.SelectedItem;
+                pedido.ItemMenuSet.Add(item);
+                pedido.ValorTotal = pedido.ValorTotal + item.Preco;
                 meuRestaurante.SaveChanges();
 
                 LerDadosPedido();
 
+            }
+            else
+            {
+                MessageBox.Show("Selecione todos os dados solicitados!");
             }
 
 
@@ -254,11 +342,18 @@ namespace RestGest
             if (listBoxPedidos.SelectedItem != null && listBoxItensPedidos.SelectedItem != null)
             {
                 PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
-                pedido.ItemMenuSet.Remove((ItemMenuSet)listBoxItensPedidos.SelectedItem);
+                ItemMenuSet item = (ItemMenuSet)listBoxItensPedidos.SelectedItem;
+                pedido.ItemMenuSet.Remove(item);
+                pedido.ValorTotal = pedido.ValorTotal - item.Preco;
+
                 meuRestaurante.SaveChanges();
 
                 LerDadosPedido();
 
+            }
+            else
+            {
+                MessageBox.Show("Selecione todos os dados solicitados!");
             }
         }
 
@@ -281,6 +376,10 @@ namespace RestGest
                 LerDadosPagamentos();
 
             }
+            else
+            {
+                MessageBox.Show("Insira e selecione todos os dados solicitados!");
+            }
 
         }
 
@@ -301,6 +400,10 @@ namespace RestGest
                 LerDadosMetodosPagamento();
                 LerDadosPagamentos();
             }
+            else
+            {
+                MessageBox.Show("Selecione todos os dados solicitados!");
+            }
 
 
         }
@@ -312,6 +415,7 @@ namespace RestGest
 
 
             path = "./faturas/fatura_" + pedido.Id + ".txt";
+            File.Create(path);
             File.AppendAllText(path, Environment.NewLine + "Restaurante: " + pedido.RestauranteSet.Nome + Environment.NewLine);
             File.AppendAllText(path, Environment.NewLine + "--------------------------------------------" + Environment.NewLine);
             File.AppendAllText(path, Environment.NewLine + "Fatura Nº: "+ pedido.Id + Environment.NewLine);
@@ -339,9 +443,53 @@ namespace RestGest
             File.AppendAllText(path, Environment.NewLine + "Obrigado, volte sempre!" + Environment.NewLine);
         }
 
+
+
+
         private void buttonExportarPdf_Click(object sender, EventArgs e)
         {
+             try { 
 
+                PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
+
+
+                path = "./faturas/fatura_" + pedido.Id + ".txt";
+            
+
+                //Read the Data from Input File
+
+                StreamReader rdr = new StreamReader(path);
+
+                //Create a New instance on Document Class
+
+                Document doc = new Document();
+
+                //Create a New instance of PDFWriter Class for Output File
+
+                PdfWriter.GetInstance(doc, new FileStream(path, FileMode.Create));
+
+                //Open the Document
+
+                doc.Open();
+
+                //Add the content of Text File to PDF File
+
+                doc.Add(new Paragraph(rdr.ReadToEnd()));
+
+                //Close the Document
+
+                doc.Close();
+
+                MessageBox.Show("Conversion Successful....");
+
+                //Open the Converted PDF File
+
+                System.Diagnostics.Process.Start(path);
+            }
+            catch(Exception Ex)
+            {
+                MessageBox.Show("conversão nao foi possivel ser feita"+Ex,"Teste");
+            }
         }
     }
 }
