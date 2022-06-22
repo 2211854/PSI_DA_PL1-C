@@ -27,9 +27,9 @@ Grupo: PL1-C
 Neste projeto pretende-se a realização de um sistema de gestão de restaurantes, cuja denominação é RestGest. Esta possui como objetivo principal gerir e operar todos os restaurantes, incluindo criar e manter o menu de cada restaurante, receber e tratar pedidos de clientes e guardar dados de clientes e trabalhadores.
 
 ## Projeto desenvolvido em:
->[.Net FrameWork (C#)](https://dotnet.microsoft.com/en-us/download/dotnet-framework).
->[EntityFrameworkData](https://docs.microsoft.com/en-us/ef/).
->[EntityFrameworkModelFirst](https://docs.microsoft.com/en-us/ef/ef6/modeling/designer/workflows/model-first).
+>- [.Net FrameWork (C#)](https://dotnet.microsoft.com/en-us/download/dotnet-framework).
+>- [EntityFrameworkData](https://docs.microsoft.com/en-us/ef/).
+>- [EntityFrameworkModelFirst](https://docs.microsoft.com/en-us/ef/ef6/modeling/designer/workflows/model-first).
 
 
 
@@ -40,6 +40,11 @@ A aplicação necessita de estar conectada a uma base de dados que foi anteriorm
 ## Configuração
 
 É importante a inserção de dados na respetiva base de dados ser por ordem. Com isto dito, é necessário criar um restaurante antes de começar a realizar as diversas outras opções. sem isso é impossível trabalhar com o software. 
+
+## Notas
+
+>- Ao dar upload da imagem no FormMenu, é normal que o programa demore um pouco a carregar a imagem.
+>- Os dados da tabela EstadoSet têm que ser adicionados manualmente.
 
 ## DataBase
 
