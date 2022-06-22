@@ -480,37 +480,44 @@ namespace RestGest
 
         private void buttonExportarTxt_Click(object sender, EventArgs e)
         {
-            PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
+            try { 
+                CriarPasta();
+                PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
             
 
 
-            path = "./faturas/fatura_" + pedido.Id + ".txt";
-            File.Create(path);
-            File.AppendAllText(path, Environment.NewLine + "Restaurante: " + pedido.RestauranteSet.Nome + Environment.NewLine);
-            File.AppendAllText(path, Environment.NewLine + "--------------------------------------------" + Environment.NewLine);
-            File.AppendAllText(path, Environment.NewLine + "Fatura Nº: "+ pedido.Id + Environment.NewLine);
-            File.AppendAllText(path, Environment.NewLine + "Funcionario: " + pedido.PessoaSet_Trabalhador.PessoaSet.Nome + Environment.NewLine);
-            File.AppendAllText(path, Environment.NewLine + "--------------------------------------------" + Environment.NewLine);
-            File.AppendAllText(path, Environment.NewLine + "Cliente: " + pedido.PessoaSet_Cliente.PessoaSet.Nome + Environment.NewLine + "Nº Contribuinte: " + pedido.PessoaSet_Cliente.NumContribuinte + Environment.NewLine);
-            File.AppendAllText(path, Environment.NewLine + "--------------------------------------------" + Environment.NewLine);
-            File.AppendAllText(path, Environment.NewLine + "Itens : " + Environment.NewLine);
-            foreach (ItemMenuSet menu in listBoxItensPedidos.Items)
+                path = "./faturas/fatura_" + pedido.Id + ".txt";
+                File.Create(path);
+                File.AppendAllText(path, Environment.NewLine + "Restaurante: " + pedido.RestauranteSet.Nome + Environment.NewLine);
+                File.AppendAllText(path, Environment.NewLine + "--------------------------------------------" + Environment.NewLine);
+                File.AppendAllText(path, Environment.NewLine + "Fatura Nº: "+ pedido.Id + Environment.NewLine);
+                File.AppendAllText(path, Environment.NewLine + "Funcionario: " + pedido.PessoaSet_Trabalhador.PessoaSet.Nome + Environment.NewLine);
+                File.AppendAllText(path, Environment.NewLine + "--------------------------------------------" + Environment.NewLine);
+                File.AppendAllText(path, Environment.NewLine + "Cliente: " + pedido.PessoaSet_Cliente.PessoaSet.Nome + Environment.NewLine + "Nº Contribuinte: " + pedido.PessoaSet_Cliente.NumContribuinte + Environment.NewLine);
+                File.AppendAllText(path, Environment.NewLine + "--------------------------------------------" + Environment.NewLine);
+                File.AppendAllText(path, Environment.NewLine + "Itens : " + Environment.NewLine);
+                foreach (ItemMenuSet menu in listBoxItensPedidos.Items)
+                {
+
+                    File.AppendAllText(path, Environment.NewLine + menu.ToString() + Environment.NewLine);
+
+                }
+                File.AppendAllText(path, Environment.NewLine + "--------------------------------------------" + Environment.NewLine);
+                File.AppendAllText(path, Environment.NewLine + "Total:"+ pedido.ValorTotal + Environment.NewLine);
+                File.AppendAllText(path, Environment.NewLine + "--------------------------------------------" + Environment.NewLine);
+                File.AppendAllText(path, Environment.NewLine + "Metodos pagamento"+ Environment.NewLine);
+                foreach (PagamentoSet pagamento in listBoxMetodoPagamentoUtilizado.Items)
+                {
+
+                    File.AppendAllText(path, Environment.NewLine + pagamento.ToString() + Environment.NewLine);
+
+                }
+                File.AppendAllText(path, Environment.NewLine + "Obrigado, volte sempre!" + Environment.NewLine);
+            }
+            catch (Exception ex)
             {
 
-                File.AppendAllText(path, Environment.NewLine + menu.ToString() + Environment.NewLine);
-
             }
-            File.AppendAllText(path, Environment.NewLine + "--------------------------------------------" + Environment.NewLine);
-            File.AppendAllText(path, Environment.NewLine + "Total:"+ pedido.ValorTotal + Environment.NewLine);
-            File.AppendAllText(path, Environment.NewLine + "--------------------------------------------" + Environment.NewLine);
-            File.AppendAllText(path, Environment.NewLine + "Metodos pagamento"+ Environment.NewLine);
-            foreach (PagamentoSet pagamento in listBoxMetodoPagamentoUtilizado.Items)
-            {
-
-                File.AppendAllText(path, Environment.NewLine + pagamento.ToString() + Environment.NewLine);
-
-            }
-            File.AppendAllText(path, Environment.NewLine + "Obrigado, volte sempre!" + Environment.NewLine);
         }
 
 
@@ -518,7 +525,8 @@ namespace RestGest
 
         private void buttonExportarPdf_Click(object sender, EventArgs e)
         {
-            try { 
+            try {
+                CriarPasta();
                 PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
 
                 // Set a path to our document.
@@ -579,6 +587,28 @@ namespace RestGest
                 
             }
 
+        }
+
+        public void CriarPasta()
+        {
+            string path = @"./faturas";
+
+            try
+            {
+                // Determine whether the directory exists.
+                if (Directory.Exists(path))
+                {
+                    return;
+                }
+
+                // Try to create the directory.
+                DirectoryInfo di = Directory.CreateDirectory(path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally { }
         }
 
         private void buttonRestanteMetodoPagamento_Click(object sender, EventArgs e)
