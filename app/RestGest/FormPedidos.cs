@@ -12,9 +12,13 @@ namespace RestGest
 {
     public partial class FormPedidos : Form
     {
-        public FormPedidos()
+        public static meuRestauranteContainer meuRestaurante;
+        public static RestauranteSet restaurante;
+        public FormPedidos(RestauranteSet rest)
         {
             InitializeComponent();
+            meuRestaurante = new meuRestauranteContainer();
+            restaurante = rest;
         }
 
         private void FormPedidos_Load(object sender, EventArgs e)
