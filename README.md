@@ -41,6 +41,10 @@ A aplicação necessita de estar conectada a uma base de dados que foi anteriorm
 
 É importante a inserção de dados na respetiva base de dados ser por ordem. Com isto dito, é necessário criar um restaurante antes de começar a realizar as diversas outras opções. sem isso é impossível trabalhar com o software. 
 
+## Notas
+
+> Ao dar upload na imagem no FormMenu, é normal que o programa demore um pouco a carregar a imagem.
+
 ## DataBase
 
 ![enter image description here](https://cdn.discordapp.com/attachments/958021459391967253/989274028080504853/unknown.png)
