@@ -43,7 +43,8 @@ A aplicação necessita de estar conectada a uma base de dados que foi anteriorm
 
 ## Notas
 
-> Ao dar upload da imagem no FormMenu, é normal que o programa demore um pouco a carregar a imagem.
+>- Ao dar upload da imagem no FormMenu, é normal que o programa demore um pouco a carregar a imagem.
+>- Os dados da tabela EstadoSet têm que ser adicionados manualmente.
 
 ## DataBase
 
