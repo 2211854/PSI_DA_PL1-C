@@ -1,0 +1,31 @@
+
+Restaurante: Restaurante 1
+
+--------------------------------------------
+
+Fatura Nº: 1
+
+Funcionario: trabalhador 1
+
+--------------------------------------------
+
+Cliente: Cliente 1
+Nº Contribuinte: 123456789
+
+--------------------------------------------
+
+Itens do Pedido Nº: 1
+
+item 1 - 5,78€
+
+--------------------------------------------
+
+Total:0
+
+--------------------------------------------
+
+Metodos pagamento
+
+dinheiro : 2€
+
+Obrigado, volte sempre!

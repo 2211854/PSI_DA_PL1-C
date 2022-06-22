@@ -58,6 +58,7 @@
           <ScalarProperty Name="Valor" ColumnName="Valor" />
           <ScalarProperty Name="IdMetodoPagamento" ColumnName="IdMetodoPagamento" />
           <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+          <ScalarProperty Name="PedidoSetId" ColumnName="PedidoSetId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

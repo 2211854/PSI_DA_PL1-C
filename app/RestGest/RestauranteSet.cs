@@ -50,7 +50,11 @@ namespace RestGest
         public int GetNumeroPedidos()
         {
             int numero = 0;
-            numero = PedidoSet.Count();
+            foreach (PedidoSet pedido in this.PedidoSet)
+            {
+
+               numero++;
+            }
             return numero;
         }
 

@@ -14,26 +14,28 @@ namespace RestGest
     public partial class FormPedidos : Form
     {
         public static meuRestauranteContainer meuRestaurante;
-        public static RestauranteSet restaurante;
+        public RestauranteSet restaurante;
+        public int restauranteId;
         private static string path;
 
         public FormPedidos(RestauranteSet rest)
         {
-            meuRestaurante = new meuRestauranteContainer();
             InitializeComponent();
-            restaurante = rest;
-            LerDadosCliente();
-            LerDadosTrabalhador();
-            LerDadosPedido();
-            LerDadosEstados();
-            LerDadosMetodosPagamento(); 
-            LerDadosPagamentos();
+            restauranteId = rest.Id;
 
         }
 
         private void FormPedidos_Load(object sender, EventArgs e)
         {
-            
+
+            meuRestaurante = new meuRestauranteContainer();
+            restaurante = meuRestaurante.RestauranteSet.Find(restauranteId);
+            LerDadosCliente();
+            LerDadosTrabalhador();
+            LerDadosPedido();
+            LerDadosEstados();
+            LerDadosMetodosPagamento();
+            LerDadosPagamentos();
         }
 
         private void LerDadosCliente()
@@ -98,7 +100,7 @@ namespace RestGest
             if(listBoxPedidos.SelectedItem != null)
             {
                 PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
-                listBoxMetodoPagamentoUtilizado.DataSource = pedido.PagamentoSet;
+                listBoxMetodoPagamentoUtilizado.DataSource = pedido.PagamentoSet.ToList();
             }
 
         }
@@ -157,14 +159,23 @@ namespace RestGest
         {
             if(comboBoxTrabalhador.SelectedItem != null && comboBoxCliente.SelectedItem != null)
             {
+
                 PedidoSet pedido = new PedidoSet();
-                pedido.PessoaSet_Trabalhador = (PessoaSet_Trabalhador)comboBoxTrabalhador.SelectedItem;
-                pedido.PessoaSet_Cliente = (PessoaSet_Cliente)comboBoxCliente.SelectedItem;
-                pedido.RestauranteSet = restaurante;
-                pedido.EstadoSet = meuRestaurante.EstadoSet.OfType<EstadoSet>().First();
+                PessoaSet_Trabalhador pessoaSet_Trabalhador = (PessoaSet_Trabalhador)comboBoxTrabalhador.SelectedItem;
+                PessoaSet_Cliente pessoaSetCliente = (PessoaSet_Cliente)comboBoxCliente.SelectedItem;
+                pedido.PessoaSet_Trabalhador = pessoaSet_Trabalhador;
+                pedido.PessoaSet_Cliente = pessoaSetCliente;
+                pedido.RestauranteSet = meuRestaurante.RestauranteSet.OfType<RestauranteSet>().First();
+                pedido.EstadoSet = (EstadoSet)comboBoxEstadoAtual.Items[0];
+                /*PagamentoSet pagamento = new PagamentoSet();
+                pagamento.MetodoPagamentoSet = meuRestaurante.MetodoPagamentoSet.OfType<MetodoPagamentoSet>().First();
+                pagamento.Valor = 0;*/
+                //pedido.ItemMenuSet.Add(meuRestaurante.ItemMenuSet.OfType<ItemMenuSet>().First());
+                //pedido.PagamentoSet.Add(pagamento);
                 pedido.ValorTotal = 0;
 
                 meuRestaurante.PedidoSet.Add(pedido);
+                //meuRestaurante.PagamentoSet.Add(pagamento);
                 meuRestaurante.SaveChanges();
 
                 LerDadosPedido();
@@ -203,9 +214,9 @@ namespace RestGest
         {
             EstadoSet estado = (EstadoSet)comboBoxEstadoAtual.SelectedItem;
             PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
-            pedido.EstadoSet = estado;
+            //pedido.EstadoSet = estado;
 
-            meuRestaurante.SaveChanges();
+            //meuRestaurante.SaveChanges();
         }
 
         private void listBoxPedidos_SelectedIndexChanged(object sender, EventArgs e)
@@ -240,7 +251,7 @@ namespace RestGest
 
         private void buttonRemoverItem_Click(object sender, EventArgs e)
         {
-            if (listBoxPedidos.SelectedItem != null && listBoxMenuRestaurante.SelectedItem != null)
+            if (listBoxPedidos.SelectedItem != null && listBoxItensPedidos.SelectedItem != null)
             {
                 PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
                 pedido.ItemMenuSet.Remove((ItemMenuSet)listBoxItensPedidos.SelectedItem);
@@ -253,12 +264,13 @@ namespace RestGest
 
         private void buttonAdicionarMetodoPagamento_Click(object sender, EventArgs e)
         {
-            if( listBoxPedidos.SelectedItem != null && listBoxMetodoPagamento.SelectedItem != null)
+            if( listBoxPedidos.SelectedItem != null && listBoxMetodoPagamento.SelectedItem != null && textBoxValorMetodoPagamento.Text != "")
             {
                 PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
 
                 PagamentoSet pagamento = new PagamentoSet();
                 pagamento.MetodoPagamentoSet = (MetodoPagamentoSet)listBoxMetodoPagamento.SelectedItem;
+                pagamento.Valor = float.Parse(textBoxValorMetodoPagamento.Text);
                 pagamento.PedidoSet = pedido;
 
                 meuRestaurante.PagamentoSet.Add(pagamento);
@@ -307,7 +319,7 @@ namespace RestGest
             File.AppendAllText(path, Environment.NewLine + "--------------------------------------------" + Environment.NewLine);
             File.AppendAllText(path, Environment.NewLine + "Cliente: " + pedido.PessoaSet_Cliente.PessoaSet.Nome + Environment.NewLine + "Nº Contribuinte: " + pedido.PessoaSet_Cliente.NumContribuinte + Environment.NewLine);
             File.AppendAllText(path, Environment.NewLine + "--------------------------------------------" + Environment.NewLine);
-            File.AppendAllText(path, Environment.NewLine + "Itens do Pedido Nº: " + pedido.Id + Environment.NewLine);
+            File.AppendAllText(path, Environment.NewLine + "Itens : " + Environment.NewLine);
             foreach (ItemMenuSet menu in listBoxItensPedidos.Items)
             {
 
