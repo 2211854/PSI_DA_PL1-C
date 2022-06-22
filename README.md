@@ -27,9 +27,9 @@ Grupo: PL1-C
 Neste projeto pretende-se a realização de um sistema de gestão de restaurantes, cuja denominação é RestGest. Esta possui como objetivo principal gerir e operar todos os restaurantes, incluindo criar e manter o menu de cada restaurante, receber e tratar pedidos de clientes e guardar dados de clientes e trabalhadores.
 
 ## Projeto desenvolvido em:
->[.Net FrameWork (C#)](https://dotnet.microsoft.com/en-us/download/dotnet-framework).
->[EntityFrameworkData](https://docs.microsoft.com/en-us/ef/).
->[EntityFrameworkModelFirst](https://docs.microsoft.com/en-us/ef/ef6/modeling/designer/workflows/model-first).
+>- [.Net FrameWork (C#)](https://dotnet.microsoft.com/en-us/download/dotnet-framework).
+>- [EntityFrameworkData](https://docs.microsoft.com/en-us/ef/).
+>- [EntityFrameworkModelFirst](https://docs.microsoft.com/en-us/ef/ef6/modeling/designer/workflows/model-first).
 
 
 
