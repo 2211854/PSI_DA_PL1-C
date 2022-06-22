@@ -8,10 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using StreamReader;
-using Document;
-using PdfWriter;
-
 
 
 namespace RestGest
@@ -448,48 +444,6 @@ namespace RestGest
 
         private void buttonExportarPdf_Click(object sender, EventArgs e)
         {
-             try { 
-
-                PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
-
-
-                path = "./faturas/fatura_" + pedido.Id + ".txt";
-            
-
-                //Read the Data from Input File
-
-                StreamReader rdr = new StreamReader(path);
-
-                //Create a New instance on Document Class
-
-                Document doc = new Document();
-
-                //Create a New instance of PDFWriter Class for Output File
-
-                PdfWriter.GetInstance(doc, new FileStream(path, FileMode.Create));
-
-                //Open the Document
-
-                doc.Open();
-
-                //Add the content of Text File to PDF File
-
-                doc.Add(new Paragraph(rdr.ReadToEnd()));
-
-                //Close the Document
-
-                doc.Close();
-
-                MessageBox.Show("Conversion Successful....");
-
-                //Open the Converted PDF File
-
-                System.Diagnostics.Process.Start(path);
-            }
-            catch(Exception Ex)
-            {
-                MessageBox.Show("conversão nao foi possivel ser feita"+Ex,"Teste");
-            }
         }
     }
 }
