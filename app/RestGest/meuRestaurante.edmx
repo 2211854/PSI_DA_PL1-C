@@ -137,7 +137,7 @@
     <Property Name="Valor" Type="real" Nullable="false" />
     <Property Name="IdMetodoPagamento" Type="int" Nullable="false" />
     <Property Name="IdPedido" Type="int" Nullable="false" />
-    <Property Name="PedidoSetId" Type="int" Nullable="true" />
+    <Property Name="PedidoSetId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="PedidoSet">
     <Key>
@@ -338,7 +338,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="PedidoSetPagamentoSet">
-    <End Role="PedidoSet" Type="meuRestaurante.Store.PedidoSet" Multiplicity="0..1" />
+    <End Role="PedidoSet" Type="meuRestaurante.Store.PedidoSet" Multiplicity="1" />
     <End Role="PagamentoSet" Type="meuRestaurante.Store.PagamentoSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PedidoSet">
@@ -533,7 +533,7 @@
           <Property Name="IdPedido" Type="Int32" Nullable="false" />
           <NavigationProperty Name="MetodoPagamentoSet" Relationship="meuRestaurante.FK_MetodoPagamentoPagamento" FromRole="PagamentoSet" ToRole="MetodoPagamentoSet" />
           <NavigationProperty Name="PedidoSet" Relationship="meuRestaurante.PedidoSetPagamentoSet" FromRole="PagamentoSet" ToRole="PedidoSet" />
-          <Property Name="PedidoSetId" Type="Int32" Nullable="true" />
+          <Property Name="PedidoSetId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="PedidoSet">
           <Key>
@@ -744,7 +744,7 @@
           <End Type="meuRestaurante.RestauranteSet" Role="RestauranteSet" Multiplicity="*" />
         </Association>
         <Association Name="PedidoSetPagamentoSet">
-          <End Type="meuRestaurante.PedidoSet" Role="PedidoSet" Multiplicity="0..1" />
+          <End Type="meuRestaurante.PedidoSet" Role="PedidoSet" Multiplicity="1" />
           <End Type="meuRestaurante.PagamentoSet" Role="PagamentoSet" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PedidoSet">

@@ -17,8 +17,8 @@ namespace RestGest
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PedidoSet()
         {
-            this.PagamentoSet = new HashSet<PagamentoSet>();
             this.ItemMenuSet = new HashSet<ItemMenuSet>();
+            this.PagamentoSet = new HashSet<PagamentoSet>();
         }
     
         public int Id { get; set; }
@@ -29,8 +29,6 @@ namespace RestGest
         public int IdTrabalhador { get; set; }
     
         public virtual EstadoSet EstadoSet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PagamentoSet> PagamentoSet { get; set; }
         public virtual PessoaSet_Cliente PessoaSet_Cliente { get; set; }
         public virtual RestauranteSet RestauranteSet { get; set; }
         public virtual PessoaSet_Trabalhador PessoaSet_Trabalhador { get; set; }
@@ -40,5 +38,7 @@ namespace RestGest
         public override string ToString(){
             return "Pedido Nº"+this.Id+", "+this.ValorTotal+"€, "+this.PessoaSet_Cliente.PessoaSet.Nome;
         }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PagamentoSet> PagamentoSet { get; set; }
     }
 }

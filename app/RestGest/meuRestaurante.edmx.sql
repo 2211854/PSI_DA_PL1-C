@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/22/2022 05:42:12
+-- Date Created: 06/22/2022 21:15:36
 -- Generated from EDMX file: D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\meuRestaurante.edmx
 -- --------------------------------------------------
 
@@ -31,9 +31,6 @@ IF OBJECT_ID(N'[dbo].[FK_MoradaPessoa]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_MoradaRestaurante]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RestauranteSet] DROP CONSTRAINT [FK_MoradaRestaurante];
-GO
-IF OBJECT_ID(N'[dbo].[FK_PagamentoPedido]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PagamentoSet] DROP CONSTRAINT [FK_PagamentoPedido];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ClientePedido]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[PedidoSet] DROP CONSTRAINT [FK_ClientePedido];
@@ -64,6 +61,9 @@ IF OBJECT_ID(N'[dbo].[FK_RestauranteItemMenu_ItemMenuSet]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_RestauranteItemMenu_RestauranteSet]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RestauranteItemMenu] DROP CONSTRAINT [FK_RestauranteItemMenu_RestauranteSet];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PedidoSetPagamentoSet]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PagamentoSet] DROP CONSTRAINT [FK_PedidoSetPagamentoSet];
 GO
 
 -- --------------------------------------------------
@@ -165,7 +165,7 @@ CREATE TABLE [dbo].[PagamentoSet] (
     [Valor] real  NOT NULL,
     [IdMetodoPagamento] int  NOT NULL,
     [IdPedido] int  NOT NULL,
-    [PedidoSetId] int  NULL
+    [PedidoSetId] int  NOT NULL
 );
 GO
 
