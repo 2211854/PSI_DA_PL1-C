@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidos));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageAdicionar = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.comboBoxMetodosPagamentos = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.buttonAdicionarPedido = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxTrabalhador = new System.Windows.Forms.ComboBox();
@@ -48,6 +51,7 @@
             this.buttonExportarPdf = new System.Windows.Forms.Button();
             this.buttonExportarTxt = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.buttonRestanteMetodoPagamento = new System.Windows.Forms.Button();
             this.textBoxValorMetodoPagamento = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.buttonAdicionarMetodoPagamento = new System.Windows.Forms.Button();
@@ -80,6 +84,7 @@
             this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPageAdicionar.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabPageConsultar.SuspendLayout();
@@ -103,6 +108,7 @@
             // 
             // tabPageAdicionar
             // 
+            this.tabPageAdicionar.Controls.Add(this.groupBox5);
             this.tabPageAdicionar.Controls.Add(this.buttonAdicionarPedido);
             this.tabPageAdicionar.Controls.Add(this.groupBox1);
             this.tabPageAdicionar.Controls.Add(this.groupBox3);
@@ -114,10 +120,40 @@
             this.tabPageAdicionar.Text = "Criar";
             this.tabPageAdicionar.UseVisualStyleBackColor = true;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.comboBoxMetodosPagamentos);
+            this.groupBox5.Controls.Add(this.label11);
+            this.groupBox5.Location = new System.Drawing.Point(218, 341);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(357, 125);
+            this.groupBox5.TabIndex = 8;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Selecionar Metodo Pagamento Predefinido:";
+            // 
+            // comboBoxMetodosPagamentos
+            // 
+            this.comboBoxMetodosPagamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboBoxMetodosPagamentos.FormattingEnabled = true;
+            this.comboBoxMetodosPagamentos.Location = new System.Drawing.Point(168, 53);
+            this.comboBoxMetodosPagamentos.Name = "comboBoxMetodosPagamentos";
+            this.comboBoxMetodosPagamentos.Size = new System.Drawing.Size(174, 28);
+            this.comboBoxMetodosPagamentos.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label11.Location = new System.Drawing.Point(10, 56);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(152, 20);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Metodo pagamento:";
+            // 
             // buttonAdicionarPedido
             // 
             this.buttonAdicionarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonAdicionarPedido.Location = new System.Drawing.Point(358, 394);
+            this.buttonAdicionarPedido.Location = new System.Drawing.Point(347, 471);
             this.buttonAdicionarPedido.Name = "buttonAdicionarPedido";
             this.buttonAdicionarPedido.Size = new System.Drawing.Size(93, 35);
             this.buttonAdicionarPedido.TabIndex = 22;
@@ -131,7 +167,7 @@
             this.groupBox1.Controls.Add(this.labelPosicaoTrabalhador);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(217, 242);
+            this.groupBox1.Location = new System.Drawing.Point(218, 199);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(357, 125);
             this.groupBox1.TabIndex = 7;
@@ -186,7 +222,7 @@
             this.groupBox3.Controls.Add(this.labelMoradaCliente);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Location = new System.Drawing.Point(217, 89);
+            this.groupBox3.Location = new System.Drawing.Point(218, 57);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(357, 125);
             this.groupBox3.TabIndex = 6;
@@ -294,6 +330,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.buttonRestanteMetodoPagamento);
             this.groupBox4.Controls.Add(this.textBoxValorMetodoPagamento);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.buttonAdicionarMetodoPagamento);
@@ -311,17 +348,28 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Itens do pedido";
             // 
+            // buttonRestanteMetodoPagamento
+            // 
+            this.buttonRestanteMetodoPagamento.Location = new System.Drawing.Point(167, 179);
+            this.buttonRestanteMetodoPagamento.Name = "buttonRestanteMetodoPagamento";
+            this.buttonRestanteMetodoPagamento.Size = new System.Drawing.Size(65, 23);
+            this.buttonRestanteMetodoPagamento.TabIndex = 24;
+            this.buttonRestanteMetodoPagamento.Text = "Restante";
+            this.buttonRestanteMetodoPagamento.UseVisualStyleBackColor = true;
+            this.buttonRestanteMetodoPagamento.Click += new System.EventHandler(this.buttonRestanteMetodoPagamento_Click);
+            // 
             // textBoxValorMetodoPagamento
             // 
-            this.textBoxValorMetodoPagamento.Location = new System.Drawing.Point(72, 181);
+            this.textBoxValorMetodoPagamento.Location = new System.Drawing.Point(63, 181);
             this.textBoxValorMetodoPagamento.Name = "textBoxValorMetodoPagamento";
-            this.textBoxValorMetodoPagamento.Size = new System.Drawing.Size(140, 20);
+            this.textBoxValorMetodoPagamento.Size = new System.Drawing.Size(98, 20);
             this.textBoxValorMetodoPagamento.TabIndex = 23;
+            this.textBoxValorMetodoPagamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValorMetodoPagamento_KeyPress);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(32, 184);
+            this.label10.Location = new System.Drawing.Point(23, 184);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(34, 13);
             this.label10.TabIndex = 22;
@@ -628,6 +676,8 @@
             this.Load += new System.EventHandler(this.FormPedidos_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageAdicionar.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -698,5 +748,9 @@
         private System.Windows.Forms.Button buttonAdicionarPedido;
         private System.Windows.Forms.Button buttonExportarPdf;
         private System.Windows.Forms.Button buttonExportarTxt;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.ComboBox comboBoxMetodosPagamentos;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button buttonRestanteMetodoPagamento;
     }
 }

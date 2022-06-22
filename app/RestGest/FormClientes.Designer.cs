@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxEstadoAlterar = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.textBoxPaisAlterar = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -62,8 +64,6 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAdicionarClientes = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBoxEstadoAlterar = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBoxListarClientes.SuspendLayout();
             this.groupBoxInserirCliente.SuspendLayout();
@@ -94,6 +94,28 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consultar e Alterar";
+            // 
+            // comboBoxEstadoAlterar
+            // 
+            this.comboBoxEstadoAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboBoxEstadoAlterar.FormattingEnabled = true;
+            this.comboBoxEstadoAlterar.Items.AddRange(new object[] {
+            "Ativado",
+            "Desativado"});
+            this.comboBoxEstadoAlterar.Location = new System.Drawing.Point(265, 257);
+            this.comboBoxEstadoAlterar.Name = "comboBoxEstadoAlterar";
+            this.comboBoxEstadoAlterar.Size = new System.Drawing.Size(202, 28);
+            this.comboBoxEstadoAlterar.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(194, 260);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 20);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Estado:";
             // 
             // buttonAlterar
             // 
@@ -127,9 +149,11 @@
             // 
             this.textBoxCodPostalAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCodPostalAlterar.Location = new System.Drawing.Point(264, 158);
+            this.textBoxCodPostalAlterar.MaxLength = 8;
             this.textBoxCodPostalAlterar.Name = "textBoxCodPostalAlterar";
             this.textBoxCodPostalAlterar.Size = new System.Drawing.Size(203, 26);
             this.textBoxCodPostalAlterar.TabIndex = 18;
+            this.textBoxCodPostalAlterar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCodPostalAlterar_KeyPress);
             // 
             // label13
             // 
@@ -181,9 +205,11 @@
             // 
             this.textBoxNumContribuinteAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNumContribuinteAlterar.Location = new System.Drawing.Point(264, 91);
+            this.textBoxNumContribuinteAlterar.MaxLength = 9;
             this.textBoxNumContribuinteAlterar.Name = "textBoxNumContribuinteAlterar";
             this.textBoxNumContribuinteAlterar.Size = new System.Drawing.Size(203, 26);
             this.textBoxNumContribuinteAlterar.TabIndex = 12;
+            this.textBoxNumContribuinteAlterar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumContribuinteAlterar_KeyPress);
             // 
             // label9
             // 
@@ -199,9 +225,11 @@
             // 
             this.textBoxTelemovelAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTelemovelAlterar.Location = new System.Drawing.Point(264, 54);
+            this.textBoxTelemovelAlterar.MaxLength = 9;
             this.textBoxTelemovelAlterar.Name = "textBoxTelemovelAlterar";
             this.textBoxTelemovelAlterar.Size = new System.Drawing.Size(203, 26);
             this.textBoxTelemovelAlterar.TabIndex = 10;
+            this.textBoxTelemovelAlterar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTelemovelAlterar_KeyPress);
             // 
             // label10
             // 
@@ -296,9 +324,11 @@
             // 
             this.textBoxCodPostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCodPostal.Location = new System.Drawing.Point(467, 77);
+            this.textBoxCodPostal.MaxLength = 8;
             this.textBoxCodPostal.Name = "textBoxCodPostal";
             this.textBoxCodPostal.Size = new System.Drawing.Size(203, 26);
             this.textBoxCodPostal.TabIndex = 15;
+            this.textBoxCodPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCodPostal_KeyPress);
             // 
             // label4
             // 
@@ -350,9 +380,11 @@
             // 
             this.textBoxNumContribuinte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNumContribuinte.Location = new System.Drawing.Point(151, 94);
+            this.textBoxNumContribuinte.MaxLength = 9;
             this.textBoxNumContribuinte.Name = "textBoxNumContribuinte";
             this.textBoxNumContribuinte.Size = new System.Drawing.Size(203, 26);
             this.textBoxNumContribuinte.TabIndex = 6;
+            this.textBoxNumContribuinte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumContribuinte_KeyPress);
             // 
             // label3
             // 
@@ -368,9 +400,11 @@
             // 
             this.textBoxTelemovel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTelemovel.Location = new System.Drawing.Point(151, 57);
+            this.textBoxTelemovel.MaxLength = 9;
             this.textBoxTelemovel.Name = "textBoxTelemovel";
             this.textBoxTelemovel.Size = new System.Drawing.Size(203, 26);
             this.textBoxTelemovel.TabIndex = 4;
+            this.textBoxTelemovel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTelemovel_KeyPress);
             // 
             // label2
             // 
@@ -409,28 +443,6 @@
             this.buttonAdicionarClientes.Text = "Adicionar";
             this.buttonAdicionarClientes.UseVisualStyleBackColor = true;
             this.buttonAdicionarClientes.Click += new System.EventHandler(this.buttonAdicionarClientes_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(194, 260);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 20);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Estado:";
-            // 
-            // comboBoxEstadoAlterar
-            // 
-            this.comboBoxEstadoAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.comboBoxEstadoAlterar.FormattingEnabled = true;
-            this.comboBoxEstadoAlterar.Items.AddRange(new object[] {
-            "Ativado",
-            "Desativado"});
-            this.comboBoxEstadoAlterar.Location = new System.Drawing.Point(265, 257);
-            this.comboBoxEstadoAlterar.Name = "comboBoxEstadoAlterar";
-            this.comboBoxEstadoAlterar.Size = new System.Drawing.Size(202, 28);
-            this.comboBoxEstadoAlterar.TabIndex = 23;
             // 
             // FormClientes
             // 

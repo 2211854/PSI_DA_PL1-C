@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SautinSoft.Document;
+using SautinSoft.Document.Drawing;
 
 
 namespace RestGest
@@ -32,9 +34,30 @@ namespace RestGest
             meuRestaurante = new meuRestauranteContainer();
             restaurante = meuRestaurante.RestauranteSet.Find(restauranteId);
             LerDadosCliente();
+            LerDadosMetodos();
             LerDadosTrabalhador();
             LerDadosPedido();
             LerDadosEstados();
+        }
+        private float CalcularTotalPago()
+        {
+            float totalPago = 0;
+            PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
+            List<PagamentoSet> listaPagamentos = pedido.PagamentoSet.ToList();
+            foreach (PagamentoSet pagamento in listaPagamentos)
+            {
+                totalPago = totalPago + pagamento.Valor;
+            }
+            return totalPago;
+        }
+
+        private float CalcularRestantePagar()
+        {
+            float restantePagar = 0;
+            float totalPago = CalcularTotalPago();
+            PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
+            restantePagar = pedido.ValorTotal - totalPago;
+            return restantePagar;
         }
 
         private void LerDadosCliente()
@@ -49,6 +72,19 @@ namespace RestGest
                 }
             }
             comboBoxCliente.DataSource = listaClientesAtivos;
+        }
+        private void LerDadosMetodos()
+        {
+            List<MetodoPagamentoSet> listaMetodos = meuRestaurante.MetodoPagamentoSet.OfType<MetodoPagamentoSet>().ToList();
+            List<MetodoPagamentoSet> listaMetodosAtivos = new List<MetodoPagamentoSet>();
+            foreach (MetodoPagamentoSet metodo in listaMetodos)
+            {
+                if (metodo.Ativo)
+                {
+                    listaMetodosAtivos.Add(metodo);
+                }
+            }
+            comboBoxMetodosPagamentos.DataSource = listaMetodosAtivos;
         }
 
         public void LerDadosPedido()
@@ -163,6 +199,56 @@ namespace RestGest
             listBoxItensPedidos.DataSource = listaMenusSelecionados;
         }
 
+        public void redefinirForm()
+        {
+            PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
+            if (pedido.EstadoSet.EstadoAtual == "Recebido")
+            {
+                comboBoxEstadoAtual.Enabled = true;
+                buttonExportarTxt.Enabled = false;
+                buttonExportarPdf.Enabled = false;
+                buttonAdicionarItem.Enabled = false;
+                buttonRemoverItem.Enabled = false;
+                buttonAdicionarMetodoPagamento.Enabled = false;
+                buttonRemoverMetodoPagamento.Enabled = false;
+                buttonRestanteMetodoPagamento.Enabled = false;
+
+            }
+            else if (pedido.EstadoSet.EstadoAtual == "Em processamento")
+            {
+                comboBoxEstadoAtual.Enabled = true;
+                buttonExportarTxt.Enabled = false;
+                buttonExportarPdf.Enabled = false;
+                buttonAdicionarItem.Enabled = true;
+                buttonRemoverItem.Enabled = true;
+                buttonAdicionarMetodoPagamento.Enabled = true;
+                buttonRemoverMetodoPagamento.Enabled = true;
+                buttonRestanteMetodoPagamento.Enabled = true;
+            }
+            else if (pedido.EstadoSet.EstadoAtual == "Cancelado")
+            {
+                comboBoxEstadoAtual.Enabled = false;
+                buttonExportarTxt.Enabled = false;
+                buttonExportarPdf.Enabled = false;
+                buttonAdicionarItem.Enabled = false;
+                buttonRemoverItem.Enabled = false;
+                buttonAdicionarMetodoPagamento.Enabled = false;
+                buttonRemoverMetodoPagamento.Enabled = false;
+                buttonRestanteMetodoPagamento.Enabled = false;
+            }
+            else if (pedido.EstadoSet.EstadoAtual == "Concluido")
+            {
+                comboBoxEstadoAtual.Enabled = false;
+                buttonExportarTxt.Enabled = true;
+                buttonExportarPdf.Enabled = true;
+                buttonAdicionarItem.Enabled = false;
+                buttonRemoverItem.Enabled = false;
+                buttonAdicionarMetodoPagamento.Enabled = false;
+                buttonRemoverMetodoPagamento.Enabled = false;
+                buttonRestanteMetodoPagamento.Enabled = false;
+            }
+        }
+
         private void comboBoxCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(comboBoxCliente.SelectedItem != null) { 
@@ -197,18 +283,19 @@ namespace RestGest
                 pedido.PessoaSet_Cliente = pessoaSetCliente;
                 pedido.RestauranteSet = meuRestaurante.RestauranteSet.OfType<RestauranteSet>().First();
                 pedido.EstadoSet = (EstadoSet)comboBoxEstadoAtual.Items[0];
-                /*PagamentoSet pagamento = new PagamentoSet();
-                pagamento.MetodoPagamentoSet = meuRestaurante.MetodoPagamentoSet.OfType<MetodoPagamentoSet>().First();
-                pagamento.Valor = 0;*/
-                //pedido.ItemMenuSet.Add(meuRestaurante.ItemMenuSet.OfType<ItemMenuSet>().First());
-                //pedido.PagamentoSet.Add(pagamento);
+                PagamentoSet pagamento = new PagamentoSet();
+                pagamento.MetodoPagamentoSet = (MetodoPagamentoSet)comboBoxMetodosPagamentos.SelectedItem;
+                pagamento.Valor = 0;
+                pagamento.PedidoSet = pedido;
                 pedido.ValorTotal = 0;
 
                 meuRestaurante.PedidoSet.Add(pedido);
-                //meuRestaurante.PagamentoSet.Add(pagamento);
+                meuRestaurante.PagamentoSet.Add(pagamento);
                 meuRestaurante.SaveChanges();
 
                 LerDadosPedido();
+                LerDadosMetodosPagamento();
+                LerDadosPagamentos();
             }
             else
             {
@@ -246,9 +333,27 @@ namespace RestGest
             {
                 EstadoSet estado = (EstadoSet)comboBoxEstadoAtual.SelectedItem;
                 PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
-                pedido.EstadoSet = estado;
+                string valor = CalcularTotalPago().ToString("0.00");
+                if(estado.EstadoAtual == "Concluido" && pedido.ItemMenuSet.ToList().Count() == 0)
+                {
+                    comboBoxEstadoAtual.SelectedItem = pedido.EstadoSet;
+                    MessageBox.Show("Nao pode concluir o pedido sem itens!");
+
+                } else if (estado.EstadoAtual == "Concluido" && pedido.ValorTotal.ToString() == valor)
+                {
+                    pedido.EstadoSet = estado;
+                }else if(estado.EstadoAtual == "Concluido" && pedido.ValorTotal != CalcularTotalPago())
+                {
+                    comboBoxEstadoAtual.SelectedItem = pedido.EstadoSet;
+                    MessageBox.Show("Tem que pagar a totalidade do pedido \n antes de marcar como concluido!");
+                }
+                else
+                {
+                    pedido.EstadoSet = estado;
+                }
 
                 meuRestaurante.SaveChanges();
+                redefinirForm();
             }
             else
             {
@@ -268,47 +373,8 @@ namespace RestGest
             labelContribuinteClineteConsultar.Text = pedido.PessoaSet_Cliente.NumContribuinte.ToString();
             LerDadosMetodosPagamento();
             LerDadosPagamentos();
-            labelTotal.Text = pedido.ValorTotal.ToString();
-            if(pedido.EstadoSet.EstadoAtual == "Recebido")
-            {
-                comboBoxEstadoAtual.Enabled = true;
-                buttonExportarTxt.Enabled = false;
-                buttonExportarPdf.Enabled = false;
-                buttonAdicionarItem.Enabled = false;
-                buttonRemoverItem.Enabled = false;
-                buttonAdicionarMetodoPagamento.Enabled = false;
-                buttonRemoverMetodoPagamento.Enabled = false;
-
-            }else if(pedido.EstadoSet.EstadoAtual == "Em processamento")
-            {
-                comboBoxEstadoAtual.Enabled = true;
-                buttonExportarTxt.Enabled = false;
-                buttonExportarPdf.Enabled = false;
-                buttonAdicionarItem.Enabled = true;
-                buttonRemoverItem.Enabled = true;
-                buttonAdicionarMetodoPagamento.Enabled = true;
-                buttonRemoverMetodoPagamento.Enabled = true;
-            }
-            else if (pedido.EstadoSet.EstadoAtual == "Cancelado")
-            {
-                comboBoxEstadoAtual.Enabled = false;
-                buttonExportarTxt.Enabled = false;
-                buttonExportarPdf.Enabled = false;
-                buttonAdicionarItem.Enabled = true;
-                buttonRemoverItem.Enabled = true;
-                buttonAdicionarMetodoPagamento.Enabled = true;
-                buttonRemoverMetodoPagamento.Enabled = true;
-            }
-            else if (pedido.EstadoSet.EstadoAtual == "Concluido")
-            {
-                comboBoxEstadoAtual.Enabled = false;
-                buttonExportarTxt.Enabled = true;
-                buttonExportarPdf.Enabled = true;
-                buttonAdicionarItem.Enabled = true;
-                buttonRemoverItem.Enabled = true;
-                buttonAdicionarMetodoPagamento.Enabled = true;
-                buttonRemoverMetodoPagamento.Enabled = true;
-            }
+            labelTotal.Text = pedido.ValorTotal + " €";
+            redefinirForm();
 
         }
 
@@ -323,6 +389,7 @@ namespace RestGest
                 meuRestaurante.SaveChanges();
 
                 LerDadosPedido();
+                listBoxPedidos.SelectedItem = pedido;
 
             }
             else
@@ -345,6 +412,7 @@ namespace RestGest
                 meuRestaurante.SaveChanges();
 
                 LerDadosPedido();
+                listBoxPedidos.SelectedItem = pedido;
 
             }
             else
@@ -357,19 +425,25 @@ namespace RestGest
         {
             if( listBoxPedidos.SelectedItem != null && listBoxMetodoPagamento.SelectedItem != null && textBoxValorMetodoPagamento.Text != "")
             {
-                PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
+                if(float.Parse(textBoxValorMetodoPagamento.Text) > CalcularRestantePagar())
+                {
+                    MessageBox.Show("Nao pode pagar mais que o valor total do pedido!");
+                }
+                else
+                {
+                    PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
 
-                PagamentoSet pagamento = new PagamentoSet();
-                pagamento.MetodoPagamentoSet = (MetodoPagamentoSet)listBoxMetodoPagamento.SelectedItem;
-                pagamento.Valor = float.Parse(textBoxValorMetodoPagamento.Text);
-                pagamento.PedidoSet = pedido;
+                    PagamentoSet pagamento = new PagamentoSet();
+                    pagamento.MetodoPagamentoSet = (MetodoPagamentoSet)listBoxMetodoPagamento.SelectedItem;
+                    pagamento.Valor = float.Parse(textBoxValorMetodoPagamento.Text);
+                    pagamento.PedidoSet = pedido;
 
-                meuRestaurante.PagamentoSet.Add(pagamento);
-                meuRestaurante.SaveChanges();
+                    meuRestaurante.PagamentoSet.Add(pagamento);
+                    meuRestaurante.SaveChanges();
 
-                LerDadosPedido();
-                LerDadosMetodosPagamento();
-                LerDadosPagamentos();
+                    LerDadosMetodosPagamento();
+                    LerDadosPagamentos();
+                }
 
             }
             else
@@ -444,6 +518,95 @@ namespace RestGest
 
         private void buttonExportarPdf_Click(object sender, EventArgs e)
         {
+            try { 
+                PedidoSet pedido = (PedidoSet)listBoxPedidos.SelectedItem;
+
+                // Set a path to our document.
+                string docPath = @"./faturas/fatura_" + pedido.Id + ".pdf";
+
+                // Create a new document and DocumentBuilder.
+                DocumentCore dc = new DocumentCore();
+                DocumentBuilder db = new DocumentBuilder(dc);
+
+                // Set page size A4.
+                Section section = db.Document.Sections[0];
+                section.PageSetup.PaperType = PaperType.A4;
+
+                // Add 1st paragraph with formatted text.
+                db.CharacterFormat.FontName = "Colibri";
+                db.CharacterFormat.Size = 16;
+
+                db.Write(Environment.NewLine + "Restaurante: " + pedido.RestauranteSet.Nome );
+                db.Write(Environment.NewLine + "--------------------------------------------" );
+                db.Write(Environment.NewLine + "Fatura Nº: " + pedido.Id );
+                db.Write(Environment.NewLine + "Funcionario: " + pedido.PessoaSet_Trabalhador.PessoaSet.Nome );
+                db.Write(Environment.NewLine + "--------------------------------------------" );
+                db.Write(Environment.NewLine + "Cliente: " + pedido.PessoaSet_Cliente.PessoaSet.Nome + Environment.NewLine + "Nº Contribuinte: " + pedido.PessoaSet_Cliente.NumContribuinte);
+                db.Write(Environment.NewLine + "--------------------------------------------" );
+                db.Write(Environment.NewLine + "Itens : ");
+                foreach (ItemMenuSet menu in listBoxItensPedidos.Items)
+                {
+
+                    db.Write(Environment.NewLine + menu.ToString());
+
+                }
+                db.Write(Environment.NewLine + "--------------------------------------------" );
+                db.Write( Environment.NewLine + "Total:" + pedido.ValorTotal);
+                db.Write( Environment.NewLine + "--------------------------------------------" );
+                db.Write(Environment.NewLine + "Metodos pagamento" );
+                foreach (PagamentoSet pagamento in listBoxMetodoPagamentoUtilizado.Items)
+                {
+
+                    db.Write(Environment.NewLine + pagamento.ToString());
+
+                }
+                db.Write(Environment.NewLine + "--------------------------------------------");
+                db.Write(Environment.NewLine + "Obrigado, volte sempre!");
+                // Add a graphics figure into the paragraph.
+                db.CharacterFormat.ClearFormatting();
+                Shape shape = db.InsertShape(SautinSoft.Document.Drawing.Figure.SmileyFace, new SautinSoft.Document.Drawing.Size(5, 5, LengthUnit.Millimeter));
+                // Specify outline and fill.
+                shape.Outline.Fill.SetSolid(new SautinSoft.Document.Color("#358CCB"));
+                shape.Outline.Width = 1;
+                shape.Fill.SetSolid(SautinSoft.Document.Color.Orange);
+
+                // Save the document to the file in PDF format.
+                dc.Save(docPath, new PdfSaveOptions()
+                { Compliance = PdfCompliance.PDF_A1a });
+            }
+            catch(Exception ex)
+            {
+                
+            }
+
+        }
+
+        private void buttonRestanteMetodoPagamento_Click(object sender, EventArgs e)
+        {
+            if(listBoxPedidos.SelectedItem != null)
+            {
+                textBoxValorMetodoPagamento.Text = CalcularRestantePagar().ToString();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um pedido!");
+            }
+        }
+
+        private void textBoxValorMetodoPagamento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }
+

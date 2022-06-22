@@ -42,3 +42,5 @@ D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.csproj.CoreComp
 D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.csproj.CopyComplete
 D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.exe
 D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.pdb
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\bin\Debug\SautinSoft.Document.dll
+D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\bin\Debug\SautinSoft.Document.xml

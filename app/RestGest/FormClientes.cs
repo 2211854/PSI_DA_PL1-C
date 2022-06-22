@@ -89,27 +89,89 @@ namespace RestGest
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            if (textBoxNomeAlterar.Text != "" && textBoxTelemovelAlterar.Text != "" && textBoxNumContribuinteAlterar.Text != "" && textBoxRuaAlterar.Text != "" && textBoxCodPostalAlterar.Text != "" && textBoxCidadeAlterar.Text != "" && textBoxPaisAlterar.Text != "" && listBoxClientes.SelectedItem != null && comboBoxEstadoAlterar.SelectedIndex >= 0)
+                if (textBoxNomeAlterar.Text != "" && textBoxTelemovelAlterar.Text != "" && textBoxNumContribuinteAlterar.Text != "" && textBoxRuaAlterar.Text != "" && textBoxCodPostalAlterar.Text != "" && textBoxCidadeAlterar.Text != "" && textBoxPaisAlterar.Text != "" && listBoxClientes.SelectedItem != null && comboBoxEstadoAlterar.SelectedIndex >= 0)
+                {
+                    PessoaSet_Cliente cliente = (PessoaSet_Cliente)listBoxClientes.SelectedItem;
+                    cliente.PessoaSet.Nome = textBoxNomeAlterar.Text;
+                    cliente.PessoaSet.Telemovel = Int32.Parse(textBoxTelemovelAlterar.Text);
+                    cliente.NumContribuinte = Int32.Parse(textBoxNumContribuinteAlterar.Text);
+                    cliente.PessoaSet.MoradaSet.Rua = textBoxRuaAlterar.Text;
+                    cliente.PessoaSet.MoradaSet.CodPostal = textBoxCodPostalAlterar.Text;
+                    cliente.PessoaSet.MoradaSet.Cidade = textBoxCidadeAlterar.Text;
+                    cliente.PessoaSet.MoradaSet.Pais = textBoxPaisAlterar.Text;
+                    cliente.PessoaSet.Ativo = (comboBoxEstadoAlterar.Text == "Ativado") ? true : false;
+
+
+                    meuRestaurante.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Preencha e selecione todos os dados solicitados para proceder a alteração!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+
+        }
+
+        private void textBoxTelemovel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                PessoaSet_Cliente cliente = (PessoaSet_Cliente)listBoxClientes.SelectedItem;
-                cliente.PessoaSet.Nome = textBoxNomeAlterar.Text;
-                cliente.PessoaSet.Telemovel = Int32.Parse(textBoxTelemovelAlterar.Text);
-                cliente.NumContribuinte = Int32.Parse(textBoxNumContribuinteAlterar.Text);
-                cliente.PessoaSet.MoradaSet.Rua = textBoxRuaAlterar.Text;
-                cliente.PessoaSet.MoradaSet.CodPostal = textBoxCodPostalAlterar.Text;
-                cliente.PessoaSet.MoradaSet.Cidade = textBoxCidadeAlterar.Text;
-                cliente.PessoaSet.MoradaSet.Pais = textBoxPaisAlterar.Text;
-                cliente.PessoaSet.Ativo = (comboBoxEstadoAlterar.Text == "Ativado") ? true : false;
-
-
-                meuRestaurante.SaveChanges();
-            }
-            else
-            {
-                MessageBox.Show("Preencha e selecione todos os dados solicitados para proceder a alteração!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                e.Handled = true;
             }
         }
 
+        private void textBoxNumContribuinte_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxCodPostal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '-'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '-') && ((sender as TextBox).Text.IndexOf('-') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxTelemovelAlterar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxNumContribuinteAlterar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxCodPostalAlterar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '-'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '-') && ((sender as TextBox).Text.IndexOf('-') > -1))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

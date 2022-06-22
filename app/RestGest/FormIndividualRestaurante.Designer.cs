@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIndividualRestaurante));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePainelDeControlo = new System.Windows.Forms.TabPage();
+            this.buttonPedidos = new System.Windows.Forms.Button();
             this.comboBoxRestaurantes = new System.Windows.Forms.ComboBox();
             this.labelTotalFaturado = new System.Windows.Forms.Label();
             this.labelNumeroPedidos = new System.Windows.Forms.Label();
@@ -90,7 +91,6 @@
             this.buttonAdicionarMenu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBoxMenus = new System.Windows.Forms.ListBox();
-            this.buttonPedidos = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPagePainelDeControlo.SuspendLayout();
             this.tabPageTrabalhadores.SuspendLayout();
@@ -128,6 +128,20 @@
             this.tabPagePainelDeControlo.TabIndex = 2;
             this.tabPagePainelDeControlo.Text = "Painel de Controlo";
             this.tabPagePainelDeControlo.UseVisualStyleBackColor = true;
+            // 
+            // buttonPedidos
+            // 
+            this.buttonPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPedidos.Image = global::RestGest.Properties.Resources.receipt_solid;
+            this.buttonPedidos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonPedidos.Location = new System.Drawing.Point(429, 78);
+            this.buttonPedidos.Name = "buttonPedidos";
+            this.buttonPedidos.Size = new System.Drawing.Size(143, 165);
+            this.buttonPedidos.TabIndex = 29;
+            this.buttonPedidos.Text = "Pedidos";
+            this.buttonPedidos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonPedidos.UseVisualStyleBackColor = true;
+            this.buttonPedidos.Click += new System.EventHandler(this.buttonPedidos_Click);
             // 
             // comboBoxRestaurantes
             // 
@@ -234,9 +248,11 @@
             // 
             this.textBoxTelemovelTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxTelemovelTrabalhador.Location = new System.Drawing.Point(123, 60);
+            this.textBoxTelemovelTrabalhador.MaxLength = 9;
             this.textBoxTelemovelTrabalhador.Name = "textBoxTelemovelTrabalhador";
             this.textBoxTelemovelTrabalhador.Size = new System.Drawing.Size(151, 26);
             this.textBoxTelemovelTrabalhador.TabIndex = 35;
+            this.textBoxTelemovelTrabalhador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTelemovelTrabalhador_KeyPress);
             // 
             // label14
             // 
@@ -338,9 +354,11 @@
             // 
             this.textBoxCodPostalTrabalhador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxCodPostalTrabalhador.Location = new System.Drawing.Point(123, 203);
+            this.textBoxCodPostalTrabalhador.MaxLength = 8;
             this.textBoxCodPostalTrabalhador.Name = "textBoxCodPostalTrabalhador";
             this.textBoxCodPostalTrabalhador.Size = new System.Drawing.Size(151, 26);
             this.textBoxCodPostalTrabalhador.TabIndex = 23;
+            this.textBoxCodPostalTrabalhador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCodPostalTrabalhador_KeyPress);
             // 
             // label19
             // 
@@ -359,6 +377,7 @@
             this.textBoxSalarioTrabalhador.Name = "textBoxSalarioTrabalhador";
             this.textBoxSalarioTrabalhador.Size = new System.Drawing.Size(151, 26);
             this.textBoxSalarioTrabalhador.TabIndex = 21;
+            this.textBoxSalarioTrabalhador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSalarioTrabalhador_KeyPress);
             // 
             // label20
             // 
@@ -439,9 +458,11 @@
             // 
             this.textBoxTelemovelTrabalhadorAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxTelemovelTrabalhadorAlterar.Location = new System.Drawing.Point(122, 70);
+            this.textBoxTelemovelTrabalhadorAlterar.MaxLength = 9;
             this.textBoxTelemovelTrabalhadorAlterar.Name = "textBoxTelemovelTrabalhadorAlterar";
             this.textBoxTelemovelTrabalhadorAlterar.Size = new System.Drawing.Size(151, 26);
             this.textBoxTelemovelTrabalhadorAlterar.TabIndex = 47;
+            this.textBoxTelemovelTrabalhadorAlterar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTelemovelTrabalhadorAlterar_KeyPress);
             // 
             // label13
             // 
@@ -533,9 +554,11 @@
             // 
             this.textBoxCodPostalTrabalhadorAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxCodPostalTrabalhadorAlterar.Location = new System.Drawing.Point(122, 208);
+            this.textBoxCodPostalTrabalhadorAlterar.MaxLength = 8;
             this.textBoxCodPostalTrabalhadorAlterar.Name = "textBoxCodPostalTrabalhadorAlterar";
             this.textBoxCodPostalTrabalhadorAlterar.Size = new System.Drawing.Size(151, 26);
             this.textBoxCodPostalTrabalhadorAlterar.TabIndex = 37;
+            this.textBoxCodPostalTrabalhadorAlterar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCodPostalTrabalhadorAlterar_KeyPress);
             // 
             // label10
             // 
@@ -554,6 +577,7 @@
             this.textBoxSalarioTrabalhadorAlterar.Name = "textBoxSalarioTrabalhadorAlterar";
             this.textBoxSalarioTrabalhadorAlterar.Size = new System.Drawing.Size(151, 26);
             this.textBoxSalarioTrabalhadorAlterar.TabIndex = 35;
+            this.textBoxSalarioTrabalhadorAlterar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSalarioTrabalhadorAlterar_KeyPress);
             // 
             // label5
             // 
@@ -730,20 +754,6 @@
             this.listBoxMenus.Name = "listBoxMenus";
             this.listBoxMenus.Size = new System.Drawing.Size(259, 381);
             this.listBoxMenus.TabIndex = 1;
-            // 
-            // buttonPedidos
-            // 
-            this.buttonPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPedidos.Image = global::RestGest.Properties.Resources.receipt_solid;
-            this.buttonPedidos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonPedidos.Location = new System.Drawing.Point(429, 78);
-            this.buttonPedidos.Name = "buttonPedidos";
-            this.buttonPedidos.Size = new System.Drawing.Size(143, 165);
-            this.buttonPedidos.TabIndex = 29;
-            this.buttonPedidos.Text = "Pedidos";
-            this.buttonPedidos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonPedidos.UseVisualStyleBackColor = true;
-            this.buttonPedidos.Click += new System.EventHandler(this.buttonPedidos_Click);
             // 
             // FormIndividualRestaurante
             // 

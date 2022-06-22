@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace RestGest
 {
     public partial class FormIndividualRestaurante : Form
@@ -202,16 +203,17 @@ namespace RestGest
             List<ItemMenuSet> listaMenusNaoSelecionados = new List<ItemMenuSet>();
             foreach (ItemMenuSet menu in listaMenus)
             {
-                if (menu.RestauranteSet.Contains(restaurante))
+                if (menu.Ativo)
                 {
+                    if (menu.RestauranteSet.Contains(restaurante))
+                    {
                         listaMenusSelecionados.Add(menu);
+                    }
+                    else
+                    {
+                        listaMenusNaoSelecionados.Add(menu);
+                    }
                 }
-                else
-                {
-                    listaMenusNaoSelecionados.Add(menu);
-                }
-
-
             }
 
             listBoxMenus.DataSource = listaMenusNaoSelecionados;
@@ -225,6 +227,71 @@ namespace RestGest
             this.Hide();
             form.ShowDialog();
             this.Show();
+        }
+
+        private void textBoxCodPostalTrabalhador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '-'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '-') && ((sender as TextBox).Text.IndexOf('-') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxCodPostalTrabalhadorAlterar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '-'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '-') && ((sender as TextBox).Text.IndexOf('-') > -1))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void textBoxTelemovelTrabalhador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxSalarioTrabalhador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void textBoxTelemovelTrabalhadorAlterar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void textBoxSalarioTrabalhadorAlterar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }

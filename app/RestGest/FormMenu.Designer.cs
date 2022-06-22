@@ -220,6 +220,7 @@
             this.textBoxPreco.Name = "textBoxPreco";
             this.textBoxPreco.Size = new System.Drawing.Size(206, 26);
             this.textBoxPreco.TabIndex = 24;
+            this.textBoxPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPreco_KeyPress);
             // 
             // label3
             // 
@@ -415,6 +416,7 @@
             this.textBoxPrecoAlterar.Name = "textBoxPrecoAlterar";
             this.textBoxPrecoAlterar.Size = new System.Drawing.Size(206, 26);
             this.textBoxPrecoAlterar.TabIndex = 7;
+            this.textBoxPrecoAlterar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrecoAlterar_KeyPress);
             // 
             // label7
             // 

@@ -402,9 +402,11 @@
             // 
             this.textBoxCodPostalRestaurante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCodPostalRestaurante.Location = new System.Drawing.Point(194, 165);
+            this.textBoxCodPostalRestaurante.MaxLength = 8;
             this.textBoxCodPostalRestaurante.Name = "textBoxCodPostalRestaurante";
             this.textBoxCodPostalRestaurante.Size = new System.Drawing.Size(203, 26);
             this.textBoxCodPostalRestaurante.TabIndex = 26;
+            this.textBoxCodPostalRestaurante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCodPostalRestaurante_KeyPress);
             // 
             // label3
             // 
@@ -523,9 +525,11 @@
             // 
             this.textBoxCodPostalRestauranteAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCodPostalRestauranteAlterar.Location = new System.Drawing.Point(196, 165);
+            this.textBoxCodPostalRestauranteAlterar.MaxLength = 9;
             this.textBoxCodPostalRestauranteAlterar.Name = "textBoxCodPostalRestauranteAlterar";
             this.textBoxCodPostalRestauranteAlterar.Size = new System.Drawing.Size(203, 26);
             this.textBoxCodPostalRestauranteAlterar.TabIndex = 37;
+            this.textBoxCodPostalRestauranteAlterar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCodPostalRestauranteAlterar_KeyPress);
             // 
             // label12
             // 
