@@ -29,7 +29,6 @@ D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\bin\Debug\EntityFramework.xml
 D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.csproj.AssemblyReference.cache
 D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.csproj.SuggestedBindingRedirects.cache
-D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormLogin.resources
 D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormClientes.resources
 D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormGlobalRestaurantes.resources
 D:\Projeto Final DA\PSI_DA_PL1-C\app\RestGest\obj\Debug\RestGest.FormIndividualRestaurante.resources
